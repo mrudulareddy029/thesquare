@@ -160,7 +160,7 @@ export default function FloorPlans() {
                       alt={`${activeTab} Plan`} 
                       width={400} 
                       height={300} 
-                      className="w-full h-auto object-contain rounded-[12px] hover:scale-105 transition-transform duration-300" 
+                      className="w-full h-auto object-contain rounded-[12px] " 
                     />
                   </div>
                 ))}
