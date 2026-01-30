@@ -44,15 +44,16 @@ export default function Navbar() {
       
       {/* 1. Main Navbar Header */}
       <div className={`relative ${navbarBackground} ${scrollShadow} h-[70px] min-[1440px]:h-[78.8px] transition-colors duration-300`}>
-        <div className="mx-auto h-full px-4 md:px-10 min-[1440px]:px-12 max-w-[1550px] flex items-center justify-between relative z-10">
+        {/* Changed max-w to [2400px] or full to allow expansion on 2560px screens */}
+        <div className="mx-auto h-full px-4 md:px-10 min-[1440px]:px-12 min-[1920px]:px-24 max-w-[2400px] flex items-center justify-between relative z-10">
           
-          {/* LEFT: Nav Links (Hidden on mobile, fluid on laptop/desktop) */}
-          <ul className="hidden lg:flex items-center justify-start lg:order-1 list-none p-0 m-0 gap-x-2 min-[1440px]:gap-x-4">
+          {/* LEFT: Nav Links */}
+          <ul className="hidden lg:flex items-center justify-start lg:order-1 list-none p-0 m-0 gap-x-2 min-[1440px]:gap-x-4 min-[1920px]:gap-x-8">
             {navLinks.map((link) => (
               <li key={link.name} className="flex items-center">
                 <Link 
                   href={link.href} 
-                  className={`px-2 min-[1440px]:px-3 py-2 text-[14px] min-[1440px]:text-[15px] font-normal hover:text-primary ${textColor} transition-colors duration-300 whitespace-nowrap`}
+                  className={`px-2 min-[1440px]:px-3 py-2 text-[14px] min-[1440px]:text-[15px] min-[1920px]:text-[17px] font-normal hover:text-primary ${textColor} transition-colors duration-300 whitespace-nowrap`}
                 >
                   {link.name}
                 </Link>
@@ -68,7 +69,7 @@ export default function Navbar() {
                 alt="Logo"
                 width={106}
                 height={50}
-                className={`h-[35px] md:h-[40px] min-[1440px]:h-[50px] w-auto object-contain transition duration-300 ${logoFilter}`}
+                className={`h-[35px] md:h-[40px] min-[1440px]:h-[50px] min-[1920px]:h-[60px] w-auto object-contain transition duration-300 ${logoFilter}`}
                 priority
               />
             </Link>
@@ -76,15 +77,15 @@ export default function Navbar() {
 
           {/* RIGHT: Desktop Section */}
           <div className="flex items-center justify-end lg:order-3"> 
-            <div className="hidden lg:flex items-center gap-3 min-[1440px]:gap-6">
+            <div className="hidden lg:flex items-center gap-3 min-[1440px]:gap-6 min-[1920px]:gap-10">
               <div className={`flex flex-col items-end gap-[2px] transition-colors duration-300 ${textColor}`}>
-                <p className="m-0 p-0 text-[12px] min-[1440px]:text-[14px] leading-none font-light whitespace-nowrap opacity-80">Email: info@irarealty.in</p>
-                <p className="m-0 p-0 text-[12px] min-[1440px]:text-[14px] leading-none font-light whitespace-nowrap">Call Us: +91 9121 777 777</p>
+                <p className="m-0 p-0 text-[12px] min-[1440px]:text-[14px] min-[1920px]:text-[16px] leading-none font-light whitespace-nowrap opacity-80">Email: info@irarealty.in</p>
+                <p className="m-0 p-0 text-[12px] min-[1440px]:text-[14px] min-[1920px]:text-[16px] leading-none font-light whitespace-nowrap">Call Us: +91 9121 777 777</p>
               </div>
 
               <Link 
                 href="#contact" 
-                className="inline-flex items-center justify-center rounded-full px-4 min-[1440px]:px-5 py-2 text-[12px] min-[1440px]:text-[13px] border border-primary text-primary transition-all duration-300 hover:bg-primary hover:text-white h-[34px]"
+                className="inline-flex items-center justify-center rounded-full px-4 min-[1440px]:px-5 min-[1920px]:px-8 py-2 text-[12px] min-[1440px]:text-[13px] min-[1920px]:text-[15px] border border-primary text-primary transition-all duration-300 hover:bg-primary hover:text-white h-[34px] min-[1920px]:h-[44px]"
               >
                 Contact now
               </Link>
