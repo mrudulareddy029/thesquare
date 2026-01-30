@@ -1,3 +1,7 @@
+export const runtime = "edge";
+export const dynamic = "force-static";
+export const revalidate = 3600;
+
 import './globals.css'
 import type { Metadata } from 'next'
 import { Inter, Montserrat } from 'next/font/google'
