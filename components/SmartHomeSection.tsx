@@ -4,91 +4,99 @@ import React from "react";
 import Image from "next/image";
 
 const features = [
-  { title: "Smart Lighting", icon: "/smart_light.webp" },
-  { title: "Fans", icon: "/fan.webp" },
-  { title: "Air Conditioner", icon: "/ac.webp" },
-  { title: "Mobile App Enabled", icon: "/mobile.webp" },
-  { title: "Smart Lock System", icon: "/lock.webp" },
-  { title: "Motion Sensor For Bathrooms", icon: "/sensor.webp" },
-  { title: "Mesh Network", icon: "/mesh_network.webp" },
-  { title: "Light Dimmer", icon: "/light_dimmer.webp" },
-  { title: "Universal IR Blaster", icon: "/ir.webp" },
+  { title: "Smart Lighting", icon: "/smart_light.png" },
+  { title: "Fans", icon: "/fan.png" },
+  { title: "Air Conditioner", icon: "/ac.png" },
+  { title: "Mobile App Enabled", icon: "/mobile.png" },
+  { title: "Smart Lock System", icon: "/lock.png" },
+  { title: "Motion Sensor For Bathrooms", icon: "/sensor.png" },
+  { title: "Mesh Network", icon: "/mesh_network.png" },
+  { title: "Light Dimmer", icon: "/light_dimmer.png" },
+  { title: "Universal IR Blaster", icon: "/ir.png" },
 ];
 
 export default function SmartHomeSection() {
   return (
-    <section className="relative w-full bg-secondary z-30 -mt-[25px] overflow-hidden rounded-t-[40px] lg:rounded-t-[42px] py-8 lg:py-16" id="automation">
-      
-      {/* 1. HEADER CONTAINER */}
-      <div className="mx-auto relative z-10 flex flex-col items-center text-center px-4 w-full max-w-[1440px]">
+    <section
+      className="relative w-full bg-secondary z-30 -mt-[25px] overflow-hidden rounded-t-[40px] lg:rounded-t-[42px] py-12 lg:py-20"
+      id="automation"
+    >
+      {/* 1. HEADER - Responsive text clamps */}
+      <div className="mx-auto relative z-10 flex flex-col items-center text-center px-6 w-full max-w-[1440px]">
         <div className="flex flex-col items-center w-full lg:w-[1296px]">
-          
-          {/* HEADING: Using Tailwind arbitrary values for exact design matching */}
           <h2 className="font-gotham font-light text-white uppercase text-center w-full 
-                         pt-[clamp(20px,5vw,64px)] text-[clamp(20px,6vw,42px)] leading-tight
-                         flex items-center justify-center min-h-auto">
-            4 BHK Luxury Villas With Home Automation
+                         text-[24px] sm:text-[32px] lg:text-[42px] leading-tight tracking-wide">
+            Connect with smart solutions at your home
           </h2>
 
-          <div className="w-full h-[10px] mb-2" />
+          <div className="w-full h-[10px] mb-4" />
 
-          {/* PARAGRAPH */}
-          <p className="text-white/90 font-gotham font-light w-full max-w-full lg:max-w-[1042px] flex flex-col items-center">
-            <span className="block w-full text-[14px] lg:text-[17px] leading-relaxed lg:leading-[22px]">
-              Experience a tech-enabled lifestyle with smart home features in our 4 BHK villas in Adibatla. 
-              Enjoy convenience, security, and luxury at the touch of a button.
+          <p className="text-white/90 font-gotham font-light w-full max-w-[900px]">
+            <span className="block text-[14px] sm:text-[16px] lg:text-[18px] leading-relaxed">
+              <p>Enjoy your home living with smart home automation empowered by cutting-edge</p>
+               technology. Enhance home life with smart automation for comfort, convenience, and security.
             </span>
           </p>
         </div>
       </div>
 
-      {/* 2. IMAGES GRID */}
-      <div className="relative container mx-auto px-4 lg:max-w-[1320px] z-10 mt-8 lg:mt-16">
-        {/* Background Frame - Using arbitrary attributes to handle visibility logic if needed */}
-        <div className="absolute top-[8%] left-1/2 -translate-x-1/2 -z-10 hidden lg:block w-full h-[90%]" data-frame="active">
-          <Image src="/rectangular.png" alt="frame" fill className="object-contain" sizes="1320px" />
+      {/* 2. IMAGES GRID - Handles stack on mobile, side-by-side on desktop */}
+      <div className="relative container mx-auto px-6 lg:max-w-[1320px] z-10 mt-10 lg:mt-20">
+        <div className="absolute top-[8%] left-1/2 -translate-x-1/2 -z-10 hidden lg:block w-full h-[90%]">
+          <Image src="/rectangular.png" alt="frame" fill className="object-contain opacity-50" sizes="1320px" />
         </div>
-        
-        <div className="flex flex-col lg:flex-row gap-4 lg:gap-8 items-stretch w-full">
-          {/* Left Large Image */}
-          <div className="w-full lg:w-1/2 relative min-h-[300px] md:min-h-[500px] lg:h-[763px] lg:pl-8">
-            <Image 
-              src="/firstimage.webp" 
-              alt="Smart Home Automation" 
-              fill 
-              className="object-cover rounded-sm" 
-              sizes="(max-width: 1024px) 100vw, 638px" 
-              priority 
+
+        <div className="flex flex-col lg:flex-row gap-6 lg:gap-8 items-stretch w-full">
+          <div className="w-full lg:w-1/2 relative min-h-[300px] sm:min-h-[450px] lg:h-[763px]">
+            <Image
+              src="/firstimage.png"
+              alt="Smart Home Automation"
+              fill
+              className="object-cover rounded-xl lg:rounded-sm"
+              sizes="(max-width: 1024px) 100vw, 638px"
+              priority
             />
           </div>
 
-          {/* Right Column Stack */}
-          <div className="w-full lg:w-1/2 flex flex-col gap-4 lg:h-[763px]">
-            <div className="relative w-full h-[250px] lg:flex-1">
-              <Image src="/secondimage.webp" alt="Kitchen Automation" fill className="object-cover rounded-sm" sizes="(max-width: 1024px) 100vw, 626px" />
+          <div className="w-full lg:w-1/2 flex flex-col gap-6 lg:h-[763px]">
+            <div className="relative w-full h-[220px] sm:h-[300px] lg:flex-1">
+              <Image src="/secondimage.png" alt="Kitchen" fill className="object-cover rounded-xl lg:rounded-sm" />
             </div>
-            <div className="relative w-full h-[250px] lg:flex-1">
-              <Image src="/thirdimage.webp" alt="Living Room Automation" fill className="object-cover rounded-sm" sizes="(max-width: 1024px) 100vw, 626px" />
+            <div className="relative w-full h-[220px] sm:h-[300px] lg:flex-1">
+              <Image src="/thirdimage.png" alt="Living Room" fill className="object-cover rounded-xl lg:rounded-sm" />
             </div>
           </div>
         </div>
       </div>
 
-      {/* 3. FEATURE BOX GRID */}
-      <div className="relative z-10 mt-12 lg:mt-20 px-4">
-        <div className="mx-auto w-full max-w-[1036px] border-[0.8px] border-white/80 p-3 md:p-[20px]">
-          <div className="mx-auto w-full bg-white border-[0.8px] border-[#7FA61A]/70">
-            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5">
+      {/* 3. FEATURE BOX GRID - Responsive Grid (1 col -> 2 col -> 5 col) */}
+      <div className="relative z-10 mt-16 lg:mt-24 px-6">
+        <div className="w-full flex justify-center mb-10">
+          <h3 className="text-white font-gotham font-normal uppercase tracking-[3px] text-[16px] lg:text-[22px] text-center">
+            Connect with smart solutions at home
+          </h3>
+        </div>
+
+        <div className="mx-auto w-full max-w-[1100px] border border-white p-2 sm:p-4">
+          <div className="w-full bg-white rounded-lg lg:rounded-none overflow-hidden">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5">
               {features.map((feature, index) => (
-                <div 
-                  key={index} 
-                  className="relative flex flex-col sm:flex-row items-center justify-center text-center gap-3 px-2 py-4 lg:py-6 border-b border-r border-[#7FA61A]/10 last:border-r-0 lg:border-b-0"
-                  data-feature-item="true"
+                <div
+                  key={index}
+                  className="flex items-center gap-4 px-6 py-8 border-b border-gray-100 
+                             sm:even:border-l lg:border-l lg:first:border-l-0 lg:border-b-0 
+                             "
                 >
-                  <div className="relative w-8 h-8 lg:w-12 lg:h-12 flex-shrink-0">
-                    <Image src={feature.icon} alt={feature.title} fill className="object-contain" sizes="48px" />
+                  <div className="relative w-10 h-10 lg:w-12 lg:h-12 flex-shrink-0">
+                    <Image
+                      src={feature.icon}
+                      alt={feature.title}
+                      fill
+                      className="object-contain"
+                      sizes="48px"
+                    />
                   </div>
-                  <span className="text-[#222] font-gotham font-light text-[11px] lg:text-[13px] tracking-wide leading-tight">
+                  <span className="text-[#222] font-gotham font-medium text-[13px] lg:text-[14px] leading-snug">
                     {feature.title}
                   </span>
                 </div>

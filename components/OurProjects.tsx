@@ -15,7 +15,16 @@ interface Project {
 
 const PROJECTS_DATA: Project[] = [
   {
-    title: "The Square Villas",
+    title: "IRA ASPIRATION",
+    type: "3 & 4 BHK Apartment",
+    location: "KOLLUR",
+    rera: "RERA NO. P01100002880",
+    status: "HANDOVER IN PROGRESS",
+    image: "/aspiration.webp",
+    link: "https://aspiration.irarealty.in/",
+  },
+  {
+    title: "IRA THE SQUARE",
     type: "4 BHK Villas",
     location: "ADIBATLA",
     rera: "RERA NO. P01100002811",
@@ -24,22 +33,13 @@ const PROJECTS_DATA: Project[] = [
     link: "https://thesquare.irarealty.in/",
   },
   {
-    title: "Moonglade Apartments",
-    type: "3 & 4 BHK Apartments",
+    title: "MOONGLADE APARTMENTS",
+    type: "3 & 4 BHK Apartment",
     location: "KOKAPET",
     rera: "RERA NO. P02400009267",
     status: "UNDER CONSTRUCTION",
     image: "/moonglade.webp",
     link: "https://beseen.moonglade.life/",
-  },
-  {
-    title: "IRA Aspiration",
-    type: "3 & 4 BHK Apartments",
-    location: "KOLLUR",
-    rera: "RERA NO. P01100002880",
-    status: "HANDOVER IN PROGRESS",
-    image: "/aspiration.webp",
-    link: "https://aspiration.irarealty.in/",
   },
 ];
 
@@ -49,107 +49,80 @@ export default function OurProjects() {
       <div className="max-w-[1280px] mx-auto w-full">
         
         {/* Header Section */}
-        <div className="text-left mb-[50px]">
-          <h2 className="text-[32px] leading-[38.4px] md:text-[48px] md:leading-[57.6px] font-gotham font-normal text-[#7FA61A] w-full mb-3">
+        <div className="text-left mb-[40px] md:mb-[50px]">
+          <h2 className="text-[32px] leading-[1.2] md:text-[48px] font-gotham font-normal text-[#7FA61A] mb-3 uppercase">
             Building Homes. Nurturing Communities.
           </h2>
-          <p className="text-gray-500 font-gotham font-light text-sm md:text-base leading-[27.2px] md:max-w-[760px]">
+          <p className="text-gray-500 font-gotham font-medium text-sm md:text-base leading-relaxed md:max-w-[760px]">
             At IRA Realty, we’re redefining real estate with transparency, trust,
             and transformative design.
           </p>
         </div>
 
         {/* PROJECT CARDS GRID */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 xl:gap-[36px] justify-items-center items-start">
-          {PROJECTS_DATA.map((project, index) => {
-            const isTargeted = index === 0 || index === 2;
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 xl:gap-[30px] justify-items-center">
+          {PROJECTS_DATA.map((project, index) => (
+            <a
+              key={index}
+              href={project.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group relative flex flex-col bg-[#7FA61A] rounded-[24px] shadow-lg p-[10px] overflow-hidden transition-all duration-300 w-full max-w-[390px]"
+            >
+              {/* IMAGE WRAPPER - Changed to aspect-4/3 to reduce vertical height */}
+              <div className="relative aspect-[4/3] w-full overflow-hidden rounded-[18px] shrink-0">
+                <Image
+                  src={project.image}
+                  alt={project.title}
+                  fill
+                  sizes="(max-width: 768px) 100vw, 370px"
+                  className="object-cover transition-transform duration-500 "
+                />
 
-            return (
-              <a
-                key={index}
-                href={project.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                /* RESPONSIVE CARD LOGIC:
-                   - Mobile: Full width (w-full)
-                   - xl Screen: Exact width [402.663px] and height [395px] or [419px]
-                */
-                className={`group relative flex flex-col bg-[#7FA61A] rounded-[30px] shadow-lg p-[10px] overflow-hidden transition-all duration-300 w-full
-                  ${isTargeted 
-                    ? "xl:w-[402.663px] xl:h-[395px]" 
-                    : "xl:w-[402.66px] xl:min-h-[419px]"
-                  }`}
-              >
-                {/* IMAGE WRAPPER */}
-                <div className="relative h-[200px] sm:h-[240px] w-full overflow-hidden rounded-[20px] shrink-0">
-                  <Image
-                    src={project.image}
-                    alt={project.title}
-                    fill
-                    sizes="(max-width: 768px) 100vw, 382px"
-                    className="object-cover transition-transform duration-500 group-hover:scale-105"
-                  />
+                {/* Status Tag - Bottom Right of Image */}
+                <div className="absolute bottom-0 right-0 z-10">
+                  <span className="bg-[#8D6554] text-white text-[10px] md:text-[11px] font-gotham font-normal uppercase tracking-wide py-[8px] px-[23px] block ">
+                    {project.status}
+                  </span>
+                </div>
+              </div>
 
-                  <div className="absolute bottom-[18px] left-1/2 transform -translate-x-1/2 z-10 w-max">
-                    <span className="bg-[#8D6554] text-white text-[10px] sm:text-[12px] leading-[18px] font-gotham font-normal uppercase tracking-[0.6px] py-[6px] px-[14px] sm:px-[18px] text-center block rounded-sm shadow-md">
-                      {project.status}
-                    </span>
-                  </div>
+              {/* TEXT CONTENT AREA - Optimized spacing to be less "tall" */}
+              <div className="flex flex-col text-white mt-4 px-2 pb-1">
+                
+                {/* Top Row: Title & Location */}
+                <div className="flex justify-between items-start mb-1 gap-2">
+                  <h3 className="font-gotham font-bold text-[17px] md:text-[19px] leading-tight uppercase">
+                    {project.title}
+                  </h3>
+                  <div className="flex items-center gap-1.5 shrink-0">
+  <div className="relative w-[12px] h-[16px]">
+    <Image 
+      src="/Subtract.png" 
+      alt="location" 
+      fill 
+      className="object-contain" 
+    />
+  </div>
+  <p className="text-[13px] font-bold tracking-wider uppercase">
+    {project.location}
+  </p>
+</div>
                 </div>
 
-                {/* TEXT CONTENT AREA */}
-                <div 
-                  className={`flex flex-row justify-between items-start text-white flex-grow mx-auto mt-[15px] sm:mt-[22px] w-full px-2 sm:px-4
-                    ${isTargeted 
-                      ? "xl:w-[350.663px] xl:h-[67px] xl:px-0" 
-                      : "xl:w-[350.663px] xl:px-0 xl:pb-[26px]"
-                    }
-                  `}
-                >
-                  
-                  {/* Left Division: Title & Type */}
-                  <div 
-                    className={`flex flex-col justify-start
-                      ${isTargeted ? "w-[60%] xl:w-[168.387px] xl:h-[67px]" : "w-[60%]"}
-                    `}
-                  >
-                    <h3 
-                      className={`font-gotham font-normal leading-[1.1] tracking-tight text-white flex items-start
-                        ${isTargeted 
-                          ? "text-[18px] sm:text-[20px] xl:h-[24px] mb-[6px]" 
-                          : "text-[20px] sm:text-[22px] min-h-[40px] sm:min-h-[48px] mb-[6px]"
-                        }
-                      `}
-                    >
-                      {project.title}
-                    </h3>
-                    <p className="text-white/95 text-[12px] sm:text-[14px] font-light leading-[21px]">
-                      {project.type}
-                    </p>
-                  </div>
-
-                  {/* Right Division: Location & RERA */}
-                  <div 
-                    className={`flex flex-col text-right items-end justify-start min-w-0
-                      ${isTargeted ? "w-[40%] xl:h-[67px]" : "w-[40%]"}
-                    `}
-                  >
-                    <div className="mb-[4px] sm:mb-[6px] flex items-center justify-end pt-[3px]">
-                      <p className="text-[12px] sm:text-[14px] font-gotham font-light uppercase tracking-wider leading-none text-white">
-                        {project.location}
-                      </p>
-                    </div>
-                    
-                    <div className="flex items-start justify-end overflow-hidden">
-                      <p className="text-white/90 text-[10px] sm:text-[12px] uppercase font-light leading-[1.3] text-right break-words">
-                        {project.rera}
-                      </p>
-                    </div>
-                  </div>
+                {/* Bottom Row: Type & RERA */}
+                <div className="flex justify-between items-end mt-1">
+                  <p className="text-[13px] font-light opacity-90">
+                    {project.type}
+                  </p>
+                  <p className="text-[9px] md:text-[10px] font-light uppercase tracking-wider ">
+                    {project.rera}
+                  </p>
                 </div>
-              </a>
-            );
-          })}
+
+              </div>
+            </a>
+          ))}
         </div>
       </div>
     </section>

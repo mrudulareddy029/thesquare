@@ -2,8 +2,10 @@
 
 import React from 'react';
 import Image from 'next/image';
+// Import your custom hook (adjust the path to your actual file location)
+import { useContactModal } from './ContactProvider'; 
 
-const JOIN_IMAGE = "/join1.webp";
+const JOIN_IMAGE = "/join1.png";
 
 const ArrowIcon = () => (
   <svg 
@@ -19,8 +21,10 @@ const ArrowIcon = () => (
 );
 
 export default function JoinUsSection() {
+  // Use the hook to get the openModal function
+  const { openModal } = useContactModal();
+
   return (
-    /* Background restored to bg-secondary */
     <section 
       className="w-full bg-secondary min-h-[600px] lg:h-[914px] flex items-center py-12 lg:py-0 overflow-hidden" 
       id="join-us"
@@ -43,32 +47,35 @@ export default function JoinUsSection() {
             <p className="text-white font-light leading-[26px] mb-8 lg:mb-[36px] w-full font-gotham
                           text-[15px]
                           lg:text-[1.11vw] xl:text-[15px]">
-              Come, join and discover the essence of vibrant living at <br className="hidden lg:block" />
-              The Square, where luxury harmonizes with nature. <br className="hidden lg:block" />
+              Come, join and discover the essence of vibrant living  <br className="hidden lg:block" />
+               at The Square, where luxury harmonizes with nature. <br className="hidden lg:block" />
               Begin your journey towards a redefined lifestyle.
             </p>
 
             <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-[24px]">
-              <a href="#contact" className="group w-full sm:w-auto">
-                <button className="w-full sm:w-auto flex items-center justify-center gap-2 bg-[#1A1A1A] text-white rounded-[30px] px-[30px] py-[14px] hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
-                  <span className="font-gotham font-bold text-sm tracking-wide">Schedule a Site Visit</span>
-                  <ArrowIcon />
-                </button>
-              </a>
+              {/* Changed from <a> to <button> for Modal trigger */}
+              <button 
+                onClick={openModal}
+                className="group w-full sm:w-auto flex items-center justify-center gap-2 bg-[#1A1A1A] text-white rounded-[30px] px-[30px] py-[14px] hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
+              >
+                <span className="font-gotham font-bold text-sm tracking-wide">Schedule a Site Visit</span>
+                <ArrowIcon />
+              </button>
 
-              <a href="tel:+919121777777" className="group w-full sm:w-auto">
-                <button className="w-full sm:w-auto flex items-center justify-center gap-2 px-[30px] py-[14px] bg-transparent border border-white text-white rounded-[30px] hover:bg-white hover:text-secondary transition-all duration-300">
-                  <span className="font-gotham font-bold text-sm tracking-wide">Contact Us</span>
-                  <ArrowIcon />
-                </button>
-              </a>
+              <button 
+                onClick={openModal}
+                className="group w-full sm:w-auto flex items-center justify-center gap-2 px-[30px] py-[14px] bg-transparent border border-white text-white rounded-[30px] hover:bg-white hover:text-secondary transition-all duration-300"
+              >
+                <span className="font-gotham font-bold text-sm tracking-wide">Contact Us</span>
+                <ArrowIcon />
+              </button>
             </div>
           </div>
 
           {/* RIGHT COLUMN: IMAGE */}
-          <div className="w-full lg:w-1/2 h-[350px] sm:h-[450px] lg:h-full relative px-3 mt-8 lg:mt-0">
-             <div className="relative w-full h-full rounded-[20px] lg:rounded-none overflow-hidden">
-               <Image 
+              <div className="w-full lg:w-1/2 h-[450px] sm:h-[550px] lg:h-full relative mt-0">
+           <div className="relative w-full h-full overflow-hidden">
+                 <Image 
                  src={JOIN_IMAGE} 
                  alt="The Square Luxury Living" 
                  fill

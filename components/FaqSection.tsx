@@ -35,8 +35,12 @@ const faqData: FaqItem[] = [
   {
     question: "What schools are nearby?",
     answer: "Top schools nearby include Sri Gayatri Jr College (4 mins), Narayana Jr College (8 mins), Sloka International School (11 mins), Delhi Public School Nadergul (17 mins), Aga Khan Academy (20 mins), and Manchester Global School (25 mins)."
-  }
-];
+  },
+   {question: "When will the villas be ready for possession at the square?",
+    answer:"The villas at The Square are progressing well and nearing completion. We are committed to timely delivery as per our approved project schedule. Our model villa is already ready for viewing, which demonstrates our commitment to quality construction and project timelines. We recommend booking your site visit to see the construction progress and quality firsthand. For exact possession dates, please connect with our sales team."
+   },
+  ];
+
 
 export default function FaqSection() {
   const [activeIndex, setActiveIndex] = useState<number | null>(0);
@@ -93,15 +97,26 @@ export default function FaqSection() {
                   </span>
                   
                   {/* ICON */}
-                  <span className={`flex-shrink-0 w-6 h-6 lg:w-[28px] lg:h-[28px] flex items-center justify-center rounded-full border-none transition-transform duration-300 ${
-                    isActive 
-                      ? 'bg-white text-[rgb(106,138,44)]' 
-                      : 'bg-[rgb(106,138,44)] text-white'
-                  }`}>
-                    <span className="text-lg font-bold leading-none select-none flex items-center justify-center h-full pb-0.5">
-                      {isActive ? '−' : '+'}
-                    </span>
-                  </span>
+<span className={`flex-shrink-0 w-6 h-6 lg:w-[28px] lg:h-[28px] flex items-center justify-center rounded-full border-none transition-all duration-300 ${
+  isActive 
+    ? 'bg-white text-[rgb(106,138,44)]' 
+    : 'bg-[rgb(106,138,44)] text-white'
+}`}>
+  <svg 
+    xmlns="http://www.w3.org/2000/svg" 
+    viewBox="0 0 24 24" 
+    fill="none" 
+    stroke="currentColor" 
+    strokeWidth="3" 
+    strokeLinecap="round" 
+    strokeLinejoin="round" 
+    className={`w-3.5 h-3.5 lg:w-4 lg:h-4 transition-transform duration-300 ${
+      isActive ? 'rotate-180' : 'rotate-0'
+    }`}
+  >
+    <polyline points="6 9 12 15 18 9"></polyline>
+  </svg>
+</span>
                 </button>
 
                 {/* ANSWER CONTENT - Optimized Grid Transition */}
