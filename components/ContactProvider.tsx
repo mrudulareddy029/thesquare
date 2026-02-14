@@ -141,7 +141,7 @@ export default function ContactProvider({ children }: { children: ReactNode }) {
                       <div className="absolute inset-0 border border-black rounded-[2px] bg-white peer-checked:bg-white" />
                       <svg className="w-3 h-3 text-black scale-0 peer-checked:scale-100 transition-transform pointer-events-none z-10 stroke-[4px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12" /></svg>
                     </div>
-                    <span className="text-[10px] leading-tight text-gray-600 select-none">
+                    <span className="text-[10px] leading-tight text-gray-600 select-none mt-1">
                       I authorize representatives of IRA Square to contact me. This consent overrides DNC/NDNC.
                     </span>
                   </label>
