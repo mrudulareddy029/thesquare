@@ -3,7 +3,6 @@
 /* ==========================================================================
    1. FONT DECLARATIONS (Gotham)
    ========================================================================== */
-
 @font-face {
   font-family: 'Gotham';
   src: url('/fonts/Gotham-Light.otf') format('opentype');
@@ -47,12 +46,10 @@
 /* ==========================================================================
    2. ROOT VARIABLES
    ========================================================================== */
-
 :root {
   --background: #ffffff;
   --foreground: #171717;
   
-  /* Brand Colors */
   --primary: #6A8A2C;
   --secondary: #93AA28;
   --border-primary: #CDE244;
@@ -61,7 +58,6 @@
   --ira-brown: #8d6554;
   --ira-dark: #333333;
 
-  /* FAQ Gradient Colors */
   --faq-start: #e5ebc8;
   --faq-end: #dbe4b5;
 }
@@ -73,14 +69,21 @@
   }
 }
 
+/* WhatsApp Widget Mobile Fix */
+@media (max-width: 768px) {
+  #wa-widget-container, 
+  iframe[id^="wa-widget"] {
+    bottom: 80px !important; 
+    right: 20px !important;
+  }
+}
+
 /* ==========================================================================
    3. TAILWIND THEME EXTENSION (v4)
    ========================================================================== */
-
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  
   --color-primary: var(--primary);
   --color-secondary: var(--secondary);
   --color-ira-primary: var(--ira-primary);
@@ -88,67 +91,51 @@
   --color-ira-brown: var(--ira-brown);
   --color-ira-dark: var(--ira-dark);
 
-  --color-faq-start: var(--faq-start);
-  --color-faq-end: var(--faq-end);
-  --background-image-faq-gradient: linear-gradient(135deg, var(--faq-start), var(--faq-end));
-
-  --radius-4xl: 40px;
-
   --font-sans: "Gotham", sans-serif;
   --font-gotham: "Gotham", sans-serif;
 
-  /* PIXEL PERFECT SCALING 
-     Formula used: clamp(min_at_1024, fluid_vw, max_at_1440)
+  /* SAFE SCALING FORMULA:
+     We lock the 'laptop' look at 1440px (3.05vw = 44px).
+     We allow it to grow to a max of 72px for 2560px monitors.
   */
 
   /* Hero Heights */
-  --size-hero-h: 600px;
-  --size-hero-h-md: 760px;
-  /* Scales perfectly to exactly 820px when the screen is 1440px wide */
-  --size-hero-h-lg: clamp(760px, 57vw, 820px); 
+  --size-hero-h-lg: clamp(760px, 50vw, 1080px); 
 
-  /* Responsive Hero Typography */
-  /* Exactly 44px at 1440px wide screen */
-  --font-size-hero: clamp(32px, 3.05vw, 44px); 
+  /* Responsive Hero Heading 
+     Laptop: ~44px | Big Screen: Max 72px
+  */
+  --font-size-hero: clamp(32px, 3.05vw, 72px); 
+  
+  /* Responsive Paragraph 
+     Laptop: ~28px | Big Screen: Max 44px
+  */
+  --font-size-body-large: clamp(18px, 1.95vw, 44px);
+
   --spacing-hero-lh: 1.2;
   --spacing-hero-mb: 8px;
-
-  /* Body Large Typography */
-  /* Exactly 28px at 1440px wide screen */
-  --font-size-body-large: clamp(20px, 1.95vw, 28px);
-  --spacing-body-large-lh: 1.5;
-  --spacing-body-large-mb: 16px;
 }
 
 /* ==========================================================================
    4. BASE STYLES & FIXES
    ========================================================================== */
-
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-sans); 
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  /* Crucial: Prevents horizontal scroll from absolute elements */
   overflow-x: hidden; 
 }
 
-h1, h2, h3, h4, h5, h6 {
-  -webkit-font-smoothing: antialiased;
-  text-rendering: optimizeLegibility;
-}
-
-/* THE "PIXEL-PERFECT" CONTAINER 
-   Use this class to wrap your sections. 
-   It locks at 1440px but shrinks safely for 1024px.
+/* THE "2560px" CONTAINER 
+   This is the most important part for your big monitor. 
+   It stops the content from stretching too far left/right.
 */
 .container-perfect {
   width: 100%;
-  max-width: 1440px;
-  margin-left: auto;
-  margin-right: auto;
-  /* Adds a tiny safety margin so elements don't hit the bezel on 1024px */
-  padding-left: clamp(16px, 2vw, 0px);
-  padding-right: clamp(16px, 2vw, 0px);
+  max-width: 2560px; /* Support the full width of your big screen */
+  margin: 0 auto;
+  /* Fluid padding: stays at 144px for laptop, grows for big screens */
+  padding-left: clamp(32px, 10vw, 250px);
+  padding-right: clamp(32px, 10vw, 250px);
 }

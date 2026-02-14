@@ -9,22 +9,22 @@ const PLAN_CONFIG = {
     title: 'EAST FACING VILLA',
     details: [
       { label: 'Plot sizes 267', highlight: 'Sq.Yds. to 330 Sq.Yds.' },
-      { label: 'Built-up area of', highlight: '3700 Sft' },
       { label: 'Provision for', highlight: 'Elevator' },
+      { label: 'Built-up area of', highlight: '3700 Sft' },
       { label: '4-BHK Luxury', highlight: 'Duplex Villas + Terrace Garden' },
     ],
-    images: ['/facing4.png', '/facing6.png', '/facing5.png'],
+    images: ['/facing1.png', '/facing2.png', '/facing3.png'],
   },
   West: {
     id: '02',
     title: 'WEST FACING VILLA',
     details: [
-      { label: 'Plot sizes 267', highlight: 'Sq.Yds. to 330 Sq.Yds.' },
-      { label: 'Built-up area of', highlight: '3700 Sft' },
+      { label: 'Plot sizes ', highlight: ' 267 Sq.Yds. to 330 Sq.Yds.' },
       { label: 'Provision for', highlight: 'Elevator' },
+      { label: 'Built-up area of', highlight: '3700 Sft' },
       { label: '4-BHK Luxury', highlight: 'Duplex Villas + Terrace Garden' },
     ],
-    images: ['/facing1.webp', '/facing3.webp', '/facing2.webp'],
+    images: ['/facing4.png', '/facing5.png', '/facing6.png'],
   },
 };
 
@@ -78,8 +78,8 @@ export default function FloorPlans() {
 
               <div className="relative z-10 flex flex-col items-center xl:items-start h-full justify-center">
                 <h1 className="w-full xl:max-w-[758px] text-[28px] md:text-[40px] xl:text-[50px] font-gotham font-light uppercase tracking-normal text-primary leading-[1.2] px-4 py-6 xl:pt-[189.5px] xl:pl-[189.5px] xl:pr-[37.9px] xl:pb-[10px]">
-  Where Every Square Foot exudes Luxury 
-</h1>
+                  Where Every Square Foot exudes Luxury 
+                </h1>
 
                 <div className="font-normal leading-[1.3125] text-[#212529] w-full px-4 mb-8 xl:w-[568.500px] xl:h-[42px] xl:pl-[189.500px] xl:pb-[189.500px] xl:mb-[16px] xl:box-content">
                 <p>Step into east and west facing duplex villas that display the finest</p>
@@ -122,11 +122,9 @@ export default function FloorPlans() {
             <div className="bg-white rounded-[20px] xl:rounded-[12px] p-6 md:p-[51.837px] shadow-lg border border-gray-100">
               
               {/* HEADER SECTION */}
-              {/* ✅ CONDITIONAL CLASS: Reverses row order on large screens if activeTab is West */}
               <div className={`flex flex-col ${activeTab === 'West' ? 'lg:flex-row-reverse' : 'lg:flex-row'} items-start lg:items-end justify-between gap-8 mb-8 border-b border-gray-100 pb-8 lg:border-none lg:pb-0`}>
                 
                 {/* Heading 01 / 02 */}
-                {/* ✅ CONDITIONAL CLASS: Aligns text to right on large screens if activeTab is West */}
                 <div className={`${activeTab === 'West' ? 'lg:text-right' : 'lg:text-left'}`}>
                   <h2 className="font-gotham font-normal text-[#8D6554] leading-none text-[60px] md:text-[80px]">
                     {currentPlan.id}
@@ -151,16 +149,19 @@ export default function FloorPlans() {
                 </div>
               </div>
 
-              {/* IMAGES GRID */}
+              {/* IMAGES GRID - UPDATED FOR ALIGNMENT */}
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-4 border-[0.8px] border-solid border-[#8D6554] p-4 md:p-[35.763px] rounded-xl">
                 {currentPlan.images.map((src, i) => (
-                  <div key={`${activeTab}-${i}`} className="w-full flex justify-center">
+                  // FIX: Set a fixed height container so all 3 items align perfectly
+                  <div key={`${activeTab}-${i}`} className="w-full relative h-[300px] md:h-[400px] lg:h-[480px]">
                     <Image 
                       src={src} 
                       alt={`${activeTab} Plan`} 
-                      width={400} 
-                      height={300} 
-                      className="w-full h-auto object-contain rounded-[12px] " 
+                      fill // Uses parent container height
+                      // object-contain ensures the image fits in the box without being cropped
+                      // object-bottom ensures they align at the 'floor' level
+                      className="object-contain object-bottom rounded-[12px]" 
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     />
                   </div>
                 ))}
