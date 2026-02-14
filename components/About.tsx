@@ -35,7 +35,7 @@ export default function About() {
               <p
                 className="
                   text-left text-[rgb(33,37,41)] font-gotham
-                  text-base leading-relaxed
+                  text-base leading-tight
                   lg:text-[15px] lg:leading-[24px]
                   lg:w-[635.2px] lg:h-[96px]
                   lg:pl-[44.462px] lg:pr-[215.962px]
