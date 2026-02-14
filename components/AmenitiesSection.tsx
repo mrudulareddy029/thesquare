@@ -118,12 +118,12 @@ export default function AmenitiesSection() {
               Amenities Abundant <br className="hidden md:block" />
               and Spaces Prolific
             </h2>
-            <p className="text-gray-600 text-[15px] lg:text-[16px] leading-relaxed font-normal font-gotham">
+            <div className="text-gray-600 text-[15px] lg:text-[16px] leading-relaxed font-normal font-gotham">
               <p>From a 4-level exclusive clubhouse to landscaped</p> 
               <p>gardens, The offers amenities that make every </p>
              <p> moment rewarding experience.Unleash your energies</p>
              <p> and live life to the fullest</p>
-            </p>
+            </div>
           </div>
         </div>
 

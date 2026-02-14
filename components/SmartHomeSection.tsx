@@ -31,12 +31,12 @@ export default function SmartHomeSection() {
 
           <div className="w-full h-[10px] mb-4" />
 
-          <p className="text-white/90 font-gotham font-light w-full max-w-[900px]">
+          <div className="text-white/90 font-gotham font-light w-full max-w-[900px]">
             <span className="block text-[14px] sm:text-[16px] lg:text-[18px] leading-relaxed">
               <p>Enjoy your home living with smart home automation empowered by cutting-edge</p>
                <p>technology. Enhance home life with smart automation for comfort, convenience, and security.</p>
             </span>
-          </p>
+          </div>
         </div>
       </div>
 
