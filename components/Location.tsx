@@ -96,7 +96,7 @@ export default function Location() {
 
       {/* SECTION 2: PRIME LOCATION (ORIGINAL STYLE RESTORED) */}
       <section
-        className="relative w-full text-ira-dark font-gotham overflow-visible -mt-4 md:-mt-18 lg:-mt-22
+        className="relative w-full text-ira-dark font-gotham overflow-visible -mt-4 md:-mt-18 lg:-mt-24
                pt-6 md:pt-[60px] lg:pt-[80px] z-20"
       >
         {/* Responsive Background Logic */}
@@ -131,16 +131,14 @@ export default function Location() {
               <h2 className="text-[#94aa29] font-light uppercase text-2xl md:text-3xl lg:text-[42px] leading-tight mb-4 tracking-wide">
                 Prime Location
               </h2>
-              <p className="text-ira-dark font-light mx-auto text-sm md:text-base lg:text-[15px] leading-relaxed max-w-[825px] mb-6">
-                Imagine living in a global address at Hyderabad’s South, as a
-                bold new frontier is expanding fast with enviable
-                infrastructure. Adibatla is becoming an eminently desirable
-                place to settle down.
-              </p>
+              <div className="text-ira-dark font-normal mx-auto text-sm md:text-base lg:text-[15px] leading-tight max-w-[1000px] mb-6">
+               <p> Imagine living in a global address at Hyderabad’s South, as a bold new frontier is expanding fast with enviable infrastructure.</p>
+                Adibatla is becoming an eminently desirable place to settle down.
+              </div>
             </div>
 
-            <div className="w-full mt-6 md:mt-10 px-0 lg:px-0">
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 items-start">
+            <div className="w-full mt-4 md:mt-8 px-0 lg:px-0">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 items-start ">
                 <LocationCard
                   title="EDUCATIONAL INSTITUTIONS"
                   icon="/education.webp"
@@ -206,18 +204,18 @@ function LocationCard({
       <button
         type="button"
         onClick={onToggle}
-        className="w-full flex items-center justify-between py-4 px-4 lg:px-6 hover:bg-gray-50 transition-colors"
+        className="w-full flex items-center justify-between py-4 px-4 lg:px-6  transition-colors"
       >
         <div className="flex items-center gap-3 lg:gap-4 overflow-hidden">
           <div className="relative w-10 h-10 lg:w-[60px] lg:h-[60px] flex-shrink-0">
             <Image src={icon} alt={title} fill className="object-contain" />
           </div>
-          <h3 className="text-[14px] lg:text-[18px] font-medium text-[#8D6554] uppercase text-left leading-tight">
+          <h3 className="text-[14px] lg:text-[19px] font-normal  text-[#8D6554] uppercase text-left leading-tight w-full">
             {title}
           </h3>
         </div>
         <span
-          className={`w-7 h-7 lg:w-[30px] lg:h-[30px] rounded-full bg-[#94aa29] text-white flex-shrink-0 flex items-center justify-center transition-transform duration-300 ${
+          className={`w-7 h-7 lg:w-[30px] lg:h-[30px] rounded-full bg-[#6A8A2C] text-white flex-shrink-0 flex items-center justify-center transition-transform duration-300 ${
             open ? "rotate-180" : ""
           }`}
         >
