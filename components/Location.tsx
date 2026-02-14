@@ -54,31 +54,46 @@ export default function Location() {
   return (
     <div className="w-full overflow-hidden bg-white">
       {/* SECTION 1: MAP */}
-      <section className="relative w-full py-8 md:py-12 lg:py-0 overflow-hidden">
-        <div className="container mx-auto relative z-10 px-4 lg:max-w-[1320px]">
-          <div className="w-full flex flex-col items-center lg:h-[770px]">
-            <div className="w-full relative bg-white/5 backdrop-blur-sm mt-4 md:mt-12 lg:mt-14 p-2 md:p-8 lg:p-[60px] lg:w-[1116px] lg:h-[714px]">
-              <div className="hidden md:block absolute top-0 left-0 w-24 h-24 border-t-[1.6px] border-l-[1.6px] border-black z-20" />
-              <div className="hidden md:block absolute bottom-0 right-0 w-24 h-24 border-b-[1.6px] border-r-[1.6px] border-black z-20" />
-              <div className="relative w-full aspect-[4/3] sm:aspect-video lg:aspect-auto lg:h-full -translate-y-4 lg:-translate-y-6">
-  <Image
-    src="/location.webp"
-    alt="Location Map"
-    fill
-    className="object-contain lg:object-fill"
-    sizes="(max-width: 768px) 100vw, 1116px"
-    priority
-  />
-</div>
+<section className="relative w-full h-[700px] overflow-visible bg-white">
 
-            </div>
-          </div>
+  {/* GREEN BACKGROUND */}
+  <div className="absolute top-0 right-0 w-[1200px] h-[1200px] pointer-events-none">
+    <Image
+      src="/image.png"
+      alt="Green Background"
+      fill
+      priority
+      className="object-contain object-top-right"
+    />
+  </div>
+
+{/* MAP CONTENT */}
+  <div className="relative z-10 container mx-auto px-4 py-12 lg:py-20 lg:max-w-[1320px] mt-5">
+    <div className="flex justify-center">
+<div className="bg-white p-6 lg:p-[70px] w-full max-w-[1110px]">
+        <div className="relative w-full aspect-[4/3] sm:aspect-video lg:h-full">
+        {/* TOP LEFT CORNER */}
+          <div className="absolute top-[-90] left-[-50] w-28 h-30 border-t-[2.5px] border-l-[2.5px] border-black z-20" />
+        {/* BOTTOM RIGHT CORNER */}
+          <div className="absolute top-120 bottom-10 right-[-80] w-28 h-30 border-b-[2.5px] border-r-[2.5px] border-black z-20" />
+
+          <Image
+            src="/location.webp"
+            alt="Location Map"
+            fill
+            priority
+            className="object-contain lg:object-fill"
+          />
         </div>
-      </section>
+      </div>
+    </div>
+  </div>
+</section>
 
       {/* SECTION 2: PRIME LOCATION */}
       <section
-  className="relative w-full text-ira-dark font-gotham overflow-visible pt-6 md:pt-[60px] lg:pt-[80px] z-20"
+  className="relative w-full text-ira-dark font-gotham overflow-visible mt-2 md:mt-6 lg:mt-10
+             pt-6 md:pt-[60px] lg:pt-[80px] z-20"
       >
         {/* Responsive Background Logic */}
         <div className="absolute top-[20px] left-0 right-0 lg:right-80 bottom-0 z-0">

@@ -43,9 +43,10 @@ export default function About() {
                   box-border
                 "
               >
-                Welcome to a luxury living experience at The Square, where every
-                villa is designed for comfort, luxury, and exclusivity in the
-                prime location of Adibatla.
+                It's an intriguing invitation to explore a new
+                dimension if luxury living, where boundaries are
+                pushed and expectations exceeded. Experience a 
+                cosmopolitan community at "The square".
               </p>
 
               {/* DECORATIVE IMAGE: Visible only on Laptop */}

@@ -9,12 +9,11 @@ const STATS = [
     label: '13.5 Acres',
     subLabel: 'of land',
     icon: (
-      // ✅ Added 'relative' so the 'fill' image knows where to fit
       <div className="relative w-[28px] h-[28px] flex-shrink-0">
         <Image
           src="/icon-1.png"
           alt="13.5 Acres"
-          fill // ✅ Makes image responsive to the parent div
+          fill
           className="object-cover scale-[1.95]"
           sizes="28px"
         />
@@ -113,7 +112,7 @@ export default function Highlights() {
                   <span className="text-[#2C2C2C] font-gotham font-medium text-[16px] leading-tight mb-1">
                     {stat.label}
                   </span>
-                  <span className="text-[#7A8F3D] font-gotham font-normal text-[14px]">
+                  <span className="text-[#6A8A2C] font-gotham font-normal text-[16px]">
                     {stat.subLabel}
                   </span>
                 </div>

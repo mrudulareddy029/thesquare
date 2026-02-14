@@ -57,11 +57,11 @@ export default function Hero() {
           absolute z-20 flex flex-col
           /* MOBILE: Positioned lower to match Figma */
           inset-x-0 top-[48px] 
-          pt-[100px] px-[32px]
+          pt-[110px] px-[32px]
           /* RESPONSIVE RESET */
           md:top-0 md:bottom-0 md:justify-end md:pt-0 md:px-20 md:pb-12
           /* DESKTOP: Content moved down with increased pt */
-          lg:justify-start lg:pt-[340px] lg:px-[144px] lg:pb-0
+          lg:justify-start lg:pt-[300px] lg:px-[144px] lg:pb-0
           pointer-events-none
         "
       >
@@ -128,7 +128,7 @@ export default function Hero() {
           {/* MAIN CTA BUTTON */}
           <button
             onClick={openModal}
-            className="inline-flex items-center justify-between rounded-full bg-[#93AA2B] text-white
+            className="inline-flex items-center justify-between rounded-full bg-[#93AA28] text-white
                        transition-all duration-300 hover:brightness-110 font-normal
                        /* MOBILE SIZE */
                        w-[162px] h-[30px] px-[15px] 

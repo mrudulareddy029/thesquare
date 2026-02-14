@@ -82,9 +82,9 @@ export default function FloorPlans() {
 </h1>
 
                 <p className="font-normal leading-[1.3125] text-[#212529] w-full px-4 mb-8 xl:w-[568.500px] xl:h-[42px] xl:pl-[189.500px] xl:pb-[189.500px] xl:mb-[16px] xl:box-content">
-                  <p>Step into east and west facing duplex villas that display the finest</p>
-                 <p> space planning, where a symphony of indoors and outdoors charms </p>
-                 <p> you with thoughtful additions and meticulous craftsmanship."</p>
+                <p>Step into east and west facing duplex villas that display the finest</p>
+                <p>space planning, where a symphony of indoors and outdoors charms </p>
+                <p>you with thoughtful additions and meticulous craftsmanship."</p>
                 </p>
               </div>
             </div>
