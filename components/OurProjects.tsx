@@ -30,7 +30,7 @@ const PROJECTS_DATA: Project[] = [
     rera: "RERA NO. P01100002811",
     status: "UNDER CONSTRUCTION",
     // TIP: Rename your file in /public to 'the-square.jpg' if it still doesn't show
-    image: "/the-square-luxury-apartments-exterior.jpg", 
+    image: "/the-square-luxury-apartments-exterior.png", 
     link: "https://thesquare.irarealty.in/",
   },
   {
