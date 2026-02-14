@@ -34,7 +34,7 @@ export default function SmartHomeSection() {
           <p className="text-white/90 font-gotham font-light w-full max-w-[900px]">
             <span className="block text-[14px] sm:text-[16px] lg:text-[18px] leading-relaxed">
               <p>Enjoy your home living with smart home automation empowered by cutting-edge</p>
-               technology. Enhance home life with smart automation for comfort, convenience, and security.
+               <p>technology. Enhance home life with smart automation for comfort, convenience, and security.</p>
             </span>
           </p>
         </div>
