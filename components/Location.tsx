@@ -53,47 +53,51 @@ export default function Location() {
 
   return (
     <div className="w-full overflow-hidden bg-white">
-      {/* SECTION 1: MAP */}
-<section className="relative w-full h-[700px] overflow-visible bg-white">
-
-  {/* GREEN BACKGROUND */}
-  <div className="absolute top-0 right-0 w-[1200px] h-[1200px] pointer-events-none">
-    <Image
-      src="/image.png"
-      alt="Green Background"
-      fill
-      priority
-      className="object-contain object-top-right"
-    />
-  </div>
-
-{/* MAP CONTENT */}
-  <div className="relative z-10 container mx-auto px-4 py-12 lg:py-20 lg:max-w-[1320px] mt-5">
-    <div className="flex justify-center">
-<div className="bg-white p-6 lg:p-[70px] w-full max-w-[1110px]">
-        <div className="relative w-full aspect-[4/3] sm:aspect-video lg:h-full">
-        {/* TOP LEFT CORNER */}
-          <div className="absolute top-[-90] left-[-50] w-28 h-30 border-t-[2.5px] border-l-[2.5px] border-black z-20" />
-        {/* BOTTOM RIGHT CORNER */}
-          <div className="absolute top-120 bottom-10 right-[-80] w-28 h-30 border-b-[2.5px] border-r-[2.5px] border-black z-20" />
-
+      {/* SECTION 1: MAP (REPAIRED FOR RESPONSIVENESS) */}
+      <section className="relative w-full overflow-visible bg-white py-10 md:py-20">
+        
+        {/* GREEN BACKGROUND - Changed fixed width to responsive constraints */}
+        <div className="absolute top-0 right-0 w-full md:w-[80%] lg:w-[1200px] h-full pointer-events-none">
           <Image
-            src="/location.webp"
-            alt="Location Map"
+            src="/image.png"
+            alt="Green Background"
             fill
             priority
-            className="object-contain lg:object-fill"
+            className="object-contain object-right-top"
           />
         </div>
-      </div>
-    </div>
-  </div>
-</section>
 
-      {/* SECTION 2: PRIME LOCATION */}
+        {/* MAP CONTENT */}
+        <div className="relative z-10 container mx-auto px-4 lg:max-w-[1320px]">
+          <div className="flex justify-center">
+            <div className="bg-white p-4 md:p-10 lg:p-[70px] w-full max-w-[1110px] relative">
+              
+              {/* INNER WRAPPER FOR ASPECT RATIO & CORNERS */}
+              <div className="relative w-full aspect-[4/3] sm:aspect-video">
+                
+                {/* TOP LEFT CORNER - Repaired syntax */}
+                <div className="absolute -top-4 -left-4 md:-top-10 md:-left-12 w-20 h-20 md:w-28 md:h-30 border-t-[2.5px] border-l-[2.5px] border-black z-20" />
+                
+                {/* BOTTOM RIGHT CORNER - Repaired syntax */}
+                <div className="absolute -bottom-4 -right-4 md:-bottom-10 md:-right-12 w-20 h-20 md:w-28 md:h-30 border-b-[2.5px] border-r-[2.5px] border-black z-20" />
+
+                <Image
+                  src="/location.webp"
+                  alt="Location Map"
+                  fill
+                  priority
+                  className="object-contain lg:object-fill"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* SECTION 2: PRIME LOCATION (ORIGINAL STYLE RESTORED) */}
       <section
-  className="relative w-full text-ira-dark font-gotham overflow-visible mt-2 md:mt-6 lg:mt-10
-             pt-6 md:pt-[60px] lg:pt-[80px] z-20"
+        className="relative w-full text-ira-dark font-gotham overflow-visible -mt-4 md:-mt-18 lg:-mt-22
+               pt-6 md:pt-[60px] lg:pt-[80px] z-20"
       >
         {/* Responsive Background Logic */}
         <div className="absolute top-[20px] left-0 right-0 lg:right-80 bottom-0 z-0">
@@ -107,18 +111,17 @@ export default function Location() {
 
         {/* Responsive Watermark Logic */}
         <div className="absolute inset-0 z-[1] pointer-events-none overflow-visible">
-  <div className="absolute top-[-60px] left-1/2 -translate-x-1/2 
+          <div className="absolute top-[-60px] left-1/2 -translate-x-1/2 
                   md:top-[-160px] md:left-[70px] md:translate-x-0 
                   w-[100vw] md:w-[1400px] aspect-square md:h-[1400px]">
-    <Image
-      src="/map.png"
-      alt="Map watermark"
-      fill
-      className="opacity-[0.04] object-contain"
-    />
-  </div>
-</div>
-
+            <Image
+              src="/map.png"
+              alt="Map watermark"
+              fill
+              className="opacity-[0.04] object-contain"
+            />
+          </div>
+        </div>
 
         <div className="absolute inset-0 z-[2] bg-white/5" />
 
