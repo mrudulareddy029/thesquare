@@ -7,6 +7,7 @@ import type { Metadata } from 'next'
 import { Inter, Montserrat } from 'next/font/google'
 import Navbar from '@/components/Navbar'
 import ContactProvider from '@/components/ContactProvider'
+import WhatsAppWidget from "@/components/WhatsAppWidget";
 
 const inter = Inter({ 
   subsets: ['latin'],
@@ -46,6 +47,7 @@ export default function RootLayout({
           <Navbar />
           <main>{children}</main>
         </ContactProvider>
+        <WhatsAppWidget />
 
       </body>
     </html>
