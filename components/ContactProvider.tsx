@@ -39,7 +39,6 @@ export default function ContactProvider({ children }: { children: ReactNode }) {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     const newErrors: { [key: string]: boolean } = {};
-    
     if (!formData.name) newErrors.name = true;
     if (!formData.email) newErrors.email = true;
     if (formData.phone.length < 10) newErrors.phone = true;
@@ -48,7 +47,6 @@ export default function ContactProvider({ children }: { children: ReactNode }) {
     if (Object.keys(newErrors).length > 0) {
       setErrors(newErrors);
     } else {
-      console.log("Form Submitted Successfully:", formData);
       closeModal();
     }
   };
@@ -59,78 +57,68 @@ export default function ContactProvider({ children }: { children: ReactNode }) {
 
       {isOpen && (
         <div 
-          className="fixed inset-0 z-[999] flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm animate-in fade-in duration-200"
+          className="fixed inset-0 z-[999] flex items-center justify-center p-4 bg-black/70 backdrop-blur-sm"
           onClick={closeModal}
         >
-          {/* Modal Container: Adjusted width and max-width for mobile */}
           <div 
-            className="bg-white w-[95%] md:w-full md:max-w-[600px] rounded-[20px] md:rounded-[25px] shadow-2xl overflow-hidden relative animate-in zoom-in-95 duration-200"
+            className="bg-white w-[95%] md:w-full md:max-w-[600px] rounded-[25px] shadow-2xl relative"
             onClick={(e) => e.stopPropagation()}
           >
             
-            {/* Header Area: Responsive text and padding */}
-            <div className="flex items-center justify-between px-6 md:px-10 pt-8 md:pt-10 pb-4 md:pb-5">
-              <h4 className="text-2xl md:text-[34px] font-bold text-[#7ca232] leading-none">Contact Us</h4>
-              <button 
-                onClick={closeModal} 
-                className="text-gray-400 hover:text-gray-600 transition-colors"
-              >
+            <div className="flex items-center justify-between px-6 md:px-10 pt-8 md:pt-10 pb-4">
+              <h4 className="text-2xl md:text-[34px] font-bold text-[#7ca232]">Contact Us</h4>
+              <button onClick={closeModal} className="text-gray-400">
                 <X className="w-6 h-6 md:w-8 md:h-8" strokeWidth={2.5} />
               </button>
             </div>
 
-            {/* Form Body: Responsive padding */}
-            <div className="bg-[#faffec] px-6 md:px-10 py-8 md:py-10">
-              <form className="space-y-4 md:space-y-6" onSubmit={handleSubmit} noValidate>
+            <div className="bg-[#faffec] px-6 md:px-10 py-6 md:py-10 rounded-b-[25px]">
+              <form className="flex flex-col gap-4" onSubmit={handleSubmit} noValidate>
                 
-                {/* Inputs: Stacking on mobile, side-by-side on desktop */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5">
-                  <div className="relative">
+                {/* Inputs: Explicitly added text-black and text-base */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div className="flex flex-col">
                     <input 
                       placeholder="Name" 
-                      className={`w-full px-5 py-3 md:py-3.5 rounded-xl bg-white outline-none shadow-sm transition-all ${errors.name ? 'ring-1 ring-red-500' : 'focus:ring-1 focus:ring-[#7ca232]'}`}
+                      // text-black and text-base (16px) fixed visibility and auto-zoom on mobile
+                      className={`w-full px-5 py-3 rounded-xl bg-white border border-transparent outline-none shadow-sm text-black text-base placeholder:text-gray-400 ${errors.name ? 'border-red-500' : 'focus:border-[#7ca232]'}`}
                       value={formData.name}
-                      onChange={(e) => {
-                        setFormData({...formData, name: e.target.value});
-                        if(e.target.value) setErrors(prev => ({...prev, name: false}));
-                      }}
+                      onChange={(e) => setFormData({...formData, name: e.target.value})}
                     />
-                    {errors.name && <p className="text-red-500 text-[11px] mt-1 font-medium pl-1">Please enter Name</p>}
+                    {errors.name && <p className="text-red-500 text-[10px] mt-1 pl-1">Please enter Name</p>}
                   </div>
                   
-                  <div className="relative">
+                  <div className="flex flex-col">
                     <input 
                       placeholder="E-Mail" 
                       type="email"
-                      className={`w-full px-5 py-3 md:py-3.5 rounded-xl bg-white outline-none shadow-sm transition-all ${errors.email ? 'ring-1 ring-red-500' : 'focus:ring-1 focus:ring-[#7ca232]'}`}
+                      className={`w-full px-5 py-3 rounded-xl bg-white border border-transparent outline-none shadow-sm text-black text-base placeholder:text-gray-400 ${errors.email ? 'border-red-500' : 'focus:border-[#7ca232]'}`}
                       value={formData.email}
-                      onChange={(e) => {
-                        setFormData({...formData, email: e.target.value});
-                        if(e.target.value) setErrors(prev => ({...prev, email: false}));
-                      }}
+                      onChange={(e) => setFormData({...formData, email: e.target.value})}
                     />
-                    {errors.email && <p className="text-red-500 text-[11px] mt-1 font-medium pl-1">Please enter E-Mail</p>}
+                    {errors.email && <p className="text-red-500 text-[10px] mt-1 pl-1">Please enter E-Mail</p>}
                   </div>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5">
-                  <div className="relative">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div className="flex flex-col">
                     <input 
                       placeholder="Phone Number" 
                       type="text"
+                      inputMode="numeric"
                       value={formData.phone}
                       onChange={handlePhoneChange}
-                      className={`w-full px-5 py-3 md:py-3.5 rounded-xl bg-white outline-none shadow-sm transition-all ${errors.phone ? 'ring-1 ring-red-500' : 'focus:ring-1 focus:ring-[#7ca232]'}`}
+                      className={`w-full px-5 py-3 rounded-xl bg-white border border-transparent outline-none shadow-sm text-black text-base placeholder:text-gray-400 ${errors.phone ? 'border-red-500' : 'focus:border-[#7ca232]'}`}
                     />
-                    {errors.phone && <p className="text-red-500 text-[11px] mt-1 font-medium pl-1">Please enter valid Phone Number</p>}
+                    {errors.phone && <p className="text-red-500 text-[10px] mt-1 pl-1">Please enter valid Phone Number</p>}
                   </div>
                   
-                  <div className="relative">
+                  <div className="flex flex-col">
                     <div 
                       onClick={handleDateClick}
-                      className={`relative flex items-center justify-between w-full px-5 py-3 md:py-3.5 rounded-xl bg-white shadow-sm cursor-pointer transition-all ${errors.date ? 'ring-1 ring-red-500' : 'focus:ring-1 focus:ring-[#7ca232]'}`}
+                      className={`relative flex items-center justify-between w-full px-5 py-3 rounded-xl bg-white shadow-sm cursor-pointer border border-transparent text-black text-base ${errors.date ? 'border-red-500' : 'focus:border-[#7ca232]'}`}
                     >
-                      <span className={formData.date ? "text-gray-800" : "text-gray-400"}>
+                      <span className={formData.date ? "text-black" : "text-gray-400"}>
                         {formData.date || "Select Date"}
                       </span>
                       <Calendar className="w-5 h-5 text-black" />
@@ -138,41 +126,30 @@ export default function ContactProvider({ children }: { children: ReactNode }) {
                         type="date" 
                         ref={dateInputRef}
                         className="absolute inset-0 opacity-0 pointer-events-none" 
-                        onChange={(e) => {
-                          setFormData({...formData, date: e.target.value});
-                          if(e.target.value) setErrors(prev => ({...prev, date: false}));
-                        }}
+                        onChange={(e) => setFormData({...formData, date: e.target.value})}
                       />
                     </div>
-                    {errors.date && <p className="text-red-500 text-[11px] mt-1 font-medium pl-1">Please select Date</p>}
+                    {errors.date && <p className="text-red-500 text-[10px] mt-1 pl-1">Please select Date</p>}
                   </div>
                 </div>
 
-                <div className="pt-2">
-                  <label className="flex items-start gap-3 cursor-pointer group relative">
-                    <input 
-                      type="checkbox" 
-                      className="appearance-none absolute inset-0 w-full h-full cursor-pointer z-50 peer" 
-                      defaultChecked 
-                    />
+                {/* Checkbox row */}
+                <div className="relative pt-2">
+                  <label className="flex items-start gap-3 cursor-pointer group">
                     <div className="relative mt-1 flex-shrink-0 w-4 h-4 flex items-center justify-center">
-                      <div className="absolute inset-0 border border-black rounded-[2px] bg-white transition-all peer-checked:bg-white" />
-                      <svg className="w-3 h-3 text-black scale-0 peer-checked:scale-100 transition-transform duration-200 pointer-events-none z-10 stroke-[4px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12" /></svg>
+                      <input type="checkbox" className="appearance-none absolute inset-0 w-full h-full cursor-pointer z-50 peer" defaultChecked />
+                      <div className="absolute inset-0 border border-black rounded-[2px] bg-white peer-checked:bg-white" />
+                      <svg className="w-3 h-3 text-black scale-0 peer-checked:scale-100 transition-transform pointer-events-none z-10 stroke-[4px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12" /></svg>
                     </div>
-                    <span className="text-[10px] md:text-[11px] leading-tight text-gray-600 select-none pr-4">
-                      I authorize representatives of IRA Square to Call, SMS, Email or WhatsApp me about its products and offers. This consent overrides any registration for DNC/NDNC.
+                    <span className="text-[10px] leading-tight text-gray-600 select-none">
+                      I authorize representatives of IRA Square to contact me. This consent overrides DNC/NDNC.
                     </span>
                   </label>
                 </div>
 
-                <div className="pt-2">
-                  <button 
-                    type="submit" 
-                    className="w-full bg-[#7ca232] hover:bg-[#6a8b2a] text-white text-lg md:text-[20px] font-semibold py-3.5 md:py-4 rounded-[15px] md:rounded-[20px] shadow-lg transition-all active:scale-[0.97]"
-                  >
-                    Book a Visit
-                  </button>
-                </div>
+                <button type="submit" className="w-full bg-[#7ca232] text-white text-lg font-semibold py-4 rounded-[20px] shadow-lg transition-all active:scale-95">
+                  Book a Visit
+                </button>
               </form>
             </div>
           </div>
