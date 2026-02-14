@@ -3,7 +3,7 @@
 import React from 'react';
 import Image from 'next/image';
 
-const COMMUNITY_IMAGE = "/the-square-luxury-apartments-exterior.jpg";
+const COMMUNITY_IMAGE = "/the-square-luxury-apartments-exterior.png";
 
 export default function CommunitySection() {
   return (

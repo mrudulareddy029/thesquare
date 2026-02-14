@@ -50,7 +50,7 @@ export default function OurProjects() {
       <div className="max-w-[1280px] mx-auto w-full">
         
         <div className="text-left mb-[40px] md:mb-[50px]">
-          <h2 className="text-[32px] leading-[1.2] md:text-[48px] font-bold text-[#7FA61A] mb-3 uppercase">
+          <h2 className="text-[32px] leading-[1.2] md:text-[48px] font-normal text-[#7FA61A] mb-3 uppercase">
             Building Homes. Nurturing Communities.
           </h2>
           <p className="text-gray-500 font-medium text-sm md:text-base leading-relaxed md:max-w-[760px]">
