@@ -71,7 +71,7 @@ export default function Highlights() {
   return (
     <section id="highlights" className="w-full flex flex-col">
       {/* ================= 1. IMAGE SECTION (Top) ================= */}
-      <div className="relative w-full aspect-[16/9] md:aspect-[1440/615]">
+      <div className="relative w-full aspect-[16/9] md:aspect-[1440/615]  rounded-t-[30px] lg:rounded-t-[50px] overflow-hidden">
 
         <Image
           src="/highlight.webp"

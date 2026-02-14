@@ -58,15 +58,15 @@ export default function JoinUsSection() {
                 onClick={openModal}
                 className="group w-full sm:w-auto flex items-center justify-center gap-2 bg-[#1A1A1A] text-white rounded-[30px] px-[30px] py-[14px] hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
               >
-                <span className="font-gotham font-bold text-sm tracking-wide">Schedule a Site Visit</span>
+                <span className="font-gotham font-normal text-sm tracking-wide">Schedule a Site Visit</span>
                 <ArrowIcon />
               </button>
 
               <button 
                 onClick={openModal}
-                className="group w-full sm:w-auto flex items-center justify-center gap-2 px-[30px] py-[14px] bg-transparent border border-white text-white rounded-[30px] hover:bg-white hover:text-secondary transition-all duration-300"
+                className="group w-full sm:w-auto flex items-center justify-center gap-2 px-[30px] py-[14px] bg-transparent border border-black text-black rounded-[30px] hover:bg-white hover:text-secondary transition-all duration-300"
               >
-                <span className="font-gotham font-bold text-sm tracking-wide">Contact Us</span>
+                <span className="font-gotham font-normal text-sm tracking-wide">Contact Us</span>
                 <ArrowIcon />
               </button>
             </div>
