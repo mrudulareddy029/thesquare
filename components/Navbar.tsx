@@ -23,7 +23,8 @@ export default function Navbar() {
 
   const navLinks = [
     { name: "Home", href: "/" },
-    { name: "Floor Plans", href: "#plans" },
+    { name: "About Us ", href: "#aboutus" },
+    { name: "Projects ", href: "#projects" },
     { name: "Amenities", href: "#amenities" },
     { name: "Contact us", href: "#contact" },
   ];
@@ -108,7 +109,7 @@ export default function Navbar() {
 />
 
                 <span className="text-[12px] min-[1440px]:text-[14px] min-[1920px]:text-[16px] font-light whitespace-nowrap">
-                  +91 9121 777 777
+                  +91 8001345345
                 </span>
               </a>
 
