@@ -33,15 +33,25 @@ export default function Footer() {
           <div className="flex flex-col lg:flex-row w-full gap-10">
             
             {/* LEFT COLUMN: Logos and Navigation (Fixed at 58% on desktop) */}
-            <div className="w-full lg:w-[58%] flex flex-col lg:flex-row lg:border-r border-[#7a8b44]/30">
-              
+           <div className="w-full lg:w-[58%] flex flex-col lg:flex-row relative">
+            {/* 2. CUSTOM VERTICAL LINE: Middle Line */}
+  <div className="
+    hidden lg:block 
+    absolute 
+    right-0              /* Positions it between left/right columns */
+    top-20               /* Moves the START of the line DOWN */
+    h-[80%]              /* Controls the length of the line */
+    w-[1px]              /* THICKNESS: Change to [3px] if needed */
+    bg-[#6A8A2C]/90      /* Color with slight transparency */
+  "></div>
+
 {/* Added h-full and justify-between to push nav to bottom */}
-<div className="w-full lg:flex-1 flex flex-col items-center lg:items-start justify-between pt-10 lg:pt-16">                {/* Logos Group */}
-                <div className="flex flex-col sm:flex-row items-center gap-8 lg:gap-10 mb-10 lg:mb-16">
+<div className="w-full lg:flex-1 flex flex-col items-center lg:items-start justify-between pt-20 lg:pt-16">                {/* Logos Group */}
+                <div className="flex flex-col sm:flex-row items-center gap-8 lg:gap-10 mb-10 lg:mb-16 mt-8 lg:mt-0">
                   <img 
-                    src="/iralogo.webp" 
+                    src="/footer-ira.png" 
                     alt="IRA" 
-                    className="w-[160px] lg:w-[130px] h-auto object-contain" 
+                    className="w-[120px] lg:w-[100px] h-auto object-contain" 
                   />
                   <img 
                     src="/the-square-ira-realty-logo.png" 
@@ -85,12 +95,13 @@ export default function Footer() {
             </div>
 
             {/* RIGHT COLUMN: Address & Contact */}
-            <div className="w-full lg:flex-1 flex items-start justify-center lg:justify-start lg:pl-10 pt-10 lg:pt-16 pb-12">
+            <div className="w-full lg:flex-1 flex items-start justify-center lg:justify-start lg:pl-10 pt-20 lg:pt-32 pb-12">
               <div className="w-full max-w-[480px] flex flex-col">
-                <p className="text-[#8B4513] font-normal mb-2 lg:mb-4 text-base">Address:</p>
+                <p className="text-[#8B4513] font-book mb-2 lg:mb-4 text-base">Address:</p>
                 
                 <div className="text-black font-light leading-relaxed text-[15px] lg:text-base">
-                  <p>4-49/2, Besides Anvaya Conventions Road, Financial District, Vattinagulapally, Hyderabad - 500 032, Telangana</p>
+                  <p>4-49/2, Besides Anvaya Conventions Road, Financial District, Vattinagulapally, Hyderabad,</p>
+                     <p>Telangana - 500 032</p>
                   
                   <div className="flex flex-col sm:flex-row lg:flex-col xl:flex-row items-start gap-4 xl:gap-8 mt-6 lg:mt-5">
                     <p className="flex items-center">
@@ -118,7 +129,7 @@ export default function Footer() {
         </div>
 
         {/* DISCLAIMER */}
-        <div className="w-full border-t border-gray-100 mt-10 py-8">
+        <div className="w-full mt-10 py-8">
           <p className="text-gray-500 font-light text-[10px] lg:text-[11px] leading-relaxed text-center max-w-5xl mx-auto">
             Disclaimer: "This is purely a conceptual presentation and not a legal offering. The promoters reserve the right to make changes in elevation, specifications, and plans as deemed fit."
           </p>
