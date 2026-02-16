@@ -73,18 +73,21 @@ export default function JoinUsSection() {
 
           {/* RIGHT COLUMN: IMAGE */}
 <div className="relative w-full lg:w-1/2 flex justify-center lg:justify-end">
-
   <div className="
       relative
       w-full
       max-w-[780px]
-      h-[700px]
+      aspect-[4/5] sm:aspect-square 
+      
+      /* DESKTOP ADJUSTMENTS */
+      lg:aspect-auto
       lg:h-[1050px]
-      lg:-mt-[68px]      
+      
+      /* Increase this value to move the image HIGHER */
+      lg:-mt-[70px]  /* Changed from -68px to -150px */
+      
       lg:-mb-[68px]
       z-20
-      lg:-translate-y-0
-     
   ">
     <Image 
       src={JOIN_IMAGE}
@@ -94,7 +97,6 @@ export default function JoinUsSection() {
       priority
     />
   </div>
-
 </div>
 
 </div>
