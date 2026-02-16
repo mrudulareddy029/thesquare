@@ -6,7 +6,7 @@ import Image from "next/image";
 export default function About() {
   return (
     <section
-      id="about-section"
+      id="aboutus"
       className="relative w-full bg-white border-x-[4px] md:border-x-[9.6px] border-[#CDE244] py-12 lg:py-[57.6px] overflow-hidden lg:overflow-visible"
     >
       <div className="container mx-auto px-4 lg:max-w-[1320px] h-full">
@@ -52,7 +52,7 @@ export default function About() {
               {/* DECORATIVE IMAGE: Visible only on Laptop */}
               <div className="hidden lg:block absolute top-[417.85px] left-[-82px] w-[150px] h-[121.6px] z-0">
                 <Image
-                  src="/aboutbackground.webp"
+                  src="/about-image.png"
                   alt="Pattern"
                   fill
                   sizes="150px"

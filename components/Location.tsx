@@ -113,13 +113,13 @@ export default function Location() {
         {/* Responsive Watermark Logic */}
         <div className="absolute inset-0 z-[1] pointer-events-none overflow-visible">
           <div className="absolute top-[-60px] left-1/2 -translate-x-1/2 
-                  md:top-[-160px] md:left-[70px] md:translate-x-0 
+                  md:top-[-130px] md:left-[110px] md:translate-x-0 
                   w-[100vw] md:w-[1400px] aspect-square md:h-[1400px]">
             <Image
               src="/map.png"
               alt="Map watermark"
               fill
-              className="opacity-[0.04] object-contain"
+              className="opacity-[0.03] object-contain"
             />
           </div>
         </div>

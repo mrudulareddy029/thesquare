@@ -46,7 +46,9 @@ const PROJECTS_DATA: Project[] = [
 
 export default function OurProjects() {
   return (
-    <section className="bg-white py-10 px-5 xl:px-[80px] md:py-[90px]">
+    <section
+    id="projects"
+     className="bg-white py-10 px-5 xl:px-[80px] md:py-[90px]">
       <div className="max-w-[1280px] mx-auto w-full">
         
         <div className="text-left mb-[40px] md:mb-[50px]">
