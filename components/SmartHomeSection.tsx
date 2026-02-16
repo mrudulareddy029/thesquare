@@ -18,14 +18,14 @@ const features = [
 export default function SmartHomeSection() {
   return (
     <section
-      className="relative w-full bg-secondary z-30 -mt-[25px] overflow-hidden rounded-t-[40px] lg:rounded-t-[42px] py-12 lg:py-20"
+      className="relative w-full bg-secondary z-30 -mt-[25px] overflow-hidden rounded-t-[50px] lg:rounded-t-[42px] py-12 lg:py-20 shadow-sm"
       id="automation"
     >
       {/* 1. HEADER - Responsive text clamps */}
       <div className="mx-auto relative z-10 flex flex-col items-center text-center px-6 w-full max-w-[1440px]">
         <div className="flex flex-col items-center w-full lg:w-[1296px]">
           <h2 className="font-gotham font-light text-white uppercase text-center w-full 
-                         text-[24px] sm:text-[32px] lg:text-[42px] leading-tight tracking-wide">
+                         text-[24px] sm:text-[32px] lg:text-[45px] leading-tight tracking-wide">
             Connect with smart solutions at your home
           </h2>
 
@@ -52,7 +52,7 @@ export default function SmartHomeSection() {
               src="/firstimage.png"
               alt="Smart Home Automation"
               fill
-              className="object-cover rounded-xl lg:rounded-sm"
+              className="object-cover rounded-xl lg:rounded-sm mt-7 lg:mt-10"
               sizes="(max-width: 1024px) 100vw, 638px"
               priority
             />
@@ -60,10 +60,10 @@ export default function SmartHomeSection() {
 
           <div className="w-full lg:w-1/2 flex flex-col gap-6 lg:h-[763px]">
             <div className="relative w-full h-[220px] sm:h-[300px] lg:flex-1">
-              <Image src="/secondimage.png" alt="Kitchen" fill className="object-cover rounded-xl lg:rounded-sm" />
+              <Image src="/secondimage.png" alt="Kitchen" fill className="object-cover rounded-xl lg:rounded-sm mt-7 lg:mt-10" />
             </div>
             <div className="relative w-full h-[220px] sm:h-[300px] lg:flex-1">
-              <Image src="/thirdimage.png" alt="Living Room" fill className="object-cover rounded-xl lg:rounded-sm" />
+              <Image src="/thirdimage.png" alt="Living Room" fill className="object-cover rounded-xl lg:rounded-smmt-7 lg:mt-10" />
             </div>
           </div>
         </div>

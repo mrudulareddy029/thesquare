@@ -55,7 +55,7 @@ export default function FaqSection() {
       className="py-12 lg:py-[70px] rounded-t-[30px] lg:rounded-t-[50px] overflow-hidden" 
       id="faq"
     >
-      <div className="w-full max-w-[920px] px-5 lg:px-0 mx-auto">
+      <div className="w-full max-w-[1150px] px-5 lg:px-0 mx-auto">
         
         {/* HEADER SECTION */}
         <div className="text-center mx-auto mb-8 lg:mb-[40px]">
@@ -86,11 +86,11 @@ export default function FaqSection() {
                   aria-expanded={isActive}
                   aria-controls={contentId}
                   onClick={() => toggleFaq(index)}
-                  className={`w-full flex items-center justify-between p-4 lg:px-[22px] lg:py-[18px] text-left transition-colors duration-300 focus:outline-none border-none ${
+                  className={`w-full flex items-center justify-between p-4 lg:px-[50px] lg:py-[18px] text-left transition-colors duration-300 focus:outline-none border-none ${
                     isActive ? 'bg-[rgb(106,138,44)]' : 'bg-white hover:bg-gray-50'
                   }`}
                 >
-                  <span className={`tracking-tight pr-4 text-[15px] sm:text-[16px] leading-[22px] sm:leading-[24px] ${
+                  <span className={`tracking-tight pr-4 text-[15px] sm:text-[20px] leading-[22px] sm:leading-[24px] ${
                     isActive ? 'text-white' : 'text-[rgb(33,37,41)]' 
                   }`}>
                     {item.question}
@@ -129,8 +129,8 @@ export default function FaqSection() {
                   }`}
                 >
                   <div className="overflow-hidden">
-                    <div className="px-5 lg:px-[22px] py-4 lg:py-[20px] text-[rgb(74,74,74)]">
-                      <p className="font-gotham font-normal text-[13px] sm:text-[14px] leading-[20px] sm:leading-[22px] text-start">
+                    <div className="px-5 lg:px-[48px] py-4 lg:py-[20px] text-[rgb(74,74,74)]">
+                      <p className="font-gotham font-normal text-[13px] sm:text-[17px] leading-[20px] sm:leading-[22px] text-start">
                         {item.answer}
                       </p>
                     </div>

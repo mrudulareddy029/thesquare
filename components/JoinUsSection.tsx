@@ -26,7 +26,7 @@ export default function JoinUsSection() {
 
   return (
     <section 
- className="w-full bg-secondary min-h-[600px] lg:h-[914px] flex items-center py-12 lg:py-0 overflow-visible"      id="join-us"
+ className="w-full bg-secondary min-h-[600px] lg:h-[854px] flex items-center py-12 lg:py-0 overflow-visible"      id="join-us"
     >
       <div className="mx-auto w-full px-6 lg:px-0 lg:w-[91.66vw] lg:max-w-[1320px] h-full">
         <div className="flex flex-col lg:flex-row h-full items-center gap-0">
@@ -77,9 +77,12 @@ export default function JoinUsSection() {
   <div className="
       relative
       w-full
-      max-w-[540px]
-      h-[520px]
-      lg:h-[990px]
+      max-w-[780px]
+      h-[700px]
+      lg:h-[1050px]
+      lg:-mt-[68px]      
+      lg:-mb-[68px]
+      z-20
       lg:-translate-y-0
      
   ">
@@ -87,7 +90,7 @@ export default function JoinUsSection() {
       src={JOIN_IMAGE}
       alt="The Square Luxury Living"
       fill
-      className="object-cover"
+      className="object-contain"
       priority
     />
   </div>

@@ -36,7 +36,7 @@ export default function Gallery() {
               src={IMAGES.leftTall}
               alt="Gallery Left"
               fill
-              className="object-cover transition-transform duration-700 "
+              className="object-cover object-right transition-transform duration-700 "
               sizes="(max-width: 768px) 100vw, 35vw"
               priority
             />

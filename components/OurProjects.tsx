@@ -55,7 +55,7 @@ export default function OurProjects() {
           <h2 className="text-[32px] leading-[1.2] md:text-[48px] font-normal text-[#7FA61A] mb-3 uppercase">
             Building Homes. Nurturing Communities.
           </h2>
-          <p className="text-gray-500 font-medium text-sm md:text-base leading-relaxed md:max-w-[760px]">
+          <p className="text-black font-medium text-sm md:text-base leading-relaxed md:max-w-[760px]">
             At IRA Realty, we’re redefining real estate with transparency, trust,
             and transformative design.
           </p>
@@ -76,7 +76,10 @@ export default function OurProjects() {
                   alt={project.title}
                   fill
                   sizes="(max-width: 768px) 100vw, 370px"
-                  className="object-cover transition-transform duration-500 "
+                  className={`object-cover transition-transform duration-500 ${
+  index === 2 ? "object-[120%_center]" : "object-center"
+}`}
+                  
                   // Forces mobile to load this image immediately
                   priority={index < 2} 
                 />
