@@ -38,7 +38,7 @@ export default function FloorPlans() {
       className="relative overflow-hidden z-20 bg-ira-bg bg-[url('/facing-bg.png')] bg-cover bg-center rounded-none lg:rounded-t-[50px] mt-0 lg:-mt-[35px]"
     >
       <div className="py-[40px] lg:py-[71.675px] xl:py-[100.8px]">
-        <div className="mx-auto px-4 lg:px-[12px] lg:max-w-[1024px] xl:max-w-[1320px]">
+        <div className="w-full px-4 md:px-10 lg:px-16 xl:px-20 mx-auto">
 
           {/* ================= UPPER SECTION ================= */}
           <div className="flex flex-col xl:flex-row items-center relative min-h-auto xl:min-h-[685px]">
@@ -118,7 +118,7 @@ export default function FloorPlans() {
           </div>
 
           {/* ================= FLOOR PLAN CARD ================= */}
-          <div className="w-full xl:w-[1296px] mx-auto px-4 xl:px-0">
+          <div className="w-full  mx-auto px-4 ">
             <div className="bg-white rounded-[20px] xl:rounded-[12px] p-6 md:p-[51.837px] shadow-lg border border-gray-100">
               
               {/* HEADER SECTION */}

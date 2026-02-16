@@ -23,126 +23,117 @@ export default function Footer() {
   if (!isMounted) return null;
 
   return (
-    <>
-      {/* Top Spacer - Desktop Only */}
-      <div className="hidden lg:block w-full max-w-[1440px] h-[60px] mx-auto bg-transparent" />
-
-      <footer className="bg-white font-sans w-full overflow-x-hidden border-t border-gray-100">
+    <footer className="bg-white font-sans w-full overflow-x-hidden border-t border-gray-100">
+      
+      {/* Main Footer Container */}
+      <div className="max-w-7xl mx-auto px-6 md:px-10 lg:px-6">
         
-        {/* Main Footer Container */}
-        <div className="w-full lg:max-w-[1440px] mx-auto">
+        <div className="w-full flex flex-col items-center">
           
-          {/* Inner Content Wrapper */}
-          <div className="w-full px-6 lg:px-0 lg:w-[1320px] lg:mx-auto flex flex-col items-center">
+          <div className="flex flex-col lg:flex-row w-full gap-10">
             
-            <div className="flex flex-col lg:flex-row w-full lg:w-[1296px] lg:-mx-3">
+            {/* LEFT COLUMN: Logos and Navigation (Fixed at 58% on desktop) */}
+            <div className="w-full lg:w-[58%] flex flex-col lg:flex-row lg:border-r border-[#7a8b44]/30">
               
-              {/* LEFT COLUMN: Logos and Navigation */}
-              <div className="w-full lg:w-[756px] flex flex-col lg:flex-row lg:border-r border-[#7a8b44]/30">
-                
-                <div className="w-full lg:w-[566px] flex flex-col items-center lg:items-start pt-10 lg:pt-0">
-                  {/* Logos Group */}
-                  <div className="flex flex-col sm:flex-row items-center gap-8 lg:gap-10 mb-10 lg:mb-[173px]">
-
-                    <img 
-                      src="/iralogo.webp" 
-                      alt="IRA" 
-                      className="w-[160px] lg:w-[143px] h-auto object-contain lg:mt-2.5" 
-                    />
-                    <img 
-                      src="/the-square-ira-realty-logo.png" 
-                      alt="Square" 
-                      className="w-[120px] lg:w-[106px] h-auto object-contain" 
-                    />
-                  </div>
-                  
-
-                  {/* Navigation links */}
-                  <nav className="w-full lg:max-w-[542px] mb-8 lg:mb-4 lg:pt-8">
-                    <ul className="flex flex-col lg:flex-row items-center lg:items-end justify-between gap-6 lg:gap-0">
-                      {NAV_LINKS.map((link, index) => (
-                        <li key={index}>
-                          <Link 
-                            href={link.href} 
-                            className={`${
-                              link.isBold 
-                                ? 'text-xl lg:text-[15px] text-[rgb(89,119,26)] font-medium' 
-                                : 'text-lg lg:text-[12px] text-[#7a8b44] font-light'
-                            } whitespace-nowrap leading-none hover:text-[rgb(89,119,26)] transition-all`}
-                          >
-                            {link.label}
-                          </Link>
-                        </li>
-                      ))}
-                    </ul>
-                  </nav>
-                </div>
-
-                {/* Bird Image Column */}
-                <div className="flex justify-center items-end w-full lg:w-[190px] mb-10 lg:mb-0">
+{/* Added h-full and justify-between to push nav to bottom */}
+<div className="w-full lg:flex-1 flex flex-col items-center lg:items-start justify-between pt-10 lg:pt-16">                {/* Logos Group */}
+                <div className="flex flex-col sm:flex-row items-center gap-8 lg:gap-10 mb-10 lg:mb-16">
                   <img 
-                    src="/footer1.webp" 
-                    alt="Birds" 
-                    className="w-[121px] lg:w-full h-auto lg:h-[295px] object-contain object-bottom" 
+                    src="/iralogo.webp" 
+                    alt="IRA" 
+                    className="w-[160px] lg:w-[130px] h-auto object-contain" 
+                  />
+                  <img 
+                    src="/the-square-ira-realty-logo.png" 
+                    alt="Square" 
+                    className="w-[120px] lg:w-[100px] h-auto object-contain" 
                   />
                 </div>
+
+                {/* Navigation links - Responsive Strategy */}
+                <nav className="w-full mb-8 lg:mb-10 lg:pt-20">
+                  {/* Mobile: flex-col (stacked)
+                    Laptops (lg): flex-row + flex-nowrap (Forces single line) + justify-between
+                  */}
+                  <ul className="flex flex-col lg:flex-row lg:flex-nowrap items-center lg:items-start justify-between w-full gap-6 lg:gap-x-2 xl:gap-x-8">
+                    {NAV_LINKS.map((link, index) => (
+                      <li key={index} className="shrink-0">
+                        <Link 
+                          href={link.href} 
+                          className={`${
+                            link.isBold 
+                              ? 'text-xl lg:text-[13px] xl:text-[15px] text-[rgb(89,119,26)] font-medium' 
+                              : 'text-lg lg:text-[12px] xl:text-[14px] text-[#7a8b44] font-light'
+                          } whitespace-nowrap hover:text-[rgb(89,119,26)] transition-all`}
+                        >
+                          {link.label}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </nav>
               </div>
 
-              {/* RIGHT COLUMN: Address & Contact */}
-              <div className="w-full lg:w-[540px] flex items-center lg:items-end justify-center lg:justify-start lg:pl-[50px] pb-10 lg:pb-2">
-                <div className="w-full max-w-[500px] flex flex-col">
-                  <p className="text-[#8B4513] font-light mb-2 lg:mb-4 text-base">Address:</p>
-                  <div className="text-black font-light leading-relaxed text-base">
-                    {/* ✅ Financial District line fixed to whitespace-nowrap for desktop */}
-                    <p className="lg:whitespace-nowrap">4-49/2, Besides Anvaya Conventions Road, Financial District,</p>
-                    <p>Vattinagulapally,</p>
-                    <p> Hyderabad - 500 032, Telangana</p>
-                    
-                    <div className="flex flex-col lg:flex-row items-start gap-4 lg:gap-8 mt-6 lg:mt-5">
-                      <p className="flex items-center">
-                        <span className="text-[#8B4513] font-normal mr-2">Phone:</span>
-                        <a href="tel:+918001345345" className="hover:underline">+91 8001345345</a>
-                      </p>
-                      <p className="flex items-center">
-                        <span className="text-[#8B4513] font-normal mr-2">Email:</span>
-                        <a href="mailto:info@irarealty.in" className="hover:underline">info@irarealty.in</a>
-                      </p>
-                    </div>
-                  </div>
+              {/* Bird Image Column - Decorative */}
+              <div className="hidden lg:flex justify-center items-end w-[140px] xl:w-[160px] mb-10 lg:mb-0 shrink-0 px-2">
+                <img 
+                  src="/footer1.webp" 
+                  alt="Birds" 
+                  className="w-full h-auto lg:h-[280px] object-contain object-bottom" 
+                />
+              </div>
+            </div>
 
-                  <div className="flex items-center justify-start gap-6 mt-8 lg:mt-5">
-                    <span className="text-[#8B4513] font-normal text-base whitespace-nowrap">Let's Connect:</span>
-                    <div className="flex gap-6 items-center">
-                      <PhoneIcon /> 
-                      <WhatsappIcon /> 
-                      <FacebookIcon />
-                    </div>
+            {/* RIGHT COLUMN: Address & Contact */}
+            <div className="w-full lg:flex-1 flex items-start justify-center lg:justify-start lg:pl-10 pt-10 lg:pt-16 pb-12">
+              <div className="w-full max-w-[480px] flex flex-col">
+                <p className="text-[#8B4513] font-normal mb-2 lg:mb-4 text-base">Address:</p>
+                
+                <div className="text-black font-light leading-relaxed text-[15px] lg:text-base">
+                  <p>4-49/2, Besides Anvaya Conventions Road, Financial District, Vattinagulapally, Hyderabad - 500 032, Telangana</p>
+                  
+                  <div className="flex flex-col sm:flex-row lg:flex-col xl:flex-row items-start gap-4 xl:gap-8 mt-6 lg:mt-5">
+                    <p className="flex items-center">
+                      <span className="text-[#8B4513] font-normal mr-2">Phone:</span>
+                      <a href="tel:+918001345345" className="hover:underline">+91 8001345345</a>
+                    </p>
+                    <p className="flex items-center">
+                      <span className="text-[#8B4513] font-normal mr-2">Email:</span>
+                      <a href="mailto:info@irarealty.in" className="hover:underline">info@irarealty.in</a>
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex items-center justify-start gap-6 mt-8 lg:mt-6">
+                  <span className="text-[#8B4513] font-normal text-base">Let's Connect:</span>
+                  <div className="flex gap-6 items-center">
+                    <PhoneIcon /> 
+                    <WhatsappIcon /> 
+                    <FacebookIcon />
                   </div>
                 </div>
               </div>
             </div>
           </div>
-
-          <div className="hidden lg:block w-full h-[60px] bg-transparent" />
-
-          {/* DISCLAIMER */}
-          <div className="w-full lg:w-[1296px] mx-auto text-center mb-6 px-6 border-t border-gray-100 lg:border-none pt-6 lg:pt-0">
-            <p className="text-gray-500 font-light text-[10px] lg:text-[11px] leading-relaxed lg:whitespace-nowrap">
-              Disclaimer: "This is purely a conceptual presentation and not a legal offering. The promoters reserve the right to make changes in elevation, specifications, and plans as deemed fit."
-            </p>
-          </div>
         </div>
 
-        {/* COPYRIGHT BAR */}
-        <div className="w-full bg-[#1a1a1a]">
-          <div className="max-w-[1440px] mx-auto flex items-center justify-center py-4 lg:h-12">
-            <span className="text-white font-light uppercase tracking-[0.2em] text-xs lg:text-sm">
-              ©2026 IRAREALTY
-            </span>
-          </div>
+        {/* DISCLAIMER */}
+        <div className="w-full border-t border-gray-100 mt-10 py-8">
+          <p className="text-gray-500 font-light text-[10px] lg:text-[11px] leading-relaxed text-center max-w-5xl mx-auto">
+            Disclaimer: "This is purely a conceptual presentation and not a legal offering. The promoters reserve the right to make changes in elevation, specifications, and plans as deemed fit."
+          </p>
         </div>
-      </footer>
-    </>
+      </div>
+
+      {/* COPYRIGHT BAR */}
+      <div className="w-full bg-[#1a1a1a]">
+        <div className="max-w-7xl mx-auto flex items-center justify-center py-4">
+          <span className="text-white font-light uppercase tracking-[0.2em] text-xs">
+            ©2026 IRAREALTY
+          </span>
+        </div>
+      </div>
+    </footer>
   );
 }
 
