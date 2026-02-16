@@ -61,7 +61,7 @@ export default function Hero() {
           /* RESPONSIVE RESET */
           md:top-0 md:bottom-0 md:justify-end md:pt-0 md:px-20 md:pb-12
           /* DESKTOP: Content moved down with increased pt */
-          lg:justify-start lg:pt-[300px] lg:px-[144px] lg:pb-0
+          lg:justify-start lg:pt-[340px] lg:px-[144px] lg:pb-0
           pointer-events-none
         "
       >
