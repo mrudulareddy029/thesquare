@@ -119,7 +119,7 @@ export default function FloorPlans() {
 
           {/* ================= FLOOR PLAN CARD ================= */}
           <div className="w-full  mx-auto px-4 ">
-            <div className="bg-white rounded-[20px] xl:rounded-[12px] p-6 md:p-[51.837px] shadow-lg border border-gray-100">
+            <div className="bg-white rounded-none p-6 md:p-[51.837px] shadow-lg border border-gray-100">
               
               {/* HEADER SECTION */}
               <div className={`flex flex-col ${activeTab === 'West' ? 'lg:flex-row-reverse' : 'lg:flex-row'} items-start lg:items-end justify-between gap-8 mb-8 border-b border-gray-100 pb-8 lg:border-none lg:pb-0`}>
@@ -150,7 +150,7 @@ export default function FloorPlans() {
               </div>
 
               {/* IMAGES GRID - UPDATED FOR ALIGNMENT */}
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-4 border-[0.8px] border-solid border-[#8D6554] p-4 md:p-[35.763px] rounded-xl">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-4 border-[0.8px] border-solid border-[#8D6554] p-4 md:p-[35.763px] rounded-none">
                 {currentPlan.images.map((src, i) => (
                   // FIX: Set a fixed height container so all 3 items align perfectly
                   <div key={`${activeTab}-${i}`} className="w-full relative h-[300px] md:h-[400px] lg:h-[480px]">
