@@ -15,7 +15,7 @@ interface Project {
 
 const PROJECTS_DATA: Project[] = [
   {
-    title: "IRA ASPIRATION",
+    title: "Ira Aspiration",
     type: "3 & 4 BHK Apartment",
     location: "KOLLUR",
     rera: "RERA NO. P01100002880",
@@ -24,7 +24,7 @@ const PROJECTS_DATA: Project[] = [
     link: "https://aspiration.irarealty.in/",
   },
   {
-    title: "IRA THE SQUARE",
+    title: "Ira The Square",
     type: "4 BHK Villas",
     location: "ADIBATLA",
     rera: "RERA NO. P01100002811",
@@ -34,7 +34,7 @@ const PROJECTS_DATA: Project[] = [
     link: "https://thesquare.irarealty.in/",
   },
   {
-    title: "MOONGLADE APARTMENTS",
+    title: "Moonglade Apartments",
     type: "3 & 4 BHK Apartment",
     location: "KOKAPET",
     rera: "RERA NO. P02400009267",
@@ -80,7 +80,7 @@ export default function OurProjects() {
                 />
 
                 <div className="absolute bottom-0 right-0 z-10">
-                  <span className="bg-[#8D6554] text-white text-[10px] md:text-[11px] font-normal uppercase tracking-wide py-[8px] px-[23px] block">
+                  <span className="bg-[#8D6554] text-white text-[10px] md:text-[11px] font-normal tracking-wide py-[8px] px-[23px] block">
                     {project.status}
                   </span>
                 </div>
@@ -88,24 +88,24 @@ export default function OurProjects() {
 
               <div className="flex flex-col text-white mt-4 px-2 pb-2">
                 <div className="flex justify-between items-start mb-1 gap-2">
-                  <h3 className="font-bold text-[17px] md:text-[19px] leading-tight uppercase">
+                  <h3 className="font-medium text-[17px] md:text-[18px] leading-tight">
                     {project.title}
                   </h3>
                   <div className="flex items-center gap-1.5 shrink-0">
                     <div className="relative w-[12px] h-[16px]">
                       <Image src="/Subtract.png" alt="loc" fill className="object-contain" />
                     </div>
-                    <p className="text-[13px] font-bold tracking-wider uppercase">
+                    <p className="text-[13px] font-medium tracking-wider uppercase">
                       {project.location}
                     </p>
                   </div>
                 </div>
 
                 <div className="flex justify-between items-end mt-1">
-                  <p className="text-[13px] font-light opacity-90">
+                  <p className="text-[13px] font-normal opacity-95">
                     {project.type}
                   </p>
-                  <p className="text-[9px] md:text-[10px] font-light uppercase tracking-wider">
+                  <p className="text-[9px] md:text-[12px] font-light uppercase tracking-wider">
                     {project.rera}
                   </p>
                 </div>

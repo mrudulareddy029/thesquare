@@ -86,10 +86,11 @@ export default function Highlights() {
       </div>
 
       {/* ================= 2. STATS BOXES SECTION (After Image) ================= */}
-      <div className="w-full bg-gray-50 py-12 px-4 md:px-0">
-        <div className="max-w-[1300px] mx-auto">
-          <div className="flex flex-wrap justify-center gap-6">
-            {STATS.map((stat, index) => (
+      <div className="w-full bg-gray-50 py-12 px-6 md:px-12 lg:px-20">
+  <div className="max-w-7xl mx-auto">
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+
+                {STATS.map((stat, index) => (
               <div
                 key={index}
                 className="
@@ -97,8 +98,8 @@ export default function Highlights() {
                   bg-white 
                   rounded-lg 
                   shadow-sm border border-gray-100
-                  p-5
-                  w-full md:w-[280px] lg:w-[300px]
+                  p-5 
+                  w-full 
                   hover:shadow-md transition-shadow duration-300
                 "
               >

@@ -7,7 +7,7 @@ const features = [
   { title: "Smart Lighting", icon: "/smart_light.png" },
   { title: "Fans", icon: "/fan.png" },
   { title: "Air Conditioner", icon: "/ac.png" },
-  { title: "Mobile App Enabled", icon: "/mobile.png" },
+  { title: "Mobile\n App\n Enabled", icon: "/mobile.png" },
   { title: "Smart Lock System", icon: "/lock.png" },
   { title: "Motion Sensor For Bathrooms", icon: "/sensor.png" },
   { title: "Mesh Network", icon: "/mesh_network.png" },
@@ -96,7 +96,7 @@ export default function SmartHomeSection() {
                       sizes="48px"
                     />
                   </div>
-                  <span className="text-[#222] font-gotham font-medium text-[13px] lg:text-[14px] leading-snug">
+                  <span className="text-[#222] font-gotham font-medium text-[13px] lg:text-[14px] leading-snug whitespace-pre-line ">
                     {feature.title}
                   </span>
                 </div>

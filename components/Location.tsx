@@ -57,9 +57,10 @@ export default function Location() {
       <section className="relative w-full overflow-visible bg-white py-10 md:py-20">
         
         {/* GREEN BACKGROUND - Changed fixed width to responsive constraints */}
-        <div className="absolute top-0 right-0 w-full md:w-[80%] lg:w-[1200px] h-full pointer-events-none">
-          <Image
-            src="/image.png"
+<div className="absolute top-0 left-0 w-full h-full pointer-events-none">   
+       <Image
+
+            src="/image.jpg"
             alt="Green Background"
             fill
             priority
@@ -96,11 +97,11 @@ export default function Location() {
 
       {/* SECTION 2: PRIME LOCATION (ORIGINAL STYLE RESTORED) */}
       <section
-        className="relative w-full text-ira-dark font-gotham overflow-visible -mt-4 md:-mt-18 lg:-mt-24
-               pt-6 md:pt-[60px] lg:pt-[80px] z-20"
+        className="relative w-full text-ira-dark font-gotham overflow-visible pt-16 md:pt-24 lg:pt-32 z-20"
+               
       >
         {/* Responsive Background Logic */}
-        <div className="absolute top-[20px] left-0 right-0 lg:right-80 bottom-0 z-0">
+        <div className="absolute top-0 left-0 right-0 lg:right-80 bottom-0 z-0">
           <Image
             src="/green.png"
             alt="Geometric background"
@@ -125,7 +126,7 @@ export default function Location() {
 
         <div className="absolute inset-0 z-[2] bg-white/5" />
 
-        <div className="container mx-auto relative z-10 px-4 lg:max-w-[1320px]">
+        <div className="w-full relative z-10 px-6 md:px-12 lg:px-20 xl:px-32">
           <div className="w-full flex flex-col items-center pt-8 md:pt-16 pb-12 md:pb-32">
             <div className="text-center w-full lg:w-[1116px] px-2 md:px-0">
               <h2 className="text-[#94aa29] font-light uppercase text-2xl md:text-3xl lg:text-[42px] leading-tight mb-4 tracking-wide">

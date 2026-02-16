@@ -17,7 +17,7 @@ export default function Gallery() {
       
       {/* 1. TITLE */}
       <div className="w-full flex justify-center pt-10 md:pt-16 pb-8 md:pb-12">
-        <h2 className="font-gotham font-light uppercase text-primary text-2xl md:text-[42px] tracking-[0.3em] text-center">
+        <h2 className="font-gotham font-normal uppercase text-primary text-2xl md:text-[42px] tracking-[0em] text-center">
           GALLERY
         </h2>
       </div>

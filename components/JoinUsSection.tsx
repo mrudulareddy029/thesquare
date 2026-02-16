@@ -26,8 +26,7 @@ export default function JoinUsSection() {
 
   return (
     <section 
-      className="w-full bg-secondary min-h-[600px] lg:h-[914px] flex items-center py-12 lg:py-0 overflow-hidden" 
-      id="join-us"
+ className="w-full bg-secondary min-h-[600px] lg:h-[914px] flex items-center py-12 lg:py-0 overflow-visible"      id="join-us"
     >
       <div className="mx-auto w-full px-6 lg:px-0 lg:w-[91.66vw] lg:max-w-[1320px] h-full">
         <div className="flex flex-col lg:flex-row h-full items-center gap-0">
@@ -73,20 +72,32 @@ export default function JoinUsSection() {
           </div>
 
           {/* RIGHT COLUMN: IMAGE */}
-              <div className="w-full lg:w-1/2 h-[450px] sm:h-[550px] lg:h-full relative mt-0">
-           <div className="relative w-full h-full overflow-hidden">
-                 <Image 
-                 src={JOIN_IMAGE} 
-                 alt="The Square Luxury Living" 
-                 fill
-                 className="object-cover" 
-                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 660px"
-                 priority
-               />
-             </div>
-          </div>
+<div className="relative w-full lg:w-1/2 flex justify-center lg:justify-end">
+
+  <div className="
+      relative
+      w-full
+      max-w-[540px]
+      h-[520px]
+      lg:h-[990px]
+      lg:-translate-y-0
+     
+  ">
+    <Image 
+      src={JOIN_IMAGE}
+      alt="The Square Luxury Living"
+      fill
+      className="object-cover"
+      priority
+    />
+  </div>
+
+</div>
+
+</div>
+
         </div>
-      </div>
+
     </section>
   );
 }
