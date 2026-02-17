@@ -19,8 +19,8 @@ const AMENITIES = [
   { icon: "/five.png", label: "Yoga & Meditation\nHall" },
   { icon: "/six.png", label: "Banquet Hall" },
   { icon: "/seven.png", label: "Guest Rooms" },
-  { icon: "/eight.png", label: "Entrance & \n Exit Plaza" },
-  { icon: "/nine.png", label: "Multipurpose \n Hall" },
+  { icon: "/eight.png", label: "Entrance &\n Exit Plaza" },
+  { icon: "/nine.png", label: "Multipurpose\n Hall" },
   { icon: "/ten.png", label: "Provision for\n Grocery store" },
   { icon: "/eleven.png", label: "Swimming Pool" },
   { icon: "/twelve.png", label: "Skating Rink" },
@@ -143,8 +143,8 @@ export default function AmenitiesSection() {
             </h2>
             <div className="text-gray-600 text-[15px] lg:text-[16px] leading-relaxed font-normal font-gotham">
               <p>From a 4-level exclusive clubhouse to landscaped</p>
-              <p>gardens, The offers amenities that make every </p>
-              <p> moment rewarding experience.Unleash your energies</p>
+              <p>gardens, The Square offers amenities that make every </p>
+              <p> moment rewarding experience. Unleash your energies</p>
               <p> and live life to the fullest</p>
             </div>
           </div>
@@ -157,7 +157,6 @@ export default function AmenitiesSection() {
             <button
               type="button"
               onClick={() => {
-                // ✅ Mobile: scroll | Desktop: paging
                 scrollMobile("left");
                 prevAmenitiesDesktop();
               }}
@@ -185,25 +184,49 @@ export default function AmenitiesSection() {
                         <Image src={a.icon} alt={a.label} fill className="object-contain" />
                       </div>
                       <p className="mt-3 text-[11px] md:text-[12px] leading-[1.2] text-[#2C2C2C] font-gotham whitespace-pre-line">
-                        {a.label}
+                        {a.label.trim()}
                       </p>
                     </div>
                   ))}
                 </div>
               </div>
 
-              {/* ✅ Desktop: Existing grid paging */}
+              {/* ✅ Desktop: FIXED Grid Paging */}
               <div className="hidden lg:block">
                 <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-0 md:gap-0 items-start">
                   {visibleAmenities.map((a, idx) => (
                     <div
                       key={`${amenityPage}-${idx}`}
-                      className="flex flex-col items-center text-center min-h-[115px]"
+                      className="
+                        flex flex-col items-center text-center 
+                        min-h-[115px]
+                        
+                        /* --- 1. FIXED HEIGHT FIX --- */
+                        min-[1440px]:h-[180px] 
+                        min-[1440px]:justify-start
+                      "
                     >
-                      <div className="relative w-[50px] h-[50px] md:w-[62px] md:h-[62px]">
+                      <div className="relative w-[50px] h-[50px] md:w-[62px] md:h-[62px] flex-shrink-0">
                         <Image src={a.icon} alt={a.label} fill className="object-contain" />
                       </div>
-                      <p className="mt-2 text-[11px] md:text-[12px] leading-[1.2] text-[#2C2C2C] font-gotham whitespace-pre-line">
+                      
+                      {/* --- 2. FIGMA FONT SPECS --- */}
+                      <p className="
+                        mt-2 text-[11px] md:text-[12px] leading-[1.2] text-[#2C2C2C] font-gotham whitespace-pre-line
+                        
+                        /* 1440px+ Specs */
+                        min-[1440px]:text-[20px]           /* Size: 20px */
+                        min-[1440px]:leading-[20px]        /* Line height: 28px */
+                        min-[1440px]:font-normal           /* Weight: 400 (Book) */
+                        min-[1440px]:tracking-[0.005em]    /* Letter spacing: 0.5% */
+                        
+                        /* Fixed Box Size */
+                        min-[1440px]:w-[149px] 
+                        min-[1440px]:h-[78px]
+                        
+                        min-[1440px]:mt-1  /* Space from Icon */
+                        min-[1440px]:flex min-[1440px]:items-center min-[1440px]:justify-center
+                      ">
                         {a.label}
                       </p>
                     </div>
@@ -216,7 +239,6 @@ export default function AmenitiesSection() {
             <button
               type="button"
               onClick={() => {
-                // ✅ Mobile: scroll | Desktop: paging
                 scrollMobile("right");
                 nextAmenitiesDesktop();
               }}
