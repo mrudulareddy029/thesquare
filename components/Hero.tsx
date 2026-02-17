@@ -104,7 +104,7 @@ export default function Hero() {
               md:text-[40px] md:max-w-none md:w-auto md:h-auto md:mb-4
               
               /* LAPTOP */
-              lg:text-[44px] lg:leading-[52.8px] lg:mb-[8px]
+              lg:text-[64px] lg:leading-[52.8px] lg:mb-[8px]
               
               /* --- 1440px+ SCREEN (Your Monitor) --- */
               min-[1440px]:text-[64px]       /* Size: 64px */
