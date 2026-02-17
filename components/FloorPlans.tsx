@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import { createPortal } from "react-dom";
 
@@ -33,34 +33,23 @@ export default function FloorPlans() {
   const [activeTab, setActiveTab] = useState<"East" | "West">("East");
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
-  // For Portal mount safety (Next.js)
+  // Portal mount safety (Next.js)
   const [mounted, setMounted] = useState(false);
   useEffect(() => setMounted(true), []);
 
   const currentPlan = PLAN_CONFIG[activeTab];
-
   const closeLightbox = () => setSelectedImage(null);
 
-  // ✅ Strong scroll lock (no rubber-band / no background movement)
+  // ✅ SIMPLE SCROLL LOCK (NO JUMP)
   useEffect(() => {
-    if (!selectedImage) return;
-
-    const scrollY = window.scrollY;
-
-    document.body.style.position = "fixed";
-    document.body.style.top = `-${scrollY}px`;
-    document.body.style.left = "0";
-    document.body.style.right = "0";
-    document.body.style.width = "100%";
+    if (selectedImage) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
 
     return () => {
-      const y = Math.abs(parseInt(document.body.style.top || "0", 10)) || scrollY;
-      document.body.style.position = "";
-      document.body.style.top = "";
-      document.body.style.left = "";
-      document.body.style.right = "";
-      document.body.style.width = "";
-      window.scrollTo(0, y);
+      document.body.style.overflow = "";
     };
   }, [selectedImage]);
 
@@ -72,7 +61,7 @@ export default function FloorPlans() {
       <div className="py-[32px] lg:py-[56px] xl:py-[72px]">
         <div className="w-full px-4 md:px-10 lg:px-16 xl:px-20 mx-auto">
           {/* ================= UPPER SECTION ================= */}
-          <div className="flex flex-col xl:flex-row items-center relative ">
+          <div className="flex flex-col xl:flex-row items-center relative">
             {/* LEFT IMAGE COLUMN */}
             <div className="w-full xl:w-5/12 mb-12 xl:mb-0 flex justify-center xl:justify-start">
               <div
@@ -166,7 +155,7 @@ export default function FloorPlans() {
           </div>
 
           {/* ================= FLOOR PLAN CARD ================= */}
-          <div className="w-full mx-auto px-4 ">
+          <div className="w-full mx-auto px-4">
             <div className="bg-white rounded-none p-6 md:p-[51.837px] shadow-lg border border-gray-100">
               {/* HEADER SECTION */}
               <div
@@ -183,6 +172,7 @@ export default function FloorPlans() {
                   </h5>
                 </div>
 
+                {/* Details List */}
                 <div className="w-full lg:w-auto">
                   <ul className="grid grid-cols-1 md:grid-cols-2 gap-x-1 gap-y-3">
                     {currentPlan.details.map((item, idx) => (
@@ -230,11 +220,11 @@ export default function FloorPlans() {
         </div>
       </div>
 
-      {/* ✅ PORTAL LIGHTBOX (renders above Navbar and everything) */}
+      {/* ✅ PORTAL LIGHTBOX */}
       {mounted && selectedImage
         ? createPortal(
             <div
-              className="fixed inset-0 z-[2147483647] bg-black/95 backdrop-blur-sm overscroll-none"
+              className="fixed inset-0 z-[2147483647] bg-black/95 backdrop-blur-sm overscroll-none touch-none"
               onClick={closeLightbox}
             >
               {/* CLOSE BUTTON */}
@@ -254,7 +244,7 @@ export default function FloorPlans() {
                 ✕
               </button>
 
-              {/* IMAGE WRAPPER (don’t close on image click) */}
+              {/* IMAGE (clicking image shouldn't close) */}
               <div
                 className="fixed inset-0 flex items-center justify-center p-4"
                 onClick={(e) => e.stopPropagation()}
