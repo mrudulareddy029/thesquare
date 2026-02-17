@@ -108,7 +108,7 @@ export default function Hero() {
               
               /* --- 1440px+ SCREEN (Your Monitor) --- */
               min-[1440px]:text-[64px]       /* Size: 64px */
-              min-[1440px]:leading-[70px]    /* Line height: 70px */
+              min-[1440px]:leading-[72px]    /* Line height: 70px */
               min-[1440px]:max-w-[1299px]    /* Width: 1299px */
               min-[1440px]:mb-[16px]         /* Spacing */
             "
