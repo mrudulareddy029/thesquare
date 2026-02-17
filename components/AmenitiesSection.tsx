@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useMemo, useState } from "react";
+import React, { useMemo, useRef, useState } from "react";
 import Image from "next/image";
 
 const images = [
@@ -38,6 +38,9 @@ export default function AmenitiesSection() {
   const perView = 6;
   const [amenityPage, setAmenityPage] = useState(0);
 
+  // ✅ NEW: ref for mobile horizontal scroll container
+  const mobileScrollRef = useRef<HTMLDivElement | null>(null);
+
   const totalPages = useMemo(() => {
     return Math.ceil(AMENITIES.length / perView);
   }, [perView]);
@@ -65,9 +68,22 @@ export default function AmenitiesSection() {
     }
   };
 
-  const nextAmenities = () => setAmenityPage((p) => (p + 1) % totalPages);
-  const prevAmenities = () =>
+  // ✅ Desktop paging (your existing logic)
+  const nextAmenitiesDesktop = () => setAmenityPage((p) => (p + 1) % totalPages);
+  const prevAmenitiesDesktop = () =>
     setAmenityPage((p) => (p - 1 + totalPages) % totalPages);
+
+  // ✅ Mobile scroll (new)
+  const scrollMobile = (direction: "left" | "right") => {
+    const el = mobileScrollRef.current;
+    if (!el) return;
+
+    const amount = 260; // scroll step
+    el.scrollBy({
+      left: direction === "right" ? amount : -amount,
+      behavior: "smooth",
+    });
+  };
 
   return (
     <section
@@ -99,7 +115,7 @@ export default function AmenitiesSection() {
               ))}
             </div>
 
-            {/* Carousel Buttons (White Arrows with Drop Shadow) */}
+            {/* Carousel Buttons */}
             <button
               onClick={prevSlide}
               className="absolute left-[5%] top-1/2 -translate-y-1/2 z-[60] w-[12%] aspect-square bg-transparent rounded-full flex items-center justify-center active:bg-white/10 transition-all cursor-pointer"
@@ -137,10 +153,14 @@ export default function AmenitiesSection() {
         {/* --- BOTTOM ICON SCROLLER --- */}
         <div className="mt-10 md:mt-14 w-full">
           <div className="relative w-full">
-            {/* Left arrow (Transparent with Green Border/Text) - MATCHES image_a45d7c.png */}
+            {/* LEFT ARROW */}
             <button
               type="button"
-              onClick={prevAmenities}
+              onClick={() => {
+                // ✅ Mobile: scroll | Desktop: paging
+                scrollMobile("left");
+                prevAmenitiesDesktop();
+              }}
               className="absolute -left-2 md:left-0 top-1/2 -translate-y-1/2 z-20 w-[34px] h-[34px] rounded-full border border-[#93AA28] bg-white text-[#93AA28] flex items-center justify-center transition active:scale-95 hover:bg-[#93AA28] hover:text-white"
               aria-label="Previous amenities"
             >
@@ -149,10 +169,12 @@ export default function AmenitiesSection() {
               </span>
             </button>
 
-            {/* Responsive Icons Grid */}
             <div className="mx-[30px] md:mx-[52px]">
-              {/* ✅ Mobile/Tablet: HAND SCROLL */}
-              <div className="lg:hidden overflow-x-auto scroll-smooth no-scrollbar">
+              {/* ✅ Mobile/Tablet: HAND SCROLL + arrow scroll */}
+              <div
+                ref={mobileScrollRef}
+                className="lg:hidden overflow-x-auto scroll-smooth no-scrollbar"
+              >
                 <div className="flex gap-2 md:gap-3 items-start px-1">
                   {AMENITIES.map((a, idx) => (
                     <div
@@ -160,12 +182,7 @@ export default function AmenitiesSection() {
                       className="flex-shrink-0 w-[110px] md:w-[130px] flex flex-col items-center text-center"
                     >
                       <div className="relative w-[50px] h-[50px] md:w-[62px] md:h-[62px]">
-                        <Image
-                          src={a.icon}
-                          alt={a.label}
-                          fill
-                          className="object-contain"
-                        />
+                        <Image src={a.icon} alt={a.label} fill className="object-contain" />
                       </div>
                       <p className="mt-3 text-[11px] md:text-[12px] leading-[1.2] text-[#2C2C2C] font-gotham whitespace-pre-line">
                         {a.label}
@@ -184,12 +201,7 @@ export default function AmenitiesSection() {
                       className="flex flex-col items-center text-center min-h-[115px]"
                     >
                       <div className="relative w-[50px] h-[50px] md:w-[62px] md:h-[62px]">
-                        <Image
-                          src={a.icon}
-                          alt={a.label}
-                          fill
-                          className="object-contain"
-                        />
+                        <Image src={a.icon} alt={a.label} fill className="object-contain" />
                       </div>
                       <p className="mt-2 text-[11px] md:text-[12px] leading-[1.2] text-[#2C2C2C] font-gotham whitespace-pre-line">
                         {a.label}
@@ -200,10 +212,14 @@ export default function AmenitiesSection() {
               </div>
             </div>
 
-            {/* Right arrow (Transparent with Green Border/Text) - MATCHES image_a45d7c.png */}
+            {/* RIGHT ARROW */}
             <button
               type="button"
-              onClick={nextAmenities}
+              onClick={() => {
+                // ✅ Mobile: scroll | Desktop: paging
+                scrollMobile("right");
+                nextAmenitiesDesktop();
+              }}
               className="absolute -right-2 md:right-0 top-1/2 -translate-y-1/2 z-20 w-[34px] h-[34px] rounded-full border border-[#93AA28] bg-white text-[#93AA28] flex items-center justify-center transition active:scale-95 hover:bg-[#93AA28] hover:text-white"
               aria-label="Next amenities"
             >

@@ -9,7 +9,7 @@ import {
   useRef,
 } from "react";
 import { X, Calendar } from "lucide-react";
-
+import axios from 'axios'
 const Contact = createContext({
   openModal: () => {},
   closeModal: () => {},
@@ -75,29 +75,43 @@ export default function ContactProvider({ children }: { children: ReactNode }) {
     if (value) setErrors((prev) => ({ ...prev, date: false }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    const name = formData.name.trim();
-    const email = formData.email.trim();
-    const phone = formData.phone.trim();
-    const date = formData.date;
+    const newErrors: Record<string, boolean> = {};
 
-    const newErrors: { [key: string]: boolean } = {};
-
-    // ✅ Required + format
-    if (!name) newErrors.name = true;
-    if (!email || !isValidEmail(email)) newErrors.email = true;
-    if (phone.length !== 10) newErrors.phone = true;
-    if (!date) newErrors.date = true;
+    if (!formData.name.trim()) newErrors.name = true;
+    if (!formData.email.trim()) newErrors.email = true;
+    if (formData.phone.length !== 10) newErrors.phone = true;
+    if (!formData.date) newErrors.date = true;
 
     if (Object.keys(newErrors).length > 0) {
       setErrors(newErrors);
       return;
     }
 
-    // ✅ If you have API call, do it here. For now: close modal.
-    closeModal();
+    try {
+      const payload = new FormData();
+      payload.append("name", formData.name);
+      payload.append("phone", formData.phone);
+      payload.append("message", "Startup Modal Submission");
+      payload.append("email", formData.email);
+      payload.append("property", "The Square");
+      payload.append("country", "India");
+
+      await axios.post(
+        "https://irarealty.in/cms/api/submitContact",
+        payload
+      );
+
+      document.cookie = `userLead=${encodeURIComponent(
+        JSON.stringify({ name: formData.name, phone: formData.phone })
+      )}; path=/; max-age=${60 * 60 * 24 * 30}`;
+
+      closeModal();
+    } catch (error) {
+      console.error("Submission failed:", error);
+    }
   };
 
   return (

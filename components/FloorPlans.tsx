@@ -30,7 +30,14 @@ const PLAN_CONFIG = {
 
 export default function FloorPlans() {
   const [activeTab, setActiveTab] = useState<'East' | 'West'>('East');
+  
+  // STATE: Track which image is currently enlarged (null means lightbox is closed)
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+
   const currentPlan = PLAN_CONFIG[activeTab];
+
+  // HELPER: Close the lightbox
+  const closeLightbox = () => setSelectedImage(null);
 
   return (
     <section
@@ -149,28 +156,71 @@ export default function FloorPlans() {
                 </div>
               </div>
 
-              {/* IMAGES GRID - UPDATED FOR ALIGNMENT */}
+              {/* IMAGES GRID */}
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-4 border-[0.8px] border-solid border-[#8D6554] p-4 md:p-[35.763px] rounded-none">
                 {currentPlan.images.map((src, i) => (
-                  // FIX: Set a fixed height container so all 3 items align perfectly
-                  <div key={`${activeTab}-${i}`} className="w-full relative h-[300px] md:h-[400px] lg:h-[480px]">
+                  <div 
+                    key={`${activeTab}-${i}`} 
+                    className="w-full relative h-[300px] md:h-[400px] lg:h-[480px] cursor-pointer group"
+                    onClick={() => setSelectedImage(src)} // Sets the image to be enlarged
+                  >
                     <Image 
                       src={src} 
                       alt={`${activeTab} Plan`} 
-                      fill // Uses parent container height
-                      // object-contain ensures the image fits in the box without being cropped
-                      // object-bottom ensures they align at the 'floor' level
-                      className="object-contain object-bottom rounded-[12px]" 
+                      fill 
+                      className="object-contain object-bottom rounded-[12px] transition-transform duration-300 group-hover:scale-105" 
                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     />
+                    
+                    {/* Hover Hint Overlay */}
+                    <div className="absolute inset-0 bg-black/5 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center rounded-[12px]">
+                         <span className="bg-black/60 text-white text-xs px-2 py-1 rounded backdrop-blur-sm">Click to Zoom</span>
+                    </div>
                   </div>
                 ))}
               </div>
             </div>
           </div>
-
         </div>
       </div>
+
+      {/* ================= LIGHTBOX / MODAL ================= */}
+      {/* Renders only when an image is selected */}
+      {selectedImage && (
+        <div 
+          className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/95 p-4 backdrop-blur-sm"
+          onClick={closeLightbox} // Click background to close
+        >
+          {/* Close Button - Top Right */}
+          <button 
+            className="absolute top-6 right-6 z-[10000] text-white bg-white/10 hover:bg-white/20 rounded-full w-10 h-10 md:w-12 md:h-12 flex items-center justify-center transition-all border border-white/20"
+            onClick={(e) => {
+              e.stopPropagation(); // Prevents double-firing with background click
+              closeLightbox();
+            }}
+            aria-label="Close"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor" className="w-5 h-5 md:w-6 md:h-6">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+
+          {/* Enlarged Image Container */}
+          <div 
+            className="relative w-full h-full max-w-7xl max-h-[90vh] flex items-center justify-center"
+            onClick={(e) => e.stopPropagation()} // Prevent clicking image from closing modal
+          >
+            <Image
+              src={selectedImage}
+              alt="Enlarged Floor Plan"
+              fill
+              className="object-contain"
+              quality={100}
+              priority
+            />
+          </div>
+        </div>
+      )}
     </section>
   );
 }

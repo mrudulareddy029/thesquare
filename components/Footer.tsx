@@ -46,8 +46,11 @@ export default function Footer() {
   "></div>
 
 {/* Added h-full and justify-between to push nav to bottom */}
-<div className="w-full lg:flex-1 flex flex-col items-center lg:items-start justify-between pt-20 lg:pt-16">                {/* Logos Group */}
-                <div className="flex flex-col sm:flex-row items-center gap-8 lg:gap-10 mb-10 lg:mb-16 mt-8 lg:mt-0">
+<div className="w-full lg:flex-1 flex flex-col items-center lg:items-start justify-between pt-20 lg:pt-16">                
+                
+                {/* --- LOGOS GROUP --- */}
+                {/* ADDED lg:ml-20 to move logos to the right */}
+                <div className="flex flex-col sm:flex-row items-center gap-8 lg:gap-10 mb-10 lg:mb-16 mt-8 lg:mt-15 lg:ml-20">
                   <img 
                     src="/footer-ira.png" 
                     alt="IRA" 

@@ -28,8 +28,8 @@ export default function CommunitySection() {
               - Removed the bottom gradient (cars are now clear).
               - Added this 'blur box' centered behind the text only.
           */}
-          <div className="absolute bottom-[25%] w-[80%] max-w-[1000px] h-[300px] 
-                          bg-black/50 rounded-[100%] blur-[90px] z-0 pointer-events-none" />
+          <div className="absolute bottom-[25%] w-[80%] max-w-[1000px] h-[320px] 
+                          bg-black/50 rounded-[100%] blur-[50px] z-0 pointer-events-none" />
 
           <div className="relative z-10"> 
              <h2 className="font-gotham font-normal uppercase tracking-widest mb-4 
