@@ -47,12 +47,24 @@ export default function Navbar() {
         <div className="mx-auto h-full px-4 md:px-10 min-[1440px]:px-12 min-[1920px]:px-24 max-w-[2400px] flex items-center justify-between relative z-10">
           
           {/* LEFT NAV LINKS */}
-          <ul className="hidden lg:flex items-center gap-x-4 min-[1920px]:gap-x-8">
+          <ul className="hidden lg:flex items-center gap-x-4 min-[1440px]:gap-x-6 min-[1920px]:gap-x-8">
             {navLinks.map((link) => (
               <li key={link.name}>
                 <Link
                   href={link.href}
-                  className={`px-2 py-2 text-[14px] min-[1920px]:text-[17px] font-normal hover:text-white/80 ${textColor}`}
+                  className={`
+                    px-2 py-2 
+                    font-gotham font-normal hover:text-white/80 ${textColor}
+                    
+                    /* Responsive Text Sizes */
+                    text-[15px]                   /* Laptop Base */
+                    min-[1440px]:text-[20px]      /* Figma Spec (20px) */
+                    
+                    /* Line Height & Spacing from Figma */
+                    leading-[19px] 
+                    tracking-normal
+                    transition-all
+                  `}
                 >
                   {link.name}
                 </Link>
@@ -60,35 +72,30 @@ export default function Navbar() {
             ))}
           </ul>
 
-          {/* LOGO */}
           {/* LOGOS CENTER */}
-{/* LOGOS CENTER */}
-<div className="flex items-center justify-center gap-6 min-[1440px]:gap-8">
-  <Link href="/" className="flex items-center gap-6 min-[1440px]:gap-8">
+          <div className="flex items-center justify-center gap-6 min-[1440px]:gap-8">
+            <Link href="/" className="flex items-center gap-6 min-[1440px]:gap-8">
+              
+              {/* IRA LOGO */}
+              <Image
+                src="/ira-logo-1.png"
+                alt="IRA Realty Logo"
+                width={90}
+                height={50}
+                className={`h-[30px] md:h-[35px] min-[1440px]:h-[45px] w-auto object-contain ${logoFilter}`}
+                priority
+              />
 
-    {/* IRA LOGO - FIRST */}
-    <Image
-      src="/ira-logo-1.png"   // 👈 your IRA logo filename
-      alt="IRA Realty Logo"
-      width={90}
-      height={50}
-      className={`h-[30px] md:h-[35px] min-[1440px]:h-[45px] w-auto object-contain ${logoFilter}`}
-      priority
-    />
-
-    {/* THE SQUARE LOGO - SECOND */}
-    <Image
-      src="/the-square-ira-realty-logo.png"
-      alt="The Square Logo"
-      width={106}
-      height={50}
-      className={`h-[35px] md:h-[40px] min-[1440px]:h-[50px] w-auto object-contain ${logoFilter}`}
-    />
-
-  </Link>
-</div>
-
-
+              {/* THE SQUARE LOGO */}
+              <Image
+                src="/the-square-ira-realty-logo.png"
+                alt="The Square Logo"
+                width={106}
+                height={50}
+                className={`h-[35px] md:h-[40px] min-[1440px]:h-[50px] w-auto object-contain ${logoFilter}`}
+              />
+            </Link>
+          </div>
 
           {/* RIGHT SECTION */}
           <div className="flex items-center">
@@ -101,12 +108,12 @@ export default function Navbar() {
                 className={`flex items-center gap-2 ${textColor}`}
               >
                 <Image
-  src="/call-icon.png"
-  alt="Call"
-  width={28}
-  height={28}
-  className="w-7 h-7 min-[1440px]:w-7 min-[1440px]:h-7 object-contain brightness-0 invert"
-/>
+                  src="/call-icon.png"
+                  alt="Call"
+                  width={28}
+                  height={28}
+                  className="w-6 h-6 min-[1440px]:w-7 min-[1440px]:h-7 object-contain brightness-0 invert"
+                />
 
                 <span className="text-[12px] min-[1440px]:text-[14px] min-[1920px]:text-[16px] font-light whitespace-nowrap">
                   +91 8001345345

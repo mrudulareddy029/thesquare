@@ -46,11 +46,11 @@ export default function Footer() {
   "></div>
 
 {/* Added h-full and justify-between to push nav to bottom */}
-<div className="w-full lg:flex-1 flex flex-col items-center lg:items-start justify-between pt-20 lg:pt-16">                
+<div className="w-full lg:flex-1 flex flex-col items-center lg:items-start justify-between pt-10 lg:pt-12">                
                 
                 {/* --- LOGOS GROUP --- */}
                 {/* ADDED lg:ml-20 to move logos to the right */}
-                <div className="flex flex-col sm:flex-row items-center gap-8 lg:gap-10 mb-10 lg:mb-16 mt-8 lg:mt-15 lg:ml-20">
+                <div className="flex flex-col sm:flex-row items-center gap-8 lg:gap-10 mb-10 lg:mb-16 mt-8 lg:mt-8 lg:ml-20">
                   <img 
                     src="/footer-ira.png" 
                     alt="IRA" 
@@ -64,7 +64,7 @@ export default function Footer() {
                 </div>
 
                 {/* Navigation links - Responsive Strategy */}
-                <nav className="w-full mb-8 lg:mb-10 lg:pt-20">
+                <nav className="w-full mb-6 lg:mb-6 lg:pt-6">
                   {/* Mobile: flex-col (stacked)
                     Laptops (lg): flex-row + flex-nowrap (Forces single line) + justify-between
                   */}
@@ -88,17 +88,23 @@ export default function Footer() {
               </div>
 
               {/* Bird Image Column - Decorative */}
-              <div className="hidden lg:flex justify-center items-end w-[140px] xl:w-[160px] mb-10 lg:mb-0 shrink-0 px-2">
-                <img 
-                  src="/footer1.webp" 
-                  alt="Birds" 
-                  className="w-full h-auto lg:h-[280px] object-contain object-bottom" 
-                />
-              </div>
+             {/* Bird Image Column - Responsive */}
+<div className="flex justify-center items-end w-full lg:w-[140px] xl:w-[160px] shrink-0 px-2 mt-6 lg:mt-0">
+  <img
+    src="/footer1.webp"
+    alt="Birds"
+    className="
+      h-auto object-contain object-bottom
+      w-[clamp(140px,45vw,240px)]
+      lg:w-full lg:h-[280px]
+    "
+  />
+</div>
+
             </div>
 
             {/* RIGHT COLUMN: Address & Contact */}
-            <div className="w-full lg:flex-1 flex items-start justify-center lg:justify-start lg:pl-10 pt-20 lg:pt-32 pb-12">
+            <div className="w-full lg:flex-1 flex items-start justify-center lg:justify-start lg:pl-10 pt-10 lg:pt-12 pb-10">
               <div className="w-full max-w-[480px] flex flex-col">
                 <p className="text-[#8B4513] font-book mb-2 lg:mb-4 text-base">Address:</p>
                 
@@ -132,7 +138,7 @@ export default function Footer() {
         </div>
 
         {/* DISCLAIMER */}
-        <div className="w-full mt-10 py-8">
+        <div className="w-full mt-6 py-6">
           <p className="text-gray-500 font-light text-[10px] lg:text-[11px] leading-relaxed text-center max-w-5xl mx-auto">
             Disclaimer: "This is purely a conceptual presentation and not a legal offering. The promoters reserve the right to make changes in elevation, specifications, and plans as deemed fit."
           </p>
