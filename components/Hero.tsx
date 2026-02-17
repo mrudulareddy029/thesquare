@@ -21,8 +21,10 @@ export default function Hero() {
   const { openModal } = useContactModal();
 
   return (
-    <section id="slider-section" className="relative w-full group overflow-hidden h-screen">
-      
+    <section
+      id="slider-section"
+      className="relative w-full group overflow-hidden h-screen"
+    >
       {/* BACKGROUND SLIDER */}
       <Swiper
         modules={[Autoplay]}
@@ -33,7 +35,7 @@ export default function Hero() {
         className="absolute inset-0 w-full h-full"
       >
         {slides.map((s, index) => (
-          <SwiperSlide key={index}>
+          <SwiperSlide key={index} className="!h-full">
             <div className="relative w-full h-full">
               <Image
                 src={s.src}
@@ -41,8 +43,9 @@ export default function Hero() {
                 fill
                 priority={index === 0}
                 sizes="100vw"
-                className="object-cover object-center md:object-bottom"
+                className="object-cover object-center"
               />
+
               {/* Gradients for text readability */}
               <div className="absolute top-0 left-0 w-full h-[120px] md:h-[180px] bg-gradient-to-b from-black/80 to-transparent z-10 pointer-events-none" />
               <div className="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-black/60 to-transparent z-10 pointer-events-none md:hidden" />
@@ -67,34 +70,30 @@ export default function Hero() {
           lg:justify-start lg:pt-[480px] lg:px-[210px] lg:pb-0
           
           /* --- 1440px+ FIGMA SPECS --- */
-          /* Left: 191px | Top: adjusted via Padding Top */
           min-[1440px]:pl-[191px] 
-          min-[1440px]:pt-[450px] /* Pushes text down to match 'Top 655px' visual weight */
+          min-[1440px]:pt-[450px]
           
           pointer-events-none
         "
       >
         <div className="pointer-events-auto w-full max-w-[90%] md:max-w-none">
-          
           {/* TS RERA */}
-          <span className="block text-white/90 font-gotham font-light tracking-widest drop-shadow-md mb-2
+          <span
+            className="block text-white/90 font-gotham font-light tracking-widest drop-shadow-md mb-2
             text-[12px] 
             md:text-[14px] 
             lg:text-[16px]
             min-[1440px]:text-[18px] min-[1440px]:mb-4
-          ">
+          "
+          >
             TS RERA: P02400005775
           </span>
 
-          {/* HEADING - EXACT FIGMA SPECS APPLIED */}
+          {/* HEADING */}
           <h1
             className="
               text-white font-gotham uppercase drop-shadow-lg text-start
-              
-              /* Weight: 300 (Light) */
               font-[300]
-              
-              /* Letter Spacing: 0% */
               tracking-normal
 
               /* MOBILE */
@@ -104,13 +103,13 @@ export default function Hero() {
               md:text-[40px] md:max-w-none md:w-auto md:h-auto md:mb-4
               
               /* LAPTOP */
-              lg:text-[64px] lg:leading-[52.8px] lg:mb-[8px]
+              lg:text-[64px] lg:mb-[8px]
               
-              /* --- 1440px+ SCREEN (Your Monitor) --- */
-              min-[1440px]:text-[64px]       /* Size: 64px */
-              min-[1440px]:leading-[72px]    /* Line height: 70px */
-              min-[1440px]:max-w-[1299px]    /* Width: 1299px */
-              min-[1440px]:mb-[16px]         /* Spacing */
+              /* --- 1440px+ SCREEN --- */
+              min-[1440px]:text-[64px]
+              leading-[72px]
+              min-[1440px]:max-w-[1299px]
+              min-[1440px]:mb-[16px]
             "
           >
             Discover Luxury 4 BHK Villas in <br className="hidden md:block" />
@@ -132,8 +131,8 @@ export default function Hero() {
               lg:text-[28px] lg:mb-[20px]
 
               /* --- 1440px+ SCREEN --- */
-              min-[1440px]:text-[32px]       /* Scaled up for large screen */
-              min-[1440px]:mb-[40px]         /* More breathing room */
+              min-[1440px]:text-[32px]
+              min-[1440px]:mb-[40px]
             "
           >
             Luxurious Villas in Adibatla, Hyderabad
@@ -154,9 +153,9 @@ export default function Hero() {
               lg:px-[20px] lg:py-[5px] lg:h-[42px] lg:leading-[30px] lg:gap-3
 
               /* --- 1440px+ SCREEN --- */
-              min-[1440px]:h-[55px]          /* Taller button */
-              min-[1440px]:px-[35px]         /* Wider button */
-              min-[1440px]:text-[18px]       /* Larger text */
+              min-[1440px]:h-[55px]
+              min-[1440px]:px-[35px]
+              min-[1440px]:text-[18px]
             "
           >
             Schedule a Site Visit
