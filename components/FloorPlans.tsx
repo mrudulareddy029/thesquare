@@ -66,7 +66,7 @@ export default function FloorPlans() {
             <div className="w-full xl:w-5/12 mb-12 xl:mb-0 flex justify-center xl:justify-start">
               <div
                 className="relative shadow-2xl overflow-visible 
-                           w-full max-w-[525.987px] aspect-[526/589]
+                           w-full max-w-[784px] aspect-[526/589]
                            xl:w-[525.987px] xl:h-[588.763px] 
                            xl:m-0 xl:p-0"
               >
@@ -108,21 +108,23 @@ export default function FloorPlans() {
             </div>
 
             {/* RIGHT CONTENT COLUMN */}
-            <div className="w-full xl:w-[758px] xl:h-[685px] relative xl:mt-[-48.125px] xl:mb-[-48.12px] xl:ml-auto flex flex-col justify-center text-center xl:text-left">
+            <div className="w-full xl:w-[758px] xl:h-[685px] relative xl:mt-[-48.125px] xl:mb-[-48.12px] flex flex-col justify-center text-center xl:text-left">
               <div className="hidden xl:block absolute top-[146.375px] bottom-[66.387px] left-[277.200px] right-[30.913px] w-[461.888px] h-[376px] pointer-events-none z-0">
                 <Image src="/recangular-box.png" alt="frame background" fill className="object-fill" />
               </div>
 
               <div className="relative z-10 flex flex-col items-center xl:items-start h-full justify-center">
-                <h1 className="w-full xl:max-w-[758px] text-[28px] md:text-[40px] xl:text-[50px] font-gotham font-light uppercase tracking-normal text-primary leading-[1.2] px-4 py-6 xl:pt-[189.5px] xl:pl-[189.5px] xl:pr-[37.9px] xl:pb-[10px]">
-                  Where Every Square Foot exudes Luxury
+                <h1 className="w-full xl:max-w-[800px] text-[28px] md:text-[40px] xl:text-[64px] font-gotham font-light uppercase tracking-normal text-primary leading-[1.2] px-4 py-6 xl:pt-[189.5px] xl:pl-[189.5px] xl:pr-[37.9px] xl:pb-[10px]">
+                  Where Every<br />
+                   Square Foot <br />
+                   exudes Luxury<br />
                 </h1>
 
-                <div className="font-normal leading-[1.3125] text-[#212529] w-full px-4 mb-8 xl:w-[568.500px] xl:h-[42px] xl:pl-[189.500px] xl:pb-[189.500px] xl:mb-[16px] xl:box-content">
-                  <p>Step into east and west facing duplex villas that display the finest</p>
-                  <p>space planning, where a symphony of indoors and outdoors charms </p>
-                  <p>you with thoughtful additions and meticulous craftsmanship."</p>
-                </div>
+<p className="font-normal text-[20px] leading-[1.3125] text-[#212529] w-full px-4 mb-8 xl:w-[568.500px] xl:h-[42px] xl:pl-[189.500px] xl:pb-[189.500px] xl:mb-[16px] xl:box-content">
+                  Step into east and west facing duplex villas that display the finest
+                  space planning, where a symphony of indoors and outdoors charms 
+                  you with thoughtful additions and meticulous craftsmanship."
+                </p>
               </div>
             </div>
           </div>
