@@ -141,11 +141,23 @@ export default function AmenitiesSection() {
               Amenities Abundant <br className="hidden md:block" />
               and Spaces Prolific
             </h2>
+            
+            {/* --- UPDATED PARAGRAPH --- */}
             <div className="text-gray-600 text-[15px] lg:text-[16px] leading-relaxed font-normal font-gotham">
-              <p>From a 4-level exclusive clubhouse to landscaped</p>
-              <p>gardens, The Square offers amenities that make every </p>
-              <p> moment rewarding experience. Unleash your energies</p>
-              <p> and live life to the fullest</p>
+              
+              {/* 1. MOBILE/LAPTOP: Natural Wrapping (Prevents ugly gaps) */}
+              <p className="block min-[1440px]:hidden">
+                From a 4-level exclusive clubhouse to landscaped gardens, The Square offers amenities that make every moment rewarding experience. Unleash your energies and live life to the fullest
+              </p>
+
+              {/* 2. BIG SCREEN (1440px+): Precise 4-Line Layout */}
+              <div className="hidden min-[1440px]:block">
+                <p>From a 4-level exclusive clubhouse to landscaped</p>
+                <p>gardens, The Square offers amenities that make every </p>
+                <p> moment rewarding experience. Unleash your energies</p>
+                <p> and live life to the fullest</p>
+              </div>
+
             </div>
           </div>
         </div>
@@ -215,10 +227,10 @@ export default function AmenitiesSection() {
                         mt-2 text-[11px] md:text-[12px] leading-[1.2] text-[#2C2C2C] font-gotham whitespace-pre-line
                         
                         /* 1440px+ Specs */
-                        min-[1440px]:text-[20px]           /* Size: 20px */
-                        min-[1440px]:leading-[20px]        /* Line height: 28px */
-                        min-[1440px]:font-normal           /* Weight: 400 (Book) */
-                        min-[1440px]:tracking-[0.005em]    /* Letter spacing: 0.5% */
+                        min-[1440px]:text-[20px] 
+                        min-[1440px]:leading-[20px] 
+                        min-[1440px]:font-normal 
+                        min-[1440px]:tracking-[0.005em]
                         
                         /* Fixed Box Size */
                         min-[1440px]:w-[149px] 
