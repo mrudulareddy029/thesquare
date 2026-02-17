@@ -109,22 +109,23 @@ export default function FloorPlans() {
 
             {/* RIGHT CONTENT COLUMN */}
             <div className="w-full xl:w-[758px] xl:h-[685px] relative xl:mt-[-48.125px] xl:mb-[-48.12px] flex flex-col justify-center text-center xl:text-left">
-              <div className="hidden xl:block absolute top-[146.375px] bottom-[66.387px] left-[277.200px] right-[30.913px] w-[461.888px] h-[376px] pointer-events-none z-0">
+              <div className="hidden xl:block absolute top-[146.375px] bottom-[66.387px] left-[277.200px] right-[30.913px] w-[550px] h-[420px] pointer-events-none z-0">
                 <Image src="/recangular-box.png" alt="frame background" fill className="object-fill" />
               </div>
 
               <div className="relative z-10 flex flex-col items-center xl:items-start h-full justify-center">
-                <h1 className="w-full xl:max-w-[800px] text-[28px] md:text-[40px] xl:text-[64px] font-gotham font-light uppercase tracking-normal text-primary leading-[1.2] px-4 py-6 xl:pt-[189.5px] xl:pl-[189.5px] xl:pr-[37.9px] xl:pb-[10px]">
-                  Where Every<br />
-                   Square Foot <br />
-                   exudes Luxury<br />
-                </h1>
+                <h1 className="w-full xl:max-w-[800px] text-[28px] md:text-[40px] xl:text-[60px] font-gotham font-light uppercase tracking-normal text-primary leading-[1.2] px-4 py-6 xl:pt-[189.5px] xl:pl-[189.5px] xl:pr-[37.9px] xl:pb-[10px]">
+  WHERE EVERY <br />
+  SQUARE FOOT <br />
+  EXUDES LUXURY
+</h1>
 
-<p className="font-normal text-[20px] leading-[1.3125] text-[#212529] w-full px-4 mb-8 xl:w-[568.500px] xl:h-[42px] xl:pl-[189.500px] xl:pb-[189.500px] xl:mb-[16px] xl:box-content">
-                  Step into east and west facing duplex villas that display the finest
-                  space planning, where a symphony of indoors and outdoors charms 
-                  you with thoughtful additions and meticulous craftsmanship."
-                </p>
+
+<div className="font-normal text-[19px] leading-[1.3125] text-[#212529] w-full px-4 mb-8 xl:w-[650px] xl:h-[40px] xl:pl-[189.500px] xl:pb-[189.500px] xl:mb-[16px] xl:box-content">
+                  <p>Step into east and west facing duplex villas that display the finest</p>
+                  <p>space planning, where a symphony of indoors and outdoors charms </p>
+                  <p>you with thoughtful additions and meticulous craftsmanship."</p>
+                </div>
               </div>
             </div>
           </div>
@@ -180,12 +181,12 @@ export default function FloorPlans() {
                     {currentPlan.details.map((item, idx) => (
                       <li
                         key={idx}
-                        className="flex items-start gap-2 text-[15px] md:text-[16px] text-gray-700 font-gotham"
+                        className="flex items-start gap-2 text-[15px] md:text-[22px] text-gray-700 font-gotham"
                       >
                         <span className="text-[#2C2C2C] mt-2 w-1.5 h-1.5 rounded-full bg-[#2C2C2C] flex-shrink-0" />
                         <span>
                           {item.label}{" "}
-                          <span className="text-[#7A8F3D] font-medium">{item.highlight}</span>
+                          <span className="text-[#7A8F3D] font-normal">{item.highlight}</span>
                         </span>
                       </li>
                     ))}
@@ -194,11 +195,11 @@ export default function FloorPlans() {
               </div>
 
               {/* IMAGES GRID */}
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-4 border-[0.8px] border-solid border-[#8D6554] p-4 md:p-[35.763px] rounded-none">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-4 border-[0.8px] border-solid border-[#8D6554] p-4 md:p-[35.763px] rounded-none">
                 {currentPlan.images.map((src, i) => (
                   <div
                     key={`${activeTab}-${i}`}
-                    className="w-full relative h-[300px] md:h-[400px] lg:h-[480px] cursor-pointer group"
+                    className="w-full relative h-[350px] md:h-[480px] lg:h-[702px] cursor-pointer group"
                     onClick={() => setSelectedImage(src)}
                   >
                     <Image
@@ -209,7 +210,7 @@ export default function FloorPlans() {
                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     />
 
-                    <div className="absolute inset-0 bg-black/5 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center rounded-[12px]">
+                    <div className="absolute inset-0 bg-black/5 opacity-0 transition-opacity flex items-center justify-center rounded-[12px]">
                       <span className="bg-black/60 text-white text-xs px-2 py-1 rounded backdrop-blur-sm">
                         Click to Zoom
                       </span>

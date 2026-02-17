@@ -7,82 +7,51 @@ export default function About() {
   return (
     <section
       id="aboutus"
-      className="relative w-full bg-white border-x-[4px] md:border-x-[9.6px] border-[#CDE244] py-12 lg:py-[57.6px] overflow-hidden lg:overflow-visible"
+      className="relative w-full bg-white border-x-[4px] md:border-x-[10px] border-[#CDE244] py-12 lg:py-24 overflow-hidden"
     >
-      <div className="container mx-auto px-4 lg:max-w-[1320px] ">
-        <div className="flex flex-col lg:flex-row h-auto items-stretch">
-
+      <div className="container mx-auto px-6 lg:px-12 xl:max-w-[1320px]">
+        <div className="flex flex-col lg:flex-row items-center lg:items-stretch gap-8 lg:gap-0">
+          
           {/* LEFT COLUMN: Content */}
-          <div className="w-full lg:w-1/2 relative h-full flex items-center">
-            <div className="relative z-10 w-full h-auto py-4 lg:py-0">
-
-              {/* HEADING: Pixel-locked on LG+, Fluid on Mobile */}
-              <h1
-                className="
-                  uppercase text-primary font-gotham font-light
-                  text-[28px] leading-[33.6px]
-                  lg:text-[50px] lg:leading-[60px]
-                  lg:w-[444.662px] lg:h-[120px]
-                  lg:pl-[38.1px] lg:pr-[152.438px]
-                  lg:pt-[158.8px] lg:pb-[19.05px]
-                  tracking-normal mb-4 lg:mb-2 box-content
-                "
-              >
-                Welcome to The Square
+          <div className="w-full lg:w-1/2 flex flex-col justify-center lg:pr-12 xl:pr-24">
+            <div className="relative z-10">
+              {/* HEADING */}
+              <h1 className="uppercase text-primary font-gotham font-light text-[28px] leading-tight md:text-[40px] lg:text-[50px] lg:leading-[1.2] tracking-normal mb-6">
+                Welcome to <br className="hidden lg:block" /> The Square
               </h1>
 
-              {/* PARAGRAPH: Pixel-locked on LG+, Fluid on Mobile */}
-              <p
-                className="
-                  text-left text-[rgb(33,37,41)] font-gotham
-                  text-base leading-tight
-                  lg:text-[15px] lg:leading-[24px]
-                  lg:w-[635.2px] lg:h-[96px]
-                  lg:pl-[44.462px] lg:pr-[215.962px]
-                  mb-8 lg:mb-[16px] max-w-md lg:max-w-none
-                  box-border
-                "
-              >
-                It's an intriguing invitation to explore a new
-                dimension if luxury living, where boundaries are
-                pushed and expectations exceeded. Experience a 
-                cosmopolitan community at "The square".
+              {/* PARAGRAPH */}
+              <p className="text-left text-[#212529] font-gotham text-base md:text-lg lg:text-[15px] leading-relaxed lg:leading-[24px] mb-8">
+                It's an intriguing invitation to explore a new dimension of luxury
+                living, where boundaries are pushed and expectations exceeded.
+                Experience a cosmopolitan community at "The Square".
               </p>
 
-              {/* DECORATIVE IMAGE: Visible only on Laptop */}
-              <div className="hidden lg:block absolute top-[417.85px] left-[-82px] w-[150px] h-[121.6px] z-0">
+              {/* DECORATIVE IMAGE (LG+) */}
+              <div className="hidden xl:block absolute -bottom-20 -left-10 w-[150px] h-[120px] z-0 opacity-50">
                 <Image
                   src="/about-image.png"
                   alt="Pattern"
                   fill
-                  sizes="150px"
                   className="object-contain"
                 />
               </div>
             </div>
           </div>
 
-          {/* VERTICAL DIVIDER */}
+          {/* VERTICAL DIVIDER (LG+) */}
           <div className="hidden lg:block w-[1px] bg-[#CDE244] self-stretch" />
 
           {/* RIGHT COLUMN: Image Area */}
-          <div className="w-full lg:w-1/2 h-full flex items-center justify-center lg:justify-end mt-4 lg:mt-0 lg:pl-[20px]">
-
-            {/* OUTER BOX: Pixel-locked on LG+ */}
-            <div className="relative w-full max-w-[500px] lg:w-[496.401px] lg:h-[555.639px] lg:p-[24.813px] lg:transform lg:-translate-x-[60px]">
-
-              {/* INNER IMAGE BOX */}
-              <div className="relative w-full aspect-[4/3] sm:aspect-video lg:aspect-auto lg:w-[446.775px] lg:h-[506.013px] overflow-hidden rounded-lg lg:rounded-none">
-                <Image
-                  src="/about.webp"
-                  alt="About The Square Luxury Villa"
-                  fill
-                  sizes="(max-width:1024px) 100vw, 446.775px"
-                  className="object-cover"
-                  priority
-                />
-              </div>
-
+          <div className="w-full lg:w-1/2 flex items-center justify-center lg:pl-12">
+            <div className="relative w-full aspect-square md:aspect-video lg:aspect-[4/5] max-h-[600px] overflow-hidden ">
+              <Image
+                src="/about.webp"
+                alt="About The Square Luxury Villa"
+                fill
+                className="object-cover"
+                priority
+              />
             </div>
           </div>
 

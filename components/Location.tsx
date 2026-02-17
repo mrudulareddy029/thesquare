@@ -53,34 +53,31 @@ export default function Location() {
 
   return (
     <div className="w-full overflow-hidden bg-white">
-      {/* SECTION 1: MAP (REPAIRED FOR RESPONSIVENESS) */}
-      <section className="relative w-full overflow-visible bg-white py-10 md:py-20">
-        
-        {/* GREEN BACKGROUND - Changed fixed width to responsive constraints */}
-<div className="absolute top-0 left-0 w-full h-full pointer-events-none">   
-       <Image
-
+      {/* SECTION 1: MAP */}
+      <section className="relative w-full bg-white py-10 md:py-20">
+        {/* Background image (must have relative parent for fill) */}
+        <div className="absolute inset-0 pointer-events-none">
+          <Image
             src="/image.jpg"
             alt="Green Background"
             fill
             priority
             className="object-contain object-right-top"
+            sizes="100vw"
           />
         </div>
 
         {/* MAP CONTENT */}
-        <div className="relative z-10 container mx-auto px-4 lg:max-w-[1320px]">
+        <div className="relative z-10 mx-auto w-full px-4 lg:max-w-[1320px]">
           <div className="flex justify-center">
-            <div className="bg-white p-4 md:p-10 lg:p-[70px] w-full max-w-[1110px] relative">
-              
-              {/* INNER WRAPPER FOR ASPECT RATIO & CORNERS */}
+            <div className="relative w-full max-w-[1110px] bg-white p-4 md:p-10 lg:p-[70px]">
+              {/* MAP WRAPPER */}
               <div className="relative w-full aspect-[4/3] sm:aspect-video">
-                
-                {/* TOP LEFT CORNER - Repaired syntax */}
-                <div className="absolute -top-4 -left-4 md:-top-10 md:-left-12 w-20 h-20 md:w-28 md:h-30 border-t-[2.5px] border-l-[2.5px] border-black z-20" />
-                
-                {/* BOTTOM RIGHT CORNER - Repaired syntax */}
-                <div className="absolute -bottom-4 -right-4 md:-bottom-10 md:-right-12 w-20 h-20 md:w-28 md:h-30 border-b-[2.5px] border-r-[2.5px] border-black z-20" />
+                {/* TOP LEFT CORNER */}
+                <div className="absolute -top-4 -left-4 md:-top-10 md:-left-12 w-20 h-20 md:w-28 md:h-28 border-t-[2.5px] border-l-[2.5px] border-black z-20" />
+
+                {/* BOTTOM RIGHT CORNER */}
+                <div className="absolute -bottom-4 -right-4 md:-bottom-10 md:-right-12 w-20 h-20 md:w-28 md:h-28 border-b-[2.5px] border-r-[2.5px] border-black z-20" />
 
                 <Image
                   src="/location.webp"
@@ -88,6 +85,7 @@ export default function Location() {
                   fill
                   priority
                   className="object-contain lg:object-fill"
+                  sizes="(max-width: 1024px) 100vw, 1110px"
                 />
               </div>
             </div>
@@ -95,31 +93,32 @@ export default function Location() {
         </div>
       </section>
 
-      {/* SECTION 2: PRIME LOCATION (ORIGINAL STYLE RESTORED) */}
-      <section
-        className="relative w-full text-ira-dark font-gotham overflow-visible pt-16 md:pt-24 lg:pt-32 z-20"
-               
-      >
-        {/* Responsive Background Logic */}
-        <div className="absolute top-0 left-0 right-0 lg:right-80 bottom-0 z-0">
+      {/* SECTION 2: PRIME LOCATION */}
+      <section className="relative w-full text-ira-dark font-gotham overflow-visible pt-16 md:pt-24 lg:pt-32 z-20">
+        {/* Background */}
+        <div className="absolute top-0 left-0 right-0 lg:right-80 bottom-0 z-0 pointer-events-none">
           <Image
             src="/green.png"
             alt="Geometric background"
             fill
-            className="object-cover object-bottom translate-y-10 lg:translate-y-20 pointer-events-none"
+            className="object-cover object-bottom translate-y-10 lg:translate-y-20"
+            sizes="100vw"
           />
         </div>
 
-        {/* Responsive Watermark Logic */}
+        {/* Watermark */}
         <div className="absolute inset-0 z-[1] pointer-events-none overflow-visible">
-          <div className="absolute top-[-60px] left-1/2 -translate-x-1/2 
-                  md:top-[-130px] md:left-[110px] md:translate-x-0 
-                  w-[100vw] md:w-[1400px] aspect-square md:h-[1400px]">
+          <div
+            className="absolute top-[-60px] left-1/2 -translate-x-1/2
+                       md:top-[-130px] md:left-[110px] md:translate-x-0
+                       w-[100vw] md:w-[1400px] aspect-square md:h-[1400px]"
+          >
             <Image
               src="/map.png"
               alt="Map watermark"
               fill
               className="opacity-[0.03] object-contain"
+              sizes="100vw"
             />
           </div>
         </div>
@@ -129,20 +128,22 @@ export default function Location() {
         <div className="w-full relative z-10 px-6 md:px-12 lg:px-20 xl:px-32">
           <div className="w-full flex flex-col items-center pt-8 md:pt-16 pb-12 md:pb-32">
             <div className="text-center w-full lg:w-[1116px] px-2 md:px-0">
-              <h2 className="text-[#94aa29] font-light uppercase text-2xl md:text-3xl lg:text-[64px] leading-tight mb-4 tracking-wide">
+              <h2 className="text-[#94aa29] font-light uppercase text-2xl md:text-3xl lg:text-[60px] leading-tight mb-4 tracking-wide">
                 Prime Location
               </h2>
-            <p className="text-ira-dark font-normal mx-auto text-sm md:text-base lg:text-[18px] leading-[1.6] max-w-[1300px] mb-6">
-  Imagine living in a global address at Hyderabad’s South, as a bold new frontier is expanding fast with enviable infrastructure.
-  <br className="hidden lg:block" />
-  Adibatla is becoming an eminently desirable place to settle down.
-</p>
 
-
+              <div className="text-ira-dark font-normal mx-auto text-sm md:text-base lg:text-[20px] leading-[28px] text-center mb-6">
+                <p className="lg:whitespace-nowrap">
+                  Imagine living in a global address at Hyderabad’s South, as a
+                  bold new frontier is expanding fast with enviable
+                  infrastructure.
+                </p>
+                <p className="mt-1">Adibatla is becoming an eminently desirable place to settle down.</p>
+              </div>
             </div>
 
-            <div className="w-full mt-4 md:mt-8 px-0 lg:px-0">
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 items-start ">
+            <div className="w-full mt-0 md:mt-8">
+<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-4 items-start justify-items-center">
                 <LocationCard
                   title="EDUCATIONAL INSTITUTIONS"
                   icon="/education.webp"
@@ -176,6 +177,7 @@ export default function Location() {
                     viewBox="0 0 512 512"
                     className="w-[18px] h-[18px]"
                     fill="currentColor"
+                    aria-hidden="true"
                   >
                     <path d="M295.6 163.7c-5.1 5-5.1 13.3-.1 18.4l60.8 60.9H124.9c-7.1 0-12.9 5.8-12.9 13s5.8 13 12.9 13h231.3l-60.8 60.9c-5 5.1-4.9 13.3.1 18.4 5.1 5 13.2 5 18.3-.1l82.4-83c1.1-1.2 2-2.5 2.7-4.1.7-1.6 1-3.3 1-5 0-3.4-1.3-6.6-3.7-9.1l-82.4-83c-4.9-5.2-13.1-5.3-18.2-.3z" />
                   </svg>
@@ -204,20 +206,21 @@ function LocationCard({
   onToggle: () => void;
 }) {
   return (
-<div className="bg-white/95 backdrop-blur-sm shadow-md w-full max-w-[488px] mx-auto h-[121px] border border-gray-100 rounded-sm overflow-hidden transition-all duration-300">
+<div className="bg-white/95 backdrop-blur-sm shadow-md w-full max-w-[420px] h-fit border border-gray-100 rounded-sm overflow-hidden transition-all duration-300">
       <button
         type="button"
         onClick={onToggle}
-        className="w-full flex items-center justify-between py-4 px-4 lg:px-6  transition-colors"
+        className="w-full flex items-center justify-between py-4 px-4 lg:px-6 transition-colors"
       >
         <div className="flex items-center gap-3 lg:gap-4 overflow-hidden">
-          <div className="relative w-10 h-10 lg:w-[98px] lg:h-[97px] flex-shrink-0">
+          <div className="relative w-10 h-10 lg:w-[60px] lg:h-[60px] flex-shrink-0">
             <Image src={icon} alt={title} fill className="object-contain" />
           </div>
-          <h3 className="text-[14px] lg:text-[30px] font-normal  text-[#8D6554] uppercase text-left leading-tight w-full">
+          <h3 className="text-[14px] lg:text-[19px] font-normal text-[#8D6554] uppercase text-left leading-tight w-full">
             {title}
           </h3>
         </div>
+
         <span
           className={`w-7 h-7 lg:w-[30px] lg:h-[30px] rounded-full bg-[#6A8A2C] text-white flex-shrink-0 flex items-center justify-center transition-transform duration-300 ${
             open ? "rotate-180" : ""
@@ -229,6 +232,7 @@ function LocationCard({
             fill="none"
             stroke="currentColor"
             strokeWidth="2.5"
+            aria-hidden="true"
           >
             <path d="M6 9l6 6 6-6" />
           </svg>

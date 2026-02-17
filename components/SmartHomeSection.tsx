@@ -27,9 +27,9 @@ export default function SmartHomeSection() {
           
           {/* MAIN HEADING (Top) */}
           <h2 className="
-            font-gotham font-light text-white uppercase text-center w-full 
+            font-gotham font-light text-white uppercase text-start w-full 
             text-[24px] sm:text-[32px] 
-            lg:text-[45px] leading-tight tracking-wide
+            lg:text-[47px] leading-tight tracking-wide
             
             /* 1440px+ Specs */
             min-[1440px]:text-[60px] 
@@ -45,13 +45,13 @@ export default function SmartHomeSection() {
           {/* PARAGRAPH */}
           <div className="
             text-white/90 font-gotham font-light w-full 
-            max-w-[900px] 
+            max-w-full 
             min-[1440px]:max-w-[1107px] 
             min-[1440px]:w-[1107px]
           ">
             <div className="
               block text-center
-              text-[14px] sm:text-[16px] lg:text-[18px] leading-relaxed
+              text-[14px] sm:text-[16px] lg:text-[24px] leading-relaxed
               min-[1440px]:text-[24px]      
               min-[1440px]:leading-[24px]    
               min-[1440px]:font-normal      
@@ -102,7 +102,7 @@ export default function SmartHomeSection() {
             text-white font-gotham uppercase text-center
             
             /* Default Mobile/Tablet Styles */
-            font-normal tracking-[3px] text-[16px] lg:text-[22px]
+            font-normal tracking-[3px] text-[16px] lg:text-[24px]
             
             /* --- 1440px+ SCREEN (Matches Figma) --- */
             min-[1440px]:text-[24px]        /* Size: 24px */

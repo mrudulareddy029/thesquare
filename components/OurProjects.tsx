@@ -51,8 +51,8 @@ export default function OurProjects() {
      className="bg-white py-10 px-5 xl:px-[80px] md:py-[90px]">
       <div className="max-w-[1280px] mx-auto w-full">
         
-        <div className="text-left mb-[40px] md:mb-[50px]">
-          <h2 className="text-[32px] leading-[1.2] md:text-[48px] font-normal text-[#7FA61A] mb-3 uppercase">
+        <div className=" mb-[40px] md:mb-[50px]">
+          <h2 className="text-[32px] leading-[1.2] md:text-[52px] font-normal text-[#7FA61A] mb-3 uppercase">
             Building Homes. Nurturing Communities.
           </h2>
           <p className="text-black font-medium text-sm md:text-base leading-relaxed md:max-w-[760px]">

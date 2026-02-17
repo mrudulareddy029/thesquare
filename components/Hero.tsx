@@ -47,8 +47,8 @@ export default function Hero() {
               />
 
               {/* Gradients for text readability */}
-              <div className="absolute top-0 left-0 w-full h-[120px] md:h-[180px] bg-gradient-to-b from-black/80 to-transparent z-10 pointer-events-none" />
-              <div className="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-black/60 to-transparent z-10 pointer-events-none md:hidden" />
+              <div className="absolute top-0 left-0 w-full h-[150px] md:h-[250px] bg-gradient-to-b from-black/70 to-transparent z-10 pointer-events-none" />
+              <div className="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-black/60 to-transparent z-10 pointer-events-none" />
             </div>
           </SwiperSlide>
         ))}
@@ -56,34 +56,24 @@ export default function Hero() {
 
       {/* TEXT OVERLAY CONTAINER */}
       <div
-        className="
-          absolute z-20 flex flex-col
-          
-          /* MOBILE: Positioned lower */
-          inset-x-0 top-[48px] 
-          pt-[110px] px-[32px]
-          
-          /* TABLET RESET */
-          md:top-0 md:bottom-0 md:justify-end md:pt-0 md:px-20 md:pb-12
-          
-          /*---- DESKTOP (Laptops) */
-          lg:justify-start lg:pt-[480px] lg:px-[210px] lg:pb-0
-          
-          /* --- 1440px+ FIGMA SPECS --- */
-          min-[1440px]:pl-[191px] 
-          min-[1440px]:pt-[450px]
-          
-          pointer-events-none
-        "
-      >
-        <div className="pointer-events-auto w-full max-w-[90%] md:max-w-none">
+  className="
+    absolute z-20 inset-0
+    flex flex-col
+    justify-start md:justify-center
+    pt-20 sm:pt-24 md:pt-48 lg:pt-56 min-[1440px]:pt-64
+    px-6 sm:px-12 md:px-20
+    lg:pl-[180px] 
+    min-[1440px]:pl-[191px]
+    pointer-events-none
+  "
+>
+
+
+<div className="pointer-events-auto w-full max-w-[1440px] mt-24 md:mt-32 lg:mt-42 min-[1440px]:mt-48">
           {/* TS RERA */}
           <span
             className="block text-white/90 font-gotham font-light tracking-widest drop-shadow-md mb-2
-            text-[12px] 
-            md:text-[14px] 
-            lg:text-[16px]
-            min-[1440px]:text-[18px] min-[1440px]:mb-4
+            text-[10px] sm:text-[12px] md:text-[14px] lg:text-[18px] 2xl:text-[22px]
           "
           >
             TS RERA: P02400005775
@@ -93,23 +83,15 @@ export default function Hero() {
           <h1
             className="
               text-white font-gotham uppercase drop-shadow-lg text-start
-              font-[300]
-              tracking-normal
-
-              /* MOBILE */
-              text-[24px] leading-tight mb-[8px] max-w-[256px] min-h-[115px]
-              
-              /* TABLET */
-              md:text-[40px] md:max-w-none md:w-auto md:h-auto md:mb-4
-              
-              /* LAPTOP */
-              lg:text-[64px] lg:mb-[8px]
-              
-              /* --- 1440px+ SCREEN --- */
+              font-[300] tracking-normal
+              /* Responsive Text Sizes to prevent cutting */
+              text-[26px] leading-[1.2]
+              sm:text-[34px]
+              md:text-[44px]
+              lg:text-[54px]
               min-[1440px]:text-[64px]
-              leading-[72px]
-              min-[1440px]:max-w-[1299px]
-              min-[1440px]:mb-[16px]
+              /* Width Management */
+              mb-4 max-w-[95%] sm:max-w-[85%] lg:max-w-[1100px] 2xl:max-w-[1299px]
             "
           >
             Discover Luxury 4 BHK Villas in <br className="hidden md:block" />
@@ -120,19 +102,8 @@ export default function Hero() {
           <p
             className="
               text-white/95 font-gotham font-[300] drop-shadow-md tracking-tight text-start
-              
-              /* MOBILE */
-              text-[16px] leading-[1.4] mb-[20px] max-w-[256px]
-              
-              /* TABLET */
-              md:text-[20px] md:leading-[1.5] md:mb-6 md:max-w-none
-              
-              /* LAPTOP */
-              lg:text-[28px] lg:mb-[20px]
-
-              /* --- 1440px+ SCREEN --- */
-              min-[1440px]:text-[32px]
-              min-[1440px]:mb-[40px]
+              text-[16px] sm:text-[20px] lg:text-[28px] min-[1440px]:text-[32px]
+              mb-8 md:mb-12
             "
           >
             Luxurious Villas in Adibatla, Hyderabad
@@ -142,20 +113,13 @@ export default function Hero() {
           <button
             onClick={openModal}
             className="
-              inline-flex items-center justify-between rounded-full bg-[#93AA28] text-white
-              transition-all duration-300 hover:brightness-110 font-normal shadow-lg
-              
-              /* MOBILE */
-              w-[162px] h-[30px] px-[15px] text-[11.5px] whitespace-nowrap tracking-tight
-              
-              /* DESKTOP */
-              md:w-fit md:h-10 md:px-6 md:py-2 md:text-[14px] md:border-0 md:justify-center md:gap-2
-              lg:px-[20px] lg:py-[5px] lg:h-[42px] lg:leading-[30px] lg:gap-3
-
-              /* --- 1440px+ SCREEN --- */
-              min-[1440px]:h-[55px]
-              min-[1440px]:px-[35px]
-              min-[1440px]:text-[18px]
+              inline-flex items-center justify-center rounded-full bg-[#93AA28] text-white
+              transition-all duration-300 hover:scale-105 active:scale-95 font-normal shadow-lg
+              /* Standardized Button Sizing */
+              h-[46px] px-8 text-[13px]
+              md:h-[54px] md:px-10 md:text-[16px]
+              min-[1440px]:h-[60px] min-[1440px]:px-[40px] min-[1440px]:text-[18px]
+              gap-3
             "
           >
             Schedule a Site Visit
@@ -163,7 +127,7 @@ export default function Hero() {
               stroke="currentColor"
               fill="currentColor"
               viewBox="0 0 512 512"
-              className="w-[14px] h-[14px] md:h-4 md:w-4 lg:h-[18px] lg:w-[18px] min-[1440px]:w-[22px] min-[1440px]:h-[22px]"
+              className="w-4 h-4 md:w-5 md:h-5 lg:w-6 lg:h-6"
               xmlns="http://www.w3.org/2000/svg"
             >
               <path d="M295.6 163.7c-5.1 5-5.1 13.3-.1 18.4l60.8 60.9H124.9c-7.1 0-12.9 5.8-12.9 13s5.8 13 12.9 13h231.3l-60.8 60.9c-5 5.1-4.9 13.3.1 18.4 5.1 5 13.2 5 18.3-.1l82.4-83c1.1-1.2 2-2.5 2.7-4.1.7-1.6 1-3.3 1-5 0-3.4-1.3-6.6-3.7-9.1l-82.4-83c-4.9-5.2-13.1-5.3-18.2-.3z"></path>

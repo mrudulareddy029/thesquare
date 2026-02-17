@@ -37,17 +37,17 @@ export default function JoinUsSection() {
               <h1 className="font-gotham font-light text-white uppercase tracking-normal
                              text-[28px] leading-[1.2]
                              sm:text-[36px]
-                             lg:text-[3.47vw] xl:text-[50px] lg:leading-[1.3]">
+                             lg:text-[3.47vw] xl:text-[64px] lg:leading-[1.2]">
                 <span className="block">JOIN US AT THE</span>
                 <span className="block">SQUARE</span>
               </h1>
             </div>
             
-            <p className="text-white font-light leading-[26px] mb-8 lg:mb-[36px] w-full font-gotham
+            <p className="text-white font-light leading-[30px] mb-8 lg:mb-[36px] w-full font-gotham
                           text-[15px]
-                          lg:text-[1.11vw] xl:text-[15px]">
-              Come, join and discover the essence of vibrant living  <br className="hidden lg:block" />
-               at The Square, where luxury harmonizes with nature. <br className="hidden lg:block" />
+                          lg:text-[1.11vw] xl:text-[22px]">
+              Come, join and discover the essence of vibrant living  
+               at The Square, where luxury harmonizes with nature. 
               Begin your journey towards a redefined lifestyle.
             </p>
 
