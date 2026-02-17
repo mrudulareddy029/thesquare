@@ -110,7 +110,6 @@ export default function Hero() {
               leading-[72px]
               min-[1440px]:max-w-[1299px]
               min-[1440px]:mb-[16px]
-              absolute bottom-[16%] left-[10%]
             "
           >
             Discover Luxury 4 BHK Villas in <br className="hidden md:block" />
