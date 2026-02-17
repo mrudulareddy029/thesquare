@@ -63,8 +63,8 @@ export default function Hero() {
           /* TABLET RESET */
           md:top-0 md:bottom-0 md:justify-end md:pt-0 md:px-20 md:pb-12
           
-          /* DESKTOP (Laptops) */
-          lg:justify-start lg:pt-[480px] lg:px-[144px] lg:pb-0
+          /*---- DESKTOP (Laptops) */
+          lg:justify-start lg:pt-[480px] lg:px-[148px] lg:pb-0
           
           /* --- 1440px+ FIGMA SPECS --- */
           /* Left: 191px | Top: adjusted via Padding Top */
