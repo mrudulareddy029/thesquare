@@ -9,11 +9,11 @@ export default function About() {
       id="aboutus"
       className="relative w-full bg-white border-x-[4px] md:border-x-[9.6px] border-[#CDE244] py-12 lg:py-[57.6px] overflow-hidden lg:overflow-visible"
     >
-      <div className="container mx-auto px-4 lg:max-w-[1320px] h-full">
-        <div className="flex flex-col lg:flex-row h-auto lg:h-[619.24px] items-center">
+      <div className="container mx-auto px-4 lg:max-w-[1320px] ">
+        <div className="flex flex-col lg:flex-row h-auto items-stretch">
 
           {/* LEFT COLUMN: Content */}
-          <div className="w-full lg:w-1/2 relative lg:border-r lg:border-[#CDE244] h-full flex items-center">
+          <div className="w-full lg:w-1/2 relative h-full flex items-center">
             <div className="relative z-10 w-full h-auto py-4 lg:py-0">
 
               {/* HEADING: Pixel-locked on LG+, Fluid on Mobile */}
@@ -61,6 +61,9 @@ export default function About() {
               </div>
             </div>
           </div>
+
+          {/* VERTICAL DIVIDER */}
+          <div className="hidden lg:block w-[1px] bg-[#CDE244] self-stretch" />
 
           {/* RIGHT COLUMN: Image Area */}
           <div className="w-full lg:w-1/2 h-full flex items-center justify-center lg:justify-end mt-4 lg:mt-0 lg:pl-[20px]">

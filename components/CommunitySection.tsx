@@ -18,7 +18,7 @@ export default function CommunitySection() {
           fill
           priority
           sizes="100vw"
-          className="object-contain lg:object-cover lg:object-[center_70%]"
+          className="object-cover lg:object-cover lg:object-[center_70%]"
         />
 
         {/* --- DESKTOP TEXT OVERLAY --- */}

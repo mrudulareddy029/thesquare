@@ -66,29 +66,7 @@ export default function Hero() {
         "
       >
         {/* RIGHT SIDE VERTICAL TAB */}
-        <button
-          onClick={openModal}
-          className="
-            absolute z-30
-            right-0 top-1/2 -translate-y-1/2
-            pointer-events-auto
-            /* BRAND COLOR UPDATED */
-            bg-[#93AA2B] text-white
-            rounded-l-[14px]
-            shadow-lg
-            h-[140px] w-[32px]
-            md:h-[170px] md:w-[38px]
-            lg:h-[190px] lg:w-[42px]
-            flex items-center justify-center
-            border border-white/20
-            hover:brightness-110 transition-all duration-300
-          "
-          aria-label="Schedule a Site Visit"
-        >
-          <span className="font-gotham font-[400] text-[12px] md:text-[13px] lg:text-[14px] tracking-wide whitespace-nowrap -rotate-90">
-            Schedule a Site Visit
-          </span>
-        </button>
+      
 
         <div className="pointer-events-auto w-full max-w-[90%] md:max-w-none">
           

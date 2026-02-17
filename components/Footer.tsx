@@ -117,7 +117,7 @@ export default function Footer() {
 
                 <div className="flex items-center justify-start gap-6 mt-8 lg:mt-6">
                   <span className="text-[#8B4513] font-normal text-base">Let's Connect:</span>
-                  <div className="flex gap-6 items-center">
+                  <div className="flex gap-6 items-center text-black">
                     <PhoneIcon /> 
                     <WhatsappIcon /> 
                     <FacebookIcon />

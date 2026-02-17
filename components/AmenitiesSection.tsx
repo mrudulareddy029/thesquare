@@ -55,7 +55,10 @@ export default function AmenitiesSection() {
     const total = images.length;
     if (index === activeIndex) {
       return "z-30 opacity-100 scale-100 translate-x-0 rotate-0 shadow-2xl";
-    } else if (index === (activeIndex + 1) % total || index === (activeIndex - 1 + total) % total) {
+    } else if (
+      index === (activeIndex + 1) % total ||
+      index === (activeIndex - 1 + total) % total
+    ) {
       return "z-20 opacity-0 scale-95 translate-x-0 rotate-0";
     } else {
       return "z-10 opacity-0 scale-90";
@@ -69,20 +72,20 @@ export default function AmenitiesSection() {
   return (
     <section
       id="amenities"
-      className="relative bg-white overflow-hidden mx-auto w-full max-w-[1440px] py-[40px] md:py-[80px]"
+      className="relative bg-white overflow-hidden mx-auto w-full max-w-[1440px] py-12 md:py-16"
     >
       <div className="container mx-auto px-6 lg:px-0 lg:w-[91.66%] lg:max-w-none">
-        
         {/* --- TOP SECTION: CAROUSEL & TEXT --- */}
-        <div className="flex flex-col lg:flex-row items-center justify-center gap-10 lg:gap-20">
-          
+        <div className="flex flex-col lg:flex-row items-center justify-center gap-15 lg:gap-20">
           {/* IMAGE COLUMN */}
           <div className="relative w-full max-w-[440px] lg:max-w-none lg:w-[480px] xl:w-[520px] aspect-[440/320] flex-shrink-0 flex items-center justify-center">
             <div className="relative w-full h-full flex items-center justify-center perspective-[1000px]">
               {images.map((src, index) => (
                 <div
                   key={index}
-                  className={`absolute top-0 left-0 w-full h-full transition-all duration-500 ease-in-out rounded-[20px] overflow-hidden bg-gray-100 shadow-xl ${getCardStyle(index)}`}
+                  className={`absolute top-0 left-0 w-full h-full transition-all duration-500 ease-in-out rounded-[20px] overflow-hidden bg-gray-100 shadow-xl ${getCardStyle(
+                    index
+                  )}`}
                 >
                   <Image
                     src={src}
@@ -101,14 +104,18 @@ export default function AmenitiesSection() {
               onClick={prevSlide}
               className="absolute left-[5%] top-1/2 -translate-y-1/2 z-[60] w-[12%] aspect-square bg-transparent rounded-full flex items-center justify-center active:bg-white/10 transition-all cursor-pointer"
             >
-              <span className="text-white text-3xl lg:text-5xl font-light drop-shadow-[0_2px_4px_rgba(0,0,0,0.6)]">‹</span>
+              <span className="text-white text-3xl lg:text-5xl font-light drop-shadow-[0_2px_4px_rgba(0,0,0,0.6)]">
+                ‹
+              </span>
             </button>
 
             <button
               onClick={nextSlide}
               className="absolute right-[5%] top-1/2 -translate-y-1/2 z-[60] w-[12%] aspect-square bg-transparent rounded-full flex items-center justify-center active:bg-white/10 transition-all cursor-pointer"
             >
-              <span className="text-white text-3xl lg:text-5xl font-light drop-shadow-[0_2px_4px_rgba(0,0,0,0.6)]">›</span>
+              <span className="text-white text-3xl lg:text-5xl font-light drop-shadow-[0_2px_4px_rgba(0,0,0,0.6)]">
+                ›
+              </span>
             </button>
           </div>
 
@@ -119,18 +126,17 @@ export default function AmenitiesSection() {
               and Spaces Prolific
             </h2>
             <div className="text-gray-600 text-[15px] lg:text-[16px] leading-relaxed font-normal font-gotham">
-              <p>From a 4-level exclusive clubhouse to landscaped</p> 
+              <p>From a 4-level exclusive clubhouse to landscaped</p>
               <p>gardens, The offers amenities that make every </p>
-             <p> moment rewarding experience.Unleash your energies</p>
-             <p> and live life to the fullest</p>
+              <p> moment rewarding experience.Unleash your energies</p>
+              <p> and live life to the fullest</p>
             </div>
           </div>
         </div>
 
         {/* --- BOTTOM ICON SCROLLER --- */}
-        <div className="mt-12 md:mt-24 w-full">
+        <div className="mt-10 md:mt-14 w-full">
           <div className="relative w-full">
-            
             {/* Left arrow (Transparent with Green Border/Text) - MATCHES image_a45d7c.png */}
             <button
               type="button"
@@ -138,22 +144,59 @@ export default function AmenitiesSection() {
               className="absolute -left-2 md:left-0 top-1/2 -translate-y-1/2 z-20 w-[34px] h-[34px] rounded-full border border-[#93AA28] bg-white text-[#93AA28] flex items-center justify-center transition active:scale-95 hover:bg-[#93AA28] hover:text-white"
               aria-label="Previous amenities"
             >
-              <span className="text-2xl font-light leading-none relative -left-[1px]">‹</span>
+              <span className="text-2xl font-light leading-none relative -left-[1px]">
+                ‹
+              </span>
             </button>
 
             {/* Responsive Icons Grid */}
             <div className="mx-[30px] md:mx-[52px]">
-              <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6 md:gap-8 items-start">
-                {visibleAmenities.map((a, idx) => (
-                  <div key={`${amenityPage}-${idx}`} className="flex flex-col items-center text-center">
-                    <div className="relative w-[50px] h-[50px] md:w-[62px] md:h-[62px]">
-                      <Image src={a.icon} alt={a.label} fill className="object-contain" />
+              {/* ✅ Mobile/Tablet: HAND SCROLL */}
+              <div className="lg:hidden overflow-x-auto scroll-smooth no-scrollbar">
+                <div className="flex gap-2 md:gap-3 items-start px-1">
+                  {AMENITIES.map((a, idx) => (
+                    <div
+                      key={idx}
+                      className="flex-shrink-0 w-[110px] md:w-[130px] flex flex-col items-center text-center"
+                    >
+                      <div className="relative w-[50px] h-[50px] md:w-[62px] md:h-[62px]">
+                        <Image
+                          src={a.icon}
+                          alt={a.label}
+                          fill
+                          className="object-contain"
+                        />
+                      </div>
+                      <p className="mt-3 text-[11px] md:text-[12px] leading-[1.2] text-[#2C2C2C] font-gotham whitespace-pre-line">
+                        {a.label}
+                      </p>
                     </div>
-                    <p className="mt-3 text-[11px] md:text-[12px] leading-[1.2] text-[#2C2C2C] font-gotham whitespace-pre-line">
-                      {a.label}
-                    </p>
-                  </div>
-                ))}
+                  ))}
+                </div>
+              </div>
+
+              {/* ✅ Desktop: Existing grid paging */}
+              <div className="hidden lg:block">
+                <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-0 md:gap-0 items-start">
+                  {visibleAmenities.map((a, idx) => (
+                    <div
+                      key={`${amenityPage}-${idx}`}
+                      className="flex flex-col items-center text-center min-h-[115px]"
+                    >
+                      <div className="relative w-[50px] h-[50px] md:w-[62px] md:h-[62px]">
+                        <Image
+                          src={a.icon}
+                          alt={a.label}
+                          fill
+                          className="object-contain"
+                        />
+                      </div>
+                      <p className="mt-2 text-[11px] md:text-[12px] leading-[1.2] text-[#2C2C2C] font-gotham whitespace-pre-line">
+                        {a.label}
+                      </p>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
 
@@ -164,11 +207,12 @@ export default function AmenitiesSection() {
               className="absolute -right-2 md:right-0 top-1/2 -translate-y-1/2 z-20 w-[34px] h-[34px] rounded-full border border-[#93AA28] bg-white text-[#93AA28] flex items-center justify-center transition active:scale-95 hover:bg-[#93AA28] hover:text-white"
               aria-label="Next amenities"
             >
-              <span className="text-2xl font-light leading-none relative left-[1px]">›</span>
+              <span className="text-2xl font-light leading-none relative left-[1px]">
+                ›
+              </span>
             </button>
           </div>
         </div>
-
       </div>
     </section>
   );

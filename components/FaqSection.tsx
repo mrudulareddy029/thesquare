@@ -52,13 +52,13 @@ export default function FaqSection() {
   return (
     <section 
       style={{ background: 'linear-gradient(135deg, #e5ebc8, #dbe4b5)' }}
-      className="py-12 lg:py-[70px] rounded-t-[30px] lg:rounded-t-[50px] overflow-hidden" 
+      className="py-8 lg:py-[50px] rounded-t-[30px] lg:rounded-t-[50px] overflow-hidden" 
       id="faq"
     >
       <div className="w-full max-w-[1150px] px-5 lg:px-0 mx-auto">
         
         {/* HEADER SECTION */}
-        <div className="text-center mx-auto mb-8 lg:mb-[40px]">
+        <div className="text-center mx-auto mb-6 lg:mb-8">
           <h2 className="text-[rgb(106,138,44)] font-gotham font-light text-[22px] leading-[26.4px] lg:text-[28px] lg:leading-[33.6px] tracking-[1px] mb-[6px] uppercase">
             Frequently Asked Questions
           </h2>
@@ -68,7 +68,7 @@ export default function FaqSection() {
         </div>
 
         {/* FAQ LIST */}
-        <div className="flex flex-col gap-4 font-gotham">
+        <div className="flex flex-col gap-3 font-gotham">
           {faqData.map((item, index) => {
             const isActive = activeIndex === index;
             const contentId = `faq-content-${index}`;
@@ -86,7 +86,7 @@ export default function FaqSection() {
                   aria-expanded={isActive}
                   aria-controls={contentId}
                   onClick={() => toggleFaq(index)}
-                  className={`w-full flex items-center justify-between p-4 lg:px-[50px] lg:py-[18px] text-left transition-colors duration-300 focus:outline-none border-none ${
+                  className={`w-full flex items-center justify-between px-4 py-3 lg:px-[50px] lg:py-[16px] text-left transition-colors duration-300 focus:outline-none border-none ${
                     isActive ? 'bg-[rgb(106,138,44)]' : 'bg-white hover:bg-gray-50'
                   }`}
                 >

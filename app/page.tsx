@@ -12,12 +12,14 @@ import Footer from "@/components/Footer";
 import JoinUsSection from "@/components/JoinUsSection";
 import CommunitySection from "@/components/CommunitySection";
 import Gallery from "@/components/Gallery";
+import FloatingSchedule from "@/components/FloatingSchedule";
  
 
 export default function Home() {
   return (
     <main className="min-h-screen bg-white">
       <Navbar />
+       <FloatingSchedule />
       <Hero />
       <div className="py-2 md:py-4 lg:py-6" />
       <Highlights/>

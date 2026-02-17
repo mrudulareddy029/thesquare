@@ -37,11 +37,11 @@ export default function FloorPlans() {
       id="plans"
       className="relative overflow-hidden z-20 bg-ira-bg bg-[url('/facing-bg.png')] bg-cover bg-center rounded-none lg:rounded-t-[50px] mt-0 lg:-mt-[35px]"
     >
-      <div className="py-[40px] lg:py-[71.675px] xl:py-[100.8px]">
+      <div className="py-[32px] lg:py-[56px] xl:py-[72px]">
         <div className="w-full px-4 md:px-10 lg:px-16 xl:px-20 mx-auto">
 
           {/* ================= UPPER SECTION ================= */}
-          <div className="flex flex-col xl:flex-row items-center relative min-h-auto xl:min-h-[685px]">
+          <div className="flex flex-col xl:flex-row items-center relative ">
 
             {/* LEFT IMAGE COLUMN */}
             <div className="w-full xl:w-5/12 mb-12 xl:mb-0 flex justify-center xl:justify-start">
@@ -90,7 +90,7 @@ export default function FloorPlans() {
             </div>
           </div>
 
-          <div className="hidden xl:block w-full h-[60px]"></div>
+          <div className="hidden xl:block w-full h-[55px]"></div>
 
           {/* LOWER SECTION TABS */}
           <div className="flex justify-start gap-3 mb-[30px] md:mb-[50px] flex-wrap px-4">

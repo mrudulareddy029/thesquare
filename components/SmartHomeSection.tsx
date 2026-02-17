@@ -18,7 +18,7 @@ const features = [
 export default function SmartHomeSection() {
   return (
     <section
-      className="relative w-full bg-secondary z-30 -mt-[25px] overflow-hidden rounded-t-[50px] lg:rounded-t-[42px] py-12 lg:py-20 shadow-sm"
+      className="relative w-full bg-secondary z-30 -mt-[25px] overflow-visible rounded-t-[50px] lg:rounded-t-[42px] py-12 lg:py-20 shadow-sm"
       id="automation"
     >
       {/* 1. HEADER - Responsive text clamps */}
@@ -78,7 +78,7 @@ export default function SmartHomeSection() {
         </div>
 
         <div className="mx-auto w-full max-w-[1100px] border border-white p-2 sm:p-4">
-          <div className="w-full bg-white rounded-lg lg:rounded-none overflow-hidden">
+          <div className="w-full bg-white rounded-lg lg:rounded-none overflow-visible">
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5">
               {features.map((feature, index) => (
                 <div
