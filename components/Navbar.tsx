@@ -65,7 +65,7 @@ export default function Navbar() {
           <div className="flex items-center justify-center gap-4 md:gap-6 xl:gap-8 flex-shrink-0 mx-4">
             <Link href="/" className="flex items-center gap-4 md:gap-6 xl:gap-8">
               {/* IRA Logo Container */}
-              <div className="relative h-[40px] w-[80px] md:h-[50px] md:w-[100px] xl:h-[60px] xl:w-[120px] 2xl:h-[70px] 2xl:w-[130px]">
+                <div className="relative w-[90px] h-[45px] md:w-[100px] md:h-[48px] lg:w-[112px] lg:h-[53px]">
                 <Image
                   src="/ira-logo-1.png"
                   alt="IRA Logo"
