@@ -1,4 +1,4 @@
-import Navbar from "@/components/Navbar"; 
+ 
 import Hero from "@/components/Hero";     
 import About from "@/components/About";
 import Highlights from "@/components/Highlights";
@@ -18,7 +18,6 @@ import FloatingSchedule from "@/components/FloatingSchedule";
 export default function Home() {
   return (
     <main className="min-h-screen bg-white">
-      <Navbar />
        <FloatingSchedule />
       <Hero />
       <div className="py-2 md:py-4 lg:py-6" />

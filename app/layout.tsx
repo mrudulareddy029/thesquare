@@ -38,11 +38,6 @@ export default function RootLayout({
         <link rel="preload" href="/fonts/GothamMedium.ttf" as="font" type="font/truetype" crossOrigin="anonymous" />
       </head>
       <body className={`${inter.className} ${montserrat.variable} antialiased`}>
-        
-        {/* CORRECTION: 
-           ContactProvider must WRAP the Navbar and Main content.
-           This allows Navbar to access the 'openModal' function.
-        */}
         <ContactProvider>
           <Navbar />
           <main>{children}</main>

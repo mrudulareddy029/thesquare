@@ -124,7 +124,7 @@ export default function Footer() {
 
         {/* DISCLAIMER */}
         <div className="w-full mt-2 lg:mt-6 py-6 border-t border-gray-50 lg:border-none">
-          <p className="text-gray-500 font-light text-[10px] lg:text-[11px] leading-relaxed text-center max-w-5xl mx-auto px-4">
+          <p className="text-gray-500 font-light text-[10px] lg:text-[11px] leading-tight text-center max-w-5xl mx-auto px-4">
             Disclaimer: "This is purely a conceptual presentation and not a legal offering. The promoters reserve the right to make changes in elevation, specifications, and plans as deemed fit."
           </p>
         </div>

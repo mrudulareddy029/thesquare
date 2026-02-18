@@ -23,7 +23,7 @@ export default function Hero() {
   return (
     <section
       id="slider-section"
-      className="relative w-full group overflow-hidden h-screen"
+      className="relative w-screen left-1/2 -translate-x-1/2 group overflow-hidden h-screen"
     >
       {/* BACKGROUND SLIDER */}
       <Swiper
@@ -56,25 +56,25 @@ export default function Hero() {
 
       {/* TEXT OVERLAY CONTAINER */}
       <div
-  className="
-    absolute z-20 inset-0
-    flex flex-col
-    justify-start md:justify-center
-    pt-20 sm:pt-24 md:pt-48 lg:pt-56 min-[1440px]:pt-64
-    px-6 sm:px-12 md:px-20
-    lg:pl-[180px] 
-    min-[1440px]:pl-[191px]
-    pointer-events-none
-  "
->
-
-
-<div className="pointer-events-auto w-full max-w-[1440px] mt-24 md:mt-32 lg:mt-42 min-[1440px]:mt-48">
+        className="
+          absolute z-20 inset-0
+          flex flex-col
+          justify-start md:justify-center
+          /* ADJUSTED lg:pt-56 to lg:pt-32 to prevent bottom cutting */
+          pt-20 sm:pt-24 md:pt-48 lg:pt-32 min-[1440px]:pt-64
+          px-6 sm:px-12 md:px-20
+          lg:px-[120px] xl:px-[180px] min-[1440px]:px-[191px]
+          pointer-events-none
+        "
+      >
+        {/* ADJUSTED lg:mt-40 to lg:mt-20 for better vertical fit at 1024px */}
+        <div className="pointer-events-auto w-full max-w-[1440px] mt-24 md:mt-32 lg:mt-20 min-[1440px]:mt-48">
           {/* TS RERA */}
           <span
-            className="block text-white/90 font-gotham font-light tracking-widest drop-shadow-md mb-2
-            text-[10px] sm:text-[12px] md:text-[14px] lg:text-[18px] 2xl:text-[22px]
-          "
+            className="
+              block text-white/90 font-gotham font-light tracking-widest drop-shadow-md mb-2
+              text-[10px] sm:text-[12px] md:text-[14px] lg:text-[18px] 2xl:text-[22px]
+            "
           >
             TS RERA: P02400005775
           </span>
@@ -84,13 +84,11 @@ export default function Hero() {
             className="
               text-white font-gotham uppercase drop-shadow-lg text-start
               font-[300] tracking-normal
-              /* Responsive Text Sizes to prevent cutting */
               text-[26px] leading-[1.2]
               sm:text-[34px]
               md:text-[44px]
               lg:text-[54px]
               min-[1440px]:text-[64px]
-              /* Width Management */
               mb-4 max-w-[95%] sm:max-w-[85%] lg:max-w-[1100px] 2xl:max-w-[1299px]
             "
           >
@@ -115,7 +113,6 @@ export default function Hero() {
             className="
               inline-flex items-center justify-center rounded-full bg-[#93AA28] text-white
               transition-all duration-300 hover:scale-105 active:scale-95 font-normal shadow-lg
-              /* Standardized Button Sizing */
               h-[46px] px-8 text-[13px]
               md:h-[54px] md:px-10 md:text-[16px]
               min-[1440px]:h-[60px] min-[1440px]:px-[40px] min-[1440px]:text-[18px]
