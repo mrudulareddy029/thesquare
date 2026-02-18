@@ -27,18 +27,18 @@ export default function SmartHomeSection() {
           
           {/* MAIN HEADING (Top) */}
           <h2 className="
-            font-gotham font-light text-white uppercase text-start w-full 
-            text-[24px] sm:text-[32px] 
-            lg:text-[47px] leading-tight tracking-wide
-            
-            /* 1440px+ Specs */
-            min-[1440px]:text-[60px] 
-            min-[1440px]:leading-[60px] 
-            min-[1440px]:font-normal 
-            min-[1440px]:tracking-normal
-          ">
-            Connect with smart solutions at your home
-          </h2>
+  font-gotham font-light text-white uppercase
+  text-[24px] sm:text-[32px] lg:text-[47px]
+  xl:text-[54px] 2xl:text-[60px]
+  leading-[1.1]
+  tracking-[2px]
+  2xl:whitespace-nowrap
+">
+
+  
+ 
+  Connect with smart solutions at your home
+</h2>
 
           <div className="w-full h-[10px] mb-4 min-[1440px]:mb-6" />
 
@@ -65,13 +65,13 @@ export default function SmartHomeSection() {
       </div>
 
       {/* 2. IMAGES GRID */}
-      <div className="relative container mx-auto px-6 lg:max-w-[1320px] min-[1440px]:max-w-[1622px] z-10 mt-10 lg:mt-20">
+      <div className="relative mx-auto px-6 lg:max-w-[1320px] min-[1440px]:max-w-[1622px] z-10 mt-10 lg:mt-20">
         <div className="absolute top-[8%] left-1/2 -translate-x-1/2 -z-10 hidden lg:block w-full h-[90%]">
           <Image src="/rectangular.png" alt="frame" fill className="object-contain opacity-50" sizes="1320px" />
         </div>
 
         <div className="flex flex-col lg:flex-row gap-6 lg:gap-8 items-stretch w-full">
-          <div className="w-full lg:w-1/2 relative min-h-[300px] sm:min-h-[450px] lg:h-[763px] min-[1440px]:h-[850px]">
+         <div className="w-full lg:w-1/2 relative aspect-[4/3] sm:aspect-[16/10] lg:aspect-auto lg:h-[763px] min-[1440px]:h-[850px]">
             <Image
               src="/firstimage.png"
               alt="Smart Home Automation"
@@ -83,11 +83,11 @@ export default function SmartHomeSection() {
           </div>
 
           <div className="w-full lg:w-1/2 flex flex-col gap-6 lg:h-[763px] min-[1440px]:h-[850px]">
-            <div className="relative w-full h-[220px] sm:h-[300px] lg:flex-1">
+<div className="relative w-full aspect-[16/10] sm:aspect-[16/9] lg:aspect-auto lg:flex-1">
               <Image src="/secondimage.png" alt="Kitchen" fill className="object-cover rounded-xl lg:rounded-sm mt-7 lg:mt-10" />
             </div>
-            <div className="relative w-full h-[220px] sm:h-[300px] lg:flex-1">
-              <Image src="/thirdimage.png" alt="Living Room" fill className="object-cover rounded-xl lg:rounded-smmt-7 lg:mt-10" />
+<div className="relative w-full aspect-[16/10] sm:aspect-[16/9] lg:aspect-auto lg:flex-1">
+              <Image src="/thirdimage.png" alt="Living Room" fill className="object-cover rounded-xl lg:rounded-sm mt-7 lg:mt-10" />
             </div>
           </div>
         </div>
@@ -121,7 +121,7 @@ export default function SmartHomeSection() {
         {/* --- ADJUSTMENT 1: REDUCED WIDTH --- */}
         <div className="mx-auto w-full max-w-[950px] min-[1440px]:max-w-[1250px] border border-white p-2 sm:p-4">
           <div className="w-full bg-white rounded-lg lg:rounded-none overflow-visible">
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 ">
               {features.map((feature, index) => (
                 <div
                   key={index}

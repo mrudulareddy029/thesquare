@@ -61,13 +61,13 @@ export default function FaqSection() {
           <h2 className="text-[rgb(106,138,44)] font-gotham font-light text-[22px] leading-[26.4px] lg:text-[60px] lg:leading-[45px] tracking-[1px] mb-[6px] uppercase">
             Frequently Asked Questions
           </h2>
-          <p className="text-black font-gotham font-normal text-[24px] leading-[50px]">
+<p className="text-black font-gotham font-normal text-[14px] leading-[22px] sm:text-[18px] sm:leading-[28px] lg:text-[24px] lg:leading-[50px]">
             Everything you need to know about The Square, Adibatla
           </p>
         </div>
 
         {/* FAQ LIST */}
-        <div className="flex flex-col gap-3 font-gotham">
+<div className="flex flex-col gap-3 font-gotham">
           {faqData.map((item, index) => {
             const isActive = activeIndex === index;
             const contentId = `faq-content-${index}`;
@@ -87,8 +87,8 @@ export default function FaqSection() {
                   onClick={() => toggleFaq(index)}
                   className={`w-full flex items-center justify-between
 min-h-[64px] sm:min-h-[80px] lg:min-h-[103px]
-px-7 sm:px-9 lg:px-[80px]
-py-4 sm:py-5 lg:py-0
+px-4 sm:px-9 lg:px-[80px]
+py-3 sm:py-5 lg:py-0
 text-left transition-colors duration-300 focus:outline-none border-none ${
   isActive ? 'bg-[rgb(106,138,44)]' : 'bg-white hover:bg-gray-50'
 }`}
@@ -133,7 +133,7 @@ text-left transition-colors duration-300 focus:outline-none border-none ${
                   }`}
                 >
                   <div className="overflow-hidden">
-                    <div className="px-6 sm:px-8 lg:px-[80px] py-4 lg:py-[40px] text-[rgb(74,74,74)]">
+                    <div className="px-4 sm:px-8 lg:px-[80px] py-3 sm :py-4 lg:py-[40px] text-[rgb(74,74,74)]">
                       <p className="font-gotham font-normal text-[18px] sm:text-[24px] leading-[26px] text-start">
                         {item.answer}
                       </p>
