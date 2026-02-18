@@ -55,14 +55,13 @@ export default function FaqSection() {
       className="pt-16 pb-6 lg:pt-[80px] lg:pb-[50px] rounded-t-[30px] lg:rounded-t-[50px] overflow-hidden" 
       id="faq"
     >
-      <div className="w-full max-w-[1500px] px-5 lg:px-0 mx-auto">
-        
+<div className="w-full mx-auto px-5 lg:px-[119px] max-w-[1920px]">        
         {/* HEADER SECTION */}
         <div className="text-center mx-auto mb-6 lg:mb-8">
           <h2 className="text-[rgb(106,138,44)] font-gotham font-light text-[22px] leading-[26.4px] lg:text-[60px] lg:leading-[45px] tracking-[1px] mb-[6px] uppercase">
             Frequently Asked Questions
           </h2>
-          <p className="text-black font-gotham font-normal text-[25px] leading-[50px]">
+          <p className="text-black font-gotham font-normal text-[24px] leading-[50px]">
             Everything you need to know about The Square, Adibatla
           </p>
         </div>
@@ -86,11 +85,16 @@ export default function FaqSection() {
                   aria-expanded={isActive}
                   aria-controls={contentId}
                   onClick={() => toggleFaq(index)}
-                  className={`w-full flex items-center justify-between px-4 py-6 lg:px-[50px] lg:py-[30px] text-left transition-colors duration-300 focus:outline-none border-none ${
-                    isActive ? 'bg-[rgb(106,138,44)]' : 'bg-white hover:bg-gray-50'
-                  }`}
+                  className={`w-full flex items-center justify-between
+min-h-[64px] sm:min-h-[80px] lg:min-h-[103px]
+px-7 sm:px-9 lg:px-[80px]
+py-4 sm:py-5 lg:py-0
+text-left transition-colors duration-300 focus:outline-none border-none ${
+  isActive ? 'bg-[rgb(106,138,44)]' : 'bg-white hover:bg-gray-50'
+}`}
+
                 >
-                  <span className={`tracking-tight pr-4 text-[15px] sm:text-[26px] leading-[22px] sm:leading-[24px] ${
+                  <span className={`tracking-tight pr-4 text-[15px] sm:text-[32px] leading-[22px] sm:leading-[24px] ${
                     isActive ? 'text-white' : 'text-[rgb(33,37,41)]' 
                   }`}>
                     {item.question}
@@ -129,8 +133,8 @@ export default function FaqSection() {
                   }`}
                 >
                   <div className="overflow-hidden">
-                    <div className="px-5 lg:px-[48px] py-4 lg:py-[40px] text-[rgb(74,74,74)]">
-                      <p className="font-gotham font-normal text-[18px] sm:text-[23px] leading-[26px] text-start">
+                    <div className="px-6 sm:px-8 lg:px-[80px] py-4 lg:py-[40px] text-[rgb(74,74,74)]">
+                      <p className="font-gotham font-normal text-[18px] sm:text-[24px] leading-[26px] text-start">
                         {item.answer}
                       </p>
                     </div>

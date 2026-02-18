@@ -30,53 +30,42 @@ export default function Footer() {
         
         <div className="w-full flex flex-col items-center">
           
-          <div className="flex flex-col lg:flex-row w-full gap-10">
+          <div className="flex flex-col lg:flex-row w-full gap-6 lg:gap-10">
             
-            {/* LEFT COLUMN: Logos and Navigation (Fixed at 58% on desktop) */}
-           <div className="w-full lg:w-[58%] flex flex-col lg:flex-row relative">
-            {/* 2. CUSTOM VERTICAL LINE: Middle Line */}
-  <div className="
-    hidden lg:block 
-    absolute 
-    right-0              /* Positions it between left/right columns */
-    top-20               /* Moves the START of the line DOWN */
-    h-[80%]              /* Controls the length of the line */
-    w-[1px]              /* THICKNESS: Change to [3px] if needed */
-    bg-[#6A8A2C]/90      /* Color with slight transparency */
-  "></div>
+            {/* LEFT COLUMN: Logos and Navigation */}
+            <div className="w-full lg:w-[58%] flex flex-col lg:flex-row relative border-b lg:border-b-0 border-gray-100 pb-8 lg:pb-0">
+              
+              {/* 2. CUSTOM VERTICAL LINE: Middle Line (Hidden on Mobile) */}
+              <div className="hidden lg:block absolute right-0 top-10 h-[90%] w-[1px] bg-[#6A8A2C]/90"></div>
 
-{/* Added h-full and justify-between to push nav to bottom */}
-<div className="w-full lg:flex-1 flex flex-col items-center lg:items-start justify-between pt-10 lg:pt-12">                
+              <div className="w-full lg:flex-1 flex flex-col items-center lg:items-start justify-between pt-8 lg:pt-12">                
                 
                 {/* --- LOGOS GROUP --- */}
-                {/* ADDED lg:ml-20 to move logos to the right */}
-                <div className="flex flex-col sm:flex-row items-center gap-8 lg:gap-10 mb-10 lg:mb-16 mt-8 lg:mt-8 lg:ml-20">
+                {/* Changed: responsive margins and alignment */}
+                <div className="flex flex-col sm:flex-row items-center gap-6 lg:gap-10 mb-8 lg:mb-16 mt-4 lg:mt-8 lg:ml-20">
                   <img 
                     src="/footer-ira.png" 
                     alt="IRA" 
-                    className="w-[120px] lg:w-[100px] h-auto object-contain" 
+                    className="w-[100px] lg:w-[100px] h-auto object-contain" 
                   />
                   <img 
                     src="/the-square-ira-realty-logo.png" 
                     alt="Square" 
-                    className="w-[120px] lg:w-[100px] h-auto object-contain" 
+                    className="w-[100px] lg:w-[100px] h-auto object-contain" 
                   />
                 </div>
 
                 {/* Navigation links - Responsive Strategy */}
                 <nav className="w-full mb-6 lg:mb-6 lg:pt-6">
-                  {/* Mobile: flex-col (stacked)
-                    Laptops (lg): flex-row + flex-nowrap (Forces single line) + justify-between
-                  */}
-                  <ul className="flex flex-col lg:flex-row lg:flex-nowrap items-center lg:items-start justify-between w-full gap-6 lg:gap-x-2 xl:gap-x-8">
+                  <ul className="flex flex-col lg:flex-row lg:flex-nowrap items-center lg:items-start justify-between w-full gap-4 lg:gap-x-2 xl:gap-x-8">
                     {NAV_LINKS.map((link, index) => (
                       <li key={index} className="shrink-0">
                         <Link 
                           href={link.href} 
                           className={`${
                             link.isBold 
-                              ? 'text-xl lg:text-[13px] xl:text-[15px] text-[rgb(89,119,26)] font-medium' 
-                              : 'text-lg lg:text-[12px] xl:text-[14px] text-[#7a8b44] font-light'
+                              ? 'text-lg lg:text-[13px] xl:text-[15px] text-[rgb(89,119,26)] font-medium' 
+                              : 'text-md lg:text-[12px] xl:text-[19px] text-[#7a8b44] font-light'
                           } whitespace-nowrap hover:text-[rgb(89,119,26)] transition-all`}
                         >
                           {link.label}
@@ -88,34 +77,30 @@ export default function Footer() {
               </div>
 
               {/* Bird Image Column - Decorative */}
-             {/* Bird Image Column - Responsive */}
-<div className="flex justify-center items-end w-full lg:w-[140px] xl:w-[160px] shrink-0 px-2 mt-6 lg:mt-0">
-  <img
-    src="/footer1.webp"
-    alt="Birds"
-    className="
-      h-auto object-contain object-bottom
-      w-[clamp(140px,45vw,240px)]
-      lg:w-full lg:h-[280px]
-    "
-  />
-</div>
+              <div className="flex justify-center items-end w-full lg:w-[140px] xl:w-[160px] shrink-0 px-2 mt-4 lg:mt-0">
+                <img
+                  src="/footer1.webp"
+                  alt="Birds"
+                  className="h-auto object-contain object-bottom w-[120px] lg:w-full lg:h-[280px]"
+                />
+              </div>
 
             </div>
 
             {/* RIGHT COLUMN: Address & Contact */}
-            <div className="w-full lg:flex-1 flex items-start justify-center lg:justify-start lg:pl-10 pt-10 lg:pt-12 pb-10">
-              <div className="w-full max-w-[480px] flex flex-col">
-                <p className="text-[#8B4513] font-book mb-2 lg:mb-4 text-base">Address:</p>
+            {/* Changed: Added text-center lg:text-left logic */}
+            <div className="w-full lg:flex-1 flex items-start justify-center lg:justify-start lg:pl-12 pt-4 lg:pt-12 pb-10 mt-4 lg:mt-10">
+              <div className="w-full max-w-[600px] flex flex-col items-center lg:items-start text-center lg:text-left">
+                <p className="text-[#8B4513] font-book mb-2 lg:mb-4 text-[16px] lg:text-[20px]">Address:</p>
                 
-                <div className="text-black font-light leading-relaxed text-[15px] lg:text-base">
+                <div className="text-black font-light leading-relaxed text-[14px] lg:text-[20px]">
                   <p>4-49/2, Besides Anvaya Conventions Road, Financial District, Vattinagulapally, Hyderabad,</p>
-                     <p>Telangana - 500 032</p>
+                  <p>Telangana - 500 032</p>
                   
-                  <div className="flex flex-col sm:flex-row lg:flex-col xl:flex-row items-start gap-4 xl:gap-8 mt-6 lg:mt-5">
+                  <div className="flex flex-col sm:flex-row lg:flex-col xl:flex-row items-center lg:items-start gap-4 xl:gap-8 mt-6 lg:mt-5">
                     <p className="flex items-center">
                       <span className="text-[#8B4513] font-normal mr-2">Phone:</span>
-                      <a href="tel:+918001345345" className="hover:underline">+91 8001345345</a>
+                      <a href="tel:+918001345345" className="text-[14px] lg:text-[20px] whitespace-nowrap hover:underline">+91 8001345345</a>
                     </p>
                     <p className="flex items-center">
                       <span className="text-[#8B4513] font-normal mr-2">Email:</span>
@@ -124,8 +109,8 @@ export default function Footer() {
                   </div>
                 </div>
 
-                <div className="flex items-center justify-start gap-6 mt-8 lg:mt-6">
-                  <span className="text-[#8B4513] font-normal text-base">Let's Connect:</span>
+                <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 sm:gap-6 mt-8 lg:mt-6">
+                  <span className="text-[#8B4513] font-normal text-[16px] lg:text-[20px]">Let's Connect:</span>
                   <div className="flex gap-6 items-center text-black">
                     <PhoneIcon /> 
                     <WhatsappIcon /> 
@@ -138,8 +123,8 @@ export default function Footer() {
         </div>
 
         {/* DISCLAIMER */}
-        <div className="w-full mt-6 py-6">
-          <p className="text-gray-500 font-light text-[10px] lg:text-[11px] leading-relaxed text-center max-w-5xl mx-auto">
+        <div className="w-full mt-2 lg:mt-6 py-6 border-t border-gray-50 lg:border-none">
+          <p className="text-gray-500 font-light text-[10px] lg:text-[11px] leading-relaxed text-center max-w-5xl mx-auto px-4">
             Disclaimer: "This is purely a conceptual presentation and not a legal offering. The promoters reserve the right to make changes in elevation, specifications, and plans as deemed fit."
           </p>
         </div>
@@ -147,8 +132,8 @@ export default function Footer() {
 
       {/* COPYRIGHT BAR */}
       <div className="w-full bg-[#1a1a1a]">
-        <div className="max-w-7xl mx-auto flex items-center justify-center py-4">
-          <span className="text-white font-light uppercase tracking-[0.2em] text-xs">
+        <div className="max-w-7xl mx-auto flex items-center justify-center py-5">
+          <span className="text-white font-light uppercase tracking-[0.2em] text-[10px] sm:text-xs">
             ©2026 IRAREALTY
           </span>
         </div>
@@ -157,8 +142,7 @@ export default function Footer() {
   );
 }
 
-/* ================= ICONS ================= */
-
+/* ================= ICONS (Remain Unchanged) ================= */
 const PhoneIcon = () => (
   <svg stroke="currentColor" fill="currentColor" viewBox="0 0 24 24" height="22" width="22" className="cursor-pointer hover:text-[rgb(89,119,26)] transition-colors">
     <path d="M20 15.5c-1.25 0-2.45-.2-3.57-.57a1.02 1.02 0 0 0-1.02.24l-2.2 2.2a15.045 15.045 0 0 1-6.59-6.59l2.2-2.21a.96.96 0 0 0 .25-1A11.36 11.36 0 0 1 8.5 4c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1 0 9.39 7.61 17 17 17 .55 0 1-.45 1-1v-3.5c0-.55-.45-1-1-1zM19 12h2a9 9 0 0 0-9-9v2c3.87 0 7 3.13 7 7zm-4 0h2c0-2.76-2.24-5-5-5v2c1.66 0 3 1.34 3 3z" />
