@@ -66,13 +66,15 @@ export default function AmenitiesSection() {
   };
 
   return (
-    <section id="amenities" className="relative bg-white overflow-hidden mx-auto w-full max-w-[1440px] py-8 md:py-16">
-      <div className="container mx-auto px-4 lg:px-0 lg:w-[91.66%] lg:max-w-none">
+<section
+  id="amenities"
+  className="relative bg-white overflow-hidden w-full max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-0 py-8 md:py-16">
+          <div className="container mx-auto px-4 lg:px-0 lg:w-[91.66%] lg:max-w-none">
         {/* ✅ PUSH LEFT & RIGHT (DESKTOP) */}
-        <div className="flex flex-col lg:flex-row items-center justify-between gap-10 lg:gap-20">
+<div className="flex flex-col lg:flex-row items-center justify-between gap-6 sm:gap-8 lg:gap-20">
 
           {/* ✅ IMAGE COLUMN FIXED WIDTH */}
-          <div className="relative w-full max-w-[440px] lg:w-[520px] xl:w-[520px] aspect-[440/320] flex-shrink-0 flex items-center justify-center">
+<div className="relative w-full max-w-[380px] sm:max-w-[440px] lg:w-[520px] xl:w-[520px] aspect-[440/320] flex-shrink-0 flex items-center justify-center">
             <div className="relative w-full h-full flex items-center justify-center perspective-[1000px]">
               {images.map((src, index) => (
                 <div
@@ -91,17 +93,19 @@ export default function AmenitiesSection() {
               ))}
             </div>
 
-            <button onClick={prevSlide} className="absolute left-[2%] top-1/2 -translate-y-1/2 z-[60] w-[12%] aspect-square flex items-center justify-center cursor-pointer">
+            <button onClick={prevSlide} className="absolute left-2 top-1/2 -translate-y-1/2 z-[60] w-10 h-10 sm:w-12 sm:h-12 lg:w-[12%] lg:h-auto lg:aspect-square flex items-center justify-center cursor-pointer"
+>
               <span className="text-white text-3xl lg:text-5xl font-light drop-shadow-[0_2px_4px_rgba(0,0,0,0.6)]">‹</span>
             </button>
 
-            <button onClick={nextSlide} className="absolute right-[2%] top-1/2 -translate-y-1/2 z-[60] w-[12%] aspect-square flex items-center justify-center cursor-pointer">
+            <button onClick={nextSlide} className="absolute right-2 top-1/2 -translate-y-1/2 z-[60] w-10 h-10 sm:w-12 sm:h-12 lg:w-[12%] lg:h-auto lg:aspect-square flex items-center justify-center cursor-pointer"
+>
               <span className="text-white text-3xl lg:text-5xl font-light drop-shadow-[0_2px_4px_rgba(0,0,0,0.6)]">›</span>
             </button>
           </div>
 
           {/* ✅ RIGHT TEXT COLUMN WIDER */}
-          <div className="w-full lg:max-w-full lg:ml-[80px] lg:text-left flex flex-col justify-center">
+<div className="w-full lg:max-w-full lg:ml-[80px] lg:text-left flex flex-col justify-center text-center lg:text-left">
             {/* ✅ EXACT 2 LINES + 60PX */}
             <h2
               className="
