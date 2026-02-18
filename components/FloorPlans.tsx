@@ -56,9 +56,9 @@ export default function FloorPlans() {
   return (
     <section
       id="plans"
-      className="relative overflow-hidden z-20 bg-ira-bg bg-[url('/facing-bg.png')] bg-cover bg-center rounded-none lg:rounded-t-[50px] mt-0 lg:-mt-[35px]"
+className="relative overflow-hidden z-20 bg-ira-bg bg-[url('/facing-bg.png')] bg-cover bg-center rounded-none lg:rounded-t-[50px]"
     >
-      <div className="py-[32px] lg:py-[56px] xl:py-[72px]">
+<div className="py-8 lg:py-[56px] xl:py-[72px]">
         <div className="w-full px-4 md:px-10 lg:px-16 xl:px-20 mx-auto">
           {/* ================= UPPER SECTION ================= */}
           <div className="flex flex-col xl:flex-row items-center relative">
@@ -114,7 +114,7 @@ export default function FloorPlans() {
               </div>
 
               <div className="relative z-10 flex flex-col items-center xl:items-start h-full justify-center">
-                <h1 className="w-full xl:max-w-[800px] text-[28px] md:text-[40px] xl:text-[60px] font-gotham font-light uppercase tracking-normal text-primary leading-[1.2] px-4 py-6 xl:pt-[189.5px] xl:pl-[189.5px] xl:pr-[37.9px] xl:pb-[10px]">
+                <h1 className="w-full xl:max-w-[800px] text-[28px] md:text-[40px] xl:text-[60px] font-gotham font-light uppercase tracking-normal text-primary leading-[1.2] px-4 pt-6 pb-4 xl:pt-[189.5px] xl:pl-[189.5px] xl:pr-[37.9px] xl:pb-[10px]">
   WHERE EVERY <br />
   SQUARE FOOT <br />
   EXUDES LUXURY
@@ -130,7 +130,7 @@ export default function FloorPlans() {
             </div>
           </div>
 
-          <div className="hidden xl:block w-full h-[55px]" />
+          
 
           {/* LOWER SECTION TABS */}
           <div className="flex justify-start gap-3 mb-[30px] md:mb-[50px] flex-wrap px-4">
