@@ -61,14 +61,15 @@ export default function OurProjects() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 xl:gap-[30px] justify-items-center">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 xl:gap-[30px]"
+>
           {PROJECTS_DATA.map((project, index) => (
             <a
               key={index}
               href={project.link}
               target="_blank"
               rel="noopener noreferrer"
-              className="group relative flex flex-col bg-[#7FA61A] rounded-[24px] shadow-lg p-[10px] overflow-hidden transition-all duration-300 w-full max-w-[390px]"
+className="group relative flex flex-col bg-[#7FA61A] rounded-[24px] shadow-lg p-[10px] overflow-hidden transition-all duration-300 w-full"
             >
               <div className="relative aspect-[4/3] w-full overflow-hidden rounded-[18px] bg-white/20">
                 <Image
@@ -106,11 +107,11 @@ export default function OurProjects() {
                   </div>
                 </div>
 
-                <div className="flex justify-between items-end mt-1">
+                <div className="flex justify-between items-center mt-1 gap-2">
                   <p className="text-[13px] font-normal opacity-95">
                     {project.type}
                   </p>
-                  <p className="text-[9px] md:text-[12px] font-light uppercase tracking-wider">
+<p className="text-[10px] md:text-[12px] font-light uppercase tracking-wider whitespace-nowrap shrink-0">
                     {project.rera}
                   </p>
                 </div>
