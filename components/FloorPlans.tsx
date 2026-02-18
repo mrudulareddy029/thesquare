@@ -133,7 +133,7 @@ className="relative overflow-hidden z-20 bg-ira-bg bg-[url('/facing-bg.png')] bg
           
 
           {/* LOWER SECTION TABS */}
-          <div className="flex justify-start gap-3 mb-[30px] md:mb-[50px] flex-wrap px-4">
+          <div className="flex justify-start gap-3 mt-12 mb-[30px] md:mb-[50px] flex-wrap px-4">
             <button
               onClick={() => setActiveTab("East")}
               className={`h-[44px] min-w-[150px] md:min-w-[169.29px] px-[20px] py-[10px] rounded-full text-sm md:text-base uppercase transition-all ${
